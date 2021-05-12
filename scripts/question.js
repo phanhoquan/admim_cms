@@ -292,6 +292,28 @@ $(document).ready(function () {
     )[0];
     var idCustomText = $(`#${idTargetBox}text_below_the_button${idTarget}`)[0];
 
+    if (typeTarget === "is_condition_logic" && targetHtml.checked) {
+      $(`${classTarget}condition_logic_show_${idTarget}`).show();
+      $(`${classTarget}condition_logic_show_${idTarget} input`).prop(
+        "required",
+        true
+      );
+      $(`${classTarget}condition_logic_show_${idTarget} input`).val("1");
+    }
+
+    if (typeTarget === "is_condition_logic" && !targetHtml.checked) {
+      $(`${classTarget}condition_logic_show_${idTarget}`).hide();
+      $(`${classTarget}condition_logic_show_${idTarget} input`).prop(
+        "required",
+        false
+      );
+      $(`${classTarget}condition_logic_show_${idTarget} input`).prop(
+        "checked",
+        false
+      );
+      $(`${classTarget}condition_logic_show_${idTarget} input`).val("0");
+    }
+
     if (typeTarget === "is_with_image_1_1" && targetHtml.checked) {
       $(`${classTarget}with_image_1_1_show_${idTarget}`).show();
       $(`${classTarget}with_image_1_1_show_${idTarget} input`).prop(
@@ -308,6 +330,7 @@ $(document).ready(function () {
         "required",
         false
       );
+      $(`${classTarget}with_image_1_1_show_${idTarget} input`).val("");
       $(`#${idTargetBox}with_image_16_9_${idTarget}`).prop("disabled", false);
       if (
         (idQuestion_format2 && idQuestion_format2.checked) ||
@@ -337,6 +360,7 @@ $(document).ready(function () {
         "required",
         false
       );
+      $(`${classTarget}with_image_16_9_show_${idTarget} input`).val("");
       if (
         (idQuestion_format2 && idQuestion_format2.checked) ||
         (idQuestion_format3 && idQuestion_format3.checked) ||
@@ -369,6 +393,7 @@ $(document).ready(function () {
         "required",
         false
       );
+      $(`${classTarget}text_below_show_${idTarget} input`).val("");
       if (idQuestion_format4 && idQuestion_format4.checked) {
         $(`#${idTargetBox}table-no-border_${idTarget}`).hide();
       } else {
@@ -396,6 +421,7 @@ $(document).ready(function () {
         "required",
         false
       );
+      $(`${classTarget}question_with_images_${idTarget} input`).val("");
     }
     //  Is set value checks box answer 1||0
     if (typeTarget === "is_answer_check_question" && targetHtml.checked) {
@@ -427,6 +453,7 @@ $(document).ready(function () {
         "required",
         false
       );
+      $(`${classTarget}question_with_images_${idTarget} input`).val("");
     }
     /**End */
   });
@@ -477,26 +504,48 @@ $(document).ready(function () {
       "required",
       false
     );
+    $(`${classTarget}with_image_1_1_show_${idTarget} input`).val("");
+
     $(`${classTarget}with_image_16_9_show_${idTarget}`).hide();
     $(`${classTarget}with_image_16_9_show_${idTarget} input`).prop(
       "required",
       false
     );
+
+    $(`${classTarget}with_image_16_9_show_${idTarget} input`).val("");
+
     $(`${classTarget}with_image_16_9_show_${idTarget} input`).prop(
       "required",
       false
     );
-    $(`${classTarget}question_with_images_${idTarget}`).hide();
+    $(`${classTarget}with_image_16_9_show_${idTarget} input`).val("");
 
+    $(`${classTarget}question_with_images_${idTarget}`).hide();
     $(`${classTarget}question_with_images_${idTarget} input`).prop(
       "required",
       false
     );
+    $(`${classTarget}question_with_images_${idTarget} input`).val("");
+
     $(`${classTarget}text_below_show_${idTarget}`).hide();
     $(`${classTarget}text_below_show_${idTarget} input`).prop(
       "required",
       false
     );
+    $(`${classTarget}text_below_show_${idTarget} input`).val("");
+
+    $(`${classTarget}condition_logic_show_${idTarget}`).hide();
+    $(`${classTarget}condition_logic_show_${idTarget} input`).prop(
+      "required",
+      false
+    );
+    $(`${classTarget}condition_logic_show_${idTarget} input`).val("");
+    $(`${classTarget}condition_logic_show_${idTarget} input`).prop(
+      "checked",
+      false
+    );
+
+    $(`${classTarget}condition_logic_show_${idTarget} input`).val("0");
   }
 
   $(document).on("click", ".sub_handleRadio", function (e) {
@@ -716,6 +765,21 @@ $(document).ready(function () {
       idParent +
       '">With images</label>' +
       "                  </div>" +
+      '                  <div class="form-group col-2-6 col-sm-3 col-3">' +
+      '                    <input type="checkbox" class="checkType check_is_condition_logic resetChecked_' +
+      idParent +
+      ' " data-id="' +
+      idParent +
+      '" name="is_condition_logic[' +
+      idParent +
+      ']" id="is_condition_logic' +
+      idParent +
+      '" data-type="is_condition_logic" data-box="parent_question">' +
+      '                    <label class="form-check-sign" for="is_condition_logic' +
+      idParent +
+      '">Condition Logic</label>' +
+      "                  </div>" +
+      "                </div>" +
       "                </div>" +
       "                </div>" +
       '                <div class="row align-items-center m-0">' +
@@ -727,7 +791,7 @@ $(document).ready(function () {
       "                    </div>" +
       "                  </div>" +
       "                </div>" +
-      '                <div class="row align-items-flex-start m-0">' +
+      '                <div class="row align-items-flex-start m-0 itemLastChild">' +
       '                  <div class="col-lg-4 col-sm-12 col-12 pr-0">' +
       '                    <div class="form-group question-text">' +
       '                      <label for="question" class="fw-normal">Question</label>' +
@@ -787,7 +851,7 @@ $(document).ready(function () {
       "                  </div>" +
       '                  <div class="col-lg-3 col-sm-12 col-12 is_with_image_16_9_show_' +
       idParent +
-      '" style=" display: none;">' +
+      '" style="display: none;">' +
       '                    <div class="form-group">' +
       '                      <label for="question" class="fw-normal">16:9 Image</label>' +
       '                      <div class="upload-btn-wrapper">' +
@@ -802,6 +866,26 @@ $(document).ready(function () {
       "                      </div>" +
       "                    </div>" +
       "                  </div>" +
+      '                  <div class="col-lg-3 col-sm-12 col-12 is_condition_logic_show_' +
+      idParent +
+      '" style="display: none;">' +
+      '                    <div class="form-group ">' +
+      '                      <label for="question" class="fw-normal">Condition Logic</label>' +
+      '                      <div class="condition-wrapper box-radio-custom px-0">' +
+      '<input type="radio" class="conditionLogic" value="0" data-type="parent_question" data-id="' +
+      idParent +
+      '" id="is_condition_logic_id_' +
+      idParent +
+      '" name="is_condition_logic_id[' +
+      idParent +
+      ']">' +
+      '<label class="input-solid" for="is_condition_logic_id_' +
+      idParent +
+      '"><span><i class="icn-actions la icon-edit"></i>Edit Condition Logic</span></label>' +
+      "                      </div>" +
+      "                    </div>" +
+      "                  </div>" +
+      "                </div>" +
       "                </div>" +
       '                <div class="row align-items-start m-0">' +
       '                  <div class="col-lg-12 col-sm-12 col-12 p-0">' +
@@ -1039,8 +1123,23 @@ $(document).ready(function () {
       idParent +
       '">With images</label>' +
       "      </div>" +
+      '                  <div class="form-group col-2-6 col-sm-3 col-3">' +
+      '                    <input type="checkbox" class="checkType check_is_condition_logic resetChecked_' +
+      idParent +
+      ' " data-id="' +
+      idParent +
+      '" name="sub_is_condition_logic[' +
+      idParent +
+      ']" id="sub_is_condition_logic' +
+      idParent +
+      '" data-type="is_condition_logic" data-box="sub_question">' +
+      '                    <label class="form-check-sign" for="sub_is_condition_logic' +
+      idParent +
+      '">Condition Logic</label>' +
+      "                  </div>" +
+      "                </div>" +
       "    </div>" +
-      '    <div class="row align-items-center">' +
+      '    <div class="row align-items-center m-0">' +
       '       <div class="col-lg-3 col-sm-12 col-12">' +
       '         <div class="form-group question-edit">' +
       '           <a href="#" class="">' +
@@ -1049,7 +1148,7 @@ $(document).ready(function () {
       "         </div>" +
       "       </div>" +
       "     </div>" +
-      '     <div class="row align-items-start">' +
+      '     <div class="row align-items-start m-0 itemLastChild">' +
       '       <div class="col-lg-4 col-sm-12 col-12 pr-0">' +
       '         <div class="form-group question-text">' +
       '           <label for="sub_question_name[' +
@@ -1130,6 +1229,25 @@ $(document).ready(function () {
       "           </div>" +
       "         </div>" +
       "       </div>" +
+      '                  <div class="col-lg-3 col-sm-12 col-12 sub_is_condition_logic_show_' +
+      idParent +
+      '" style=" display: none;">' +
+      '                    <div class="form-group ">' +
+      '                      <label for="question" class="fw-normal">Condition Logic</label>' +
+      '                      <div class="condition-wrapper box-radio-custom px-0">' +
+      '<input type="radio" class="conditionLogic" value="0" data-type="sub_question" data-id="' +
+      idParent +
+      '" id="sub_is_condition_logic_id_' +
+      idParent +
+      '" name="sub_is_condition_logic_id[' +
+      idParent +
+      ']">' +
+      '<label class="input-solid" for="sub_is_condition_logic_id_' +
+      idParent +
+      '"><span><i class="icn-actions la icon-edit"></i>Edit Condition Logic</span></label>' +
+      "                      </div>" +
+      "                    </div>" +
+      "                  </div>" +
       "     </div>" +
       '     <div class="row align-items-start">' +
       '       <div class="col-lg-12 col-sm-12 col-12 no-padding-mb">' +

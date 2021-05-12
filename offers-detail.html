@@ -3,7 +3,7 @@
 
 <head>
   <!-- include head.html -->
-  <title>HTML Boilerplate</title>
+  <title>Leads Board</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
   <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
@@ -27,7 +27,7 @@
 </head>
 
 <body>
-  <div class="wrapper -LandingPage">
+  <div class="wrapper -offersPage -LandingPage">
     <!-- include header.html -->
     <div class="main-header">
       <div class="logo-header d-flex align-items-center">
@@ -162,7 +162,7 @@
             </a>
           </li>
           <!-- /item -->
-          <li class="nav-item  submenu">
+          <li class="nav-item active submenu">
             <a data-toggle="collapse" href="#campaign" class="" aria-expanded="false">
               <span class="icn-sidebar icon-offers"></span>
               <p onclick="location.href='campaigns.html'">
@@ -181,7 +181,7 @@
             </div>
           </li>
           <!-- /item -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a data-toggle="collapse" href="#landing_page" class="" aria-expanded="false">
               <span class="icn-sidebar icon-landing-page"></span>
               <p onclick="location.href='landing-page.html'">Landing Pages</p>
@@ -278,53 +278,60 @@
     <main class="main-panel">
       <div class="content page-table">
         <div class="container-fluid">
-          <div class="d-flex align-items-center mb-3 flex-wrap headPageTop">
-            <div class="headPageTop__left">
-              <h4 class="page-title">Landing Pages</h4>
+          <div class="d-flex align-items-center mb-3 flex-wrap headPageTop create-landing-page">
+            <div class="headPageTop__left d-flex align-items-center">
+              <h4 class="page-title">Offers Details</h4>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Campaign</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Offers Details</li>
+                </ol>
+              </nav>
             </div>
             <div class="headPageTop__right d-flex justify-content-end">
-              <button type="submit" class="btn btn-info btnCreate">
+              <button type="submit" class="btn btn-info btnCreate mr-25">
                 <span class="icn-btn icon-save"></span>
                 <span class="ml-4 text-btn fw-semimbold">Save</span>
               </button>
-              <a href="create-landing-page.html" class="btn btn-info btnCreate">
-                <span class="icn-btn icon-landing-page"></span>
-                <span class="ml-4 text-btn fw-semimbold">Create new landing page</span>
+              <a href="create-offers.html" class="btn btn-info btnCreate mr-0">
+                <span class="icn-btn icon-public"></span>
+                <span class="ml-4 text-btn fw-semimbold">Create Offer</span>
               </a>
             </div>
           </div>
+          <!-- /Breadcrum -->
           <div class="card">
             <div class="card-header has-border-top">
-              <div class="row align-items-center filterTop">
-                <div class="col-lg-3 col-sm-3 col-12 filterTop__left">
-                  <div class="card-title">All landing pages (85)</div>
+              <div class="row align-items-center">
+                <div class="col-sm-3 col-12">
+                  <div class="pl-0 form-group selectForm form-inline pr0 selectFormPaging">
+                    <select class="form-control mw120 input-square bg-info border-0 text-white" id="squareSelect">
+                      <option>Actions</option>
+                      <option>Delete</option>
+                      <option>Active</option>
+                      <option>Inactive</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="col-lg-9 col-sm-9 col-12 filterTop__right">
+                <div class="col-sm-9 col-12">
                   <form action="" method="POST">
-                    <div class="d-flex justify-content-end groupSearch ">
-                      <div class="form-group filter-search">
-                        <div class="input-group has-icon">
-                          <input type="text" value="Type in to search..." class="form-control input-solid pr-0">
-                          <div class="input-group-append">
-                            <span class="input-group-text input-group-icon"><i class="la la-neuter"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group selectForm form-inline selectFormPaging">
-                        <select class="form-control mw120 input-solid input-square bg-info text-muted border-info" id="counter">
+                    <div class="d-flex justify-content-md-end justify-content-sm-start selectFormPaging">
+                      <div class="form-group form-inline pr-0 filterGroup">
+                        <select class="form-control mw120 input-solid input-square bg-info text-muted border-info select-hidden" id="Filters">
+                          <option>Filters</option>
                           <option>50</option>
                           <option>100</option>
                           <option>150</option>
                           <option>200</option>
                         </select>
                       </div>
-                      <div class="form-group selectForm form-inline pr0 selectFormAction">
-                        <select class="form-control mw120 input-square bg-info border-0 text-white" id="squareSelect">
-                          <option>Actions</option>
-                          <option>Delete</option>
-                          <option>Active</option>
-                          <option>Inactive</option>
-                        </select>
+                      <div class="form-group filter-search px-0">
+                        <div class="input-group has-icon border-bottom-left-radius-0 border-top-left-radius-0">
+                          <input type="text" value="Type in to search..." class="form-control input-solid">
+                          <div class="input-group-append">
+                            <span class="input-group-text input-group-icon"><i class="la la-neuter"></i></span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </form>
@@ -333,15 +340,17 @@
             </div>
             <div class="card-body pt-0">
               <div class="table-responsive">
-                <table class="table table-bordered table-head-bg-info">
+
+                <table class="table table-bordered table-head-bg-info tableOffers">
                   <thead>
                     <tr>
                       <th width="36px"></th>
-                      <th class="text-center">ID</th>
-                      <th class="text-center">Landing Page Name</th>
-                      <th class="text-center">Campaign</th>
-                      <th class="text-center">Page Title</th>
-                      <th class="text-center">URL</th>
+                      <th width="50px" class="text-center">Lock <br /> Status</th>
+                      <th class="text-center" width="250px">Campaign title</th>
+                      <th class="text-center" width="200px">Question</th>
+                      <th class="text-center">Answers</th>
+                      <th width="280px" class="text-center">Sub question<br />Condition logic</th>
+                      <th width="40px" class="text-center">Order</th>
                       <th class="text-center">Status</th>
                       <th width="200px" class="text-center">Action</th>
                     </tr>
@@ -354,311 +363,381 @@
                           <label class="form-check-sign" for="is_tableCheck_001"></label>
                         </div>
                       </td>
-                      <td class="align-top">001</td>
-                      <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                      <td class="align-top px-2">
+                        <span class="lockIcon d-block text-center">
+                          <i class="icon-lock text-info"></i>
+                        </span>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>What is your current employment status?</p>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>What is your housing situation?</p>
                       </td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <p class="text-info fw-bold">
+                        <ul class="answerList">
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">I’m a home owner</h5>
+                          </li>
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">I’m renting my home</h5>
+                          </li>
+                          <!-- /item -->
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title"> I’m living with my parents</h5>
+                          </li>
+                          <!-- /item -->
+                        </ul>
+                        </p>
                       </td>
                       <td class="align-top">
-                        WHO IS THE NEXT WINNER OF OUR<br />
-                        PLAYSTATION 5 COMPETITION?!
+                        <p> <i class="icn-actions la icon-edit"></i> Condition logic</p>
                       </td>
-                      <td class="align-top">
-                        <a href="https://landingpageps5.com" alt="landingpageps5.com">landingpageps5.com</a>
+                      <td class="align-top px-2">
+                        <input type="text" class="form-control px-2 text-center" placeholder="" value="001">
                       </td>
-                      <td class="align-center text-center">
-                        <span class="badge badge-danger">Inactive</span>
-                      </td>
+                      <td class="align-top"><span class="badge badge-danger">Inactive</span></td>
                       <td class="td-actions pt-2">
-                        <a href="#" class="btn edit-actions">
-                          <i class="icn-actions la icon-edit"></i>
-                          <span class="actions-text">Edit</span>
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-eye"></i>
+                          <span class="actions-text">Preview Offer</span>
                         </a>
-                        <!-- <a href="#" class="btn edit-actions">
-                          <i class="icn-actions icon-offers"></i>
-                          <span class="actions-text">Edit Condition Logic</span>
-                        </a> -->
-                        <button class="btn detail-actions del-actions" data-toggle="modal" data-target="#modalConfirm">
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-bar-chart-o"></i>
+                          <span class="actions-text">View Stats</span>
+                        </a>
+                        <a href="#" class="btn del-actions">
                           <i class="icn-actions la la-trash-o"></i>
                           <span class="actions-text">Delete</span>
-                        </button>
+                        </a>
                       </td>
                     </tr>
                     <tr>
                       <td class="align-top box-checkbox-custom px-3">
                         <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[002]" id="is_tableCheck_002">
-                          <label class="form-check-sign" for="is_tableCheck_002"></label>
+                          <input class="tableCheck" type="checkbox" name="is_tableCheck[002]" id="is_tableCheck_2">
+                          <label class="form-check-sign" for="is_tableCheck_2"></label>
                         </div>
                       </td>
-                      <td class="align-top">002</td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <span class="lockIcon d-block text-center">
+                          <i class="icon-unlock text-info"></i>
+                        </span>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>Do you own a house?</p>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>Do you currently own a house?</p>
                       </td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <p class="text-info fw-bold">
+                        <ul class="answerList">
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">Yes</h5>
+                          </li>
+                          <!-- /item -->
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">No</h5>
+                          </li>
+                          <!-- /item -->
+                        </ul>
+                        </p>
                       </td>
                       <td class="align-top">
-                        WHO IS THE NEXT WINNER OF OUR<br />
-                        PLAYSTATION 5 COMPETITION?!
+                        <p>Sub question</p>
                       </td>
-                      <td class="align-top">
-                        <a href="https://landingpageps5.com" alt="landingpageps5.com">landingpageps5.com</a>
+                      <td class="align-top px-2">
+                        <input type="text" class="form-control px-2 text-center" placeholder="" value="02">
                       </td>
-                      <td class="align-center text-center">
-                        <span class="badge badge-success">Active</span>
-                      </td>
+                      <td class="align-top"><span class="badge badge-success">Active</span></td>
                       <td class="td-actions pt-2">
-                        <a href="#" class="btn edit-actions">
-                          <i class="icn-actions la icon-edit"></i>
-                          <span class="actions-text">Edit</span>
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-eye"></i>
+                          <span class="actions-text">Preview Offer</span>
                         </a>
-                        <!-- <a href="#" class="btn edit-actions">
-                          <i class="icn-actions icon-offers"></i>
-                          <span class="actions-text">Edit Condition Logic</span>
-                        </a> -->
-                        <button class="btn detail-actions del-actions" data-toggle="modal" data-target="#modalConfirm">
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-bar-chart-o"></i>
+                          <span class="actions-text">View Stats</span>
+                        </a>
+                        <a href="#" class="btn del-actions">
                           <i class="icn-actions la la-trash-o"></i>
                           <span class="actions-text">Delete</span>
-                        </button>
+                        </a>
                       </td>
                     </tr>
                     <tr>
                       <td class="align-top box-checkbox-custom px-3">
                         <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[003]" id="is_tableCheck_003">
-                          <label class="form-check-sign" for="is_tableCheck_003"></label>
+                          <input class="tableCheck" type="checkbox" name="is_tableCheck[003]" id="is_tableCheck_3">
+                          <label class="form-check-sign" for="is_tableCheck_3"></label>
                         </div>
                       </td>
-                      <td class="align-top">003</td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <span class="lockIcon d-block text-center">
+                          <i class="icon-unlock text-info"></i>
+                        </span>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>Do you own a house?</p>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>Do you currently own a house?</p>
                       </td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <p class="text-info fw-bold">
+                        <ul class="answerList">
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">Yes</h5>
+                          </li>
+                          <!-- /item -->
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">No</h5>
+                          </li>
+                          <!-- /item -->
+                        </ul>
+                        </p>
                       </td>
                       <td class="align-top">
-                        WHO IS THE NEXT WINNER OF OUR<br />
-                        PLAYSTATION 5 COMPETITION?!
+                        <p>Sub question</p>
                       </td>
-                      <td class="align-top">
-                        <a href="https://landingpageps5.com" alt="landingpageps5.com">landingpageps5.com</a>
+                      <td class="align-top px-2">
+                        <input type="text" class="form-control px-2 text-center" placeholder="" value="03">
                       </td>
-                      <td class="align-center text-center">
-                        <span class="badge badge-success">Active</span>
-                      </td>
+                      <td class="align-top"><span class="badge badge-success">Active</span></td>
                       <td class="td-actions pt-2">
-                        <a href="#" class="btn edit-actions">
-                          <i class="icn-actions la icon-edit"></i>
-                          <span class="actions-text">Edit</span>
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-eye"></i>
+                          <span class="actions-text">Preview Offer</span>
                         </a>
-                        <!-- <a href="#" class="btn edit-actions">
-                          <i class="icn-actions icon-offers"></i>
-                          <span class="actions-text">Edit Condition Logic</span>
-                        </a> -->
-                        <button class="btn detail-actions del-actions" data-toggle="modal" data-target="#modalConfirm">
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-bar-chart-o"></i>
+                          <span class="actions-text">View Stats</span>
+                        </a>
+                        <a href="#" class="btn del-actions">
                           <i class="icn-actions la la-trash-o"></i>
                           <span class="actions-text">Delete</span>
-                        </button>
+                        </a>
                       </td>
                     </tr>
                     <tr>
                       <td class="align-top box-checkbox-custom px-3">
                         <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[004]" id="is_tableCheck_004">
-                          <label class="form-check-sign" for="is_tableCheck_004"></label>
+                          <input class="tableCheck" type="checkbox" name="is_tableCheck[004]" id="is_tableCheck_4">
+                          <label class="form-check-sign" for="is_tableCheck_4"></label>
                         </div>
                       </td>
-                      <td class="align-top">004</td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <span class="lockIcon d-block text-center">
+                          <i class="icon-unlock text-info"></i>
+                        </span>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>Do you own a house?</p>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>Do you currently own a house?</p>
                       </td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <p class="text-info fw-bold">
+                        <ul class="answerList">
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">Yes</h5>
+                          </li>
+                          <!-- /item -->
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">No</h5>
+                          </li>
+                          <!-- /item -->
+                        </ul>
+                        </p>
                       </td>
                       <td class="align-top">
-                        WHO IS THE NEXT WINNER OF OUR<br />
-                        PLAYSTATION 5 COMPETITION?!
+                        <p>Sub question</p>
                       </td>
-                      <td class="align-top">
-                        <a href="https://landingpageps5.com" alt="landingpageps5.com">landingpageps5.com</a>
+                      <td class="align-top px-2">
+                        <input type="text" class="form-control px-2 text-center" placeholder="" value="04">
                       </td>
-                      <td class="align-center text-center">
-                        <span class="badge badge-success">Active</span>
-                      </td>
+                      <td class="align-top"><span class="badge badge-success">Active</span></td>
                       <td class="td-actions pt-2">
-                        <a href="#" class="btn edit-actions">
-                          <i class="icn-actions la icon-edit"></i>
-                          <span class="actions-text">Edit</span>
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-eye"></i>
+                          <span class="actions-text">Preview Offer</span>
                         </a>
-                        <!-- <a href="#" class="btn edit-actions">
-                          <i class="icn-actions icon-offers"></i>
-                          <span class="actions-text">Edit Condition Logic</span>
-                        </a> -->
-                        <button class="btn detail-actions del-actions" data-toggle="modal" data-target="#modalConfirm">
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-bar-chart-o"></i>
+                          <span class="actions-text">View Stats</span>
+                        </a>
+                        <a href="#" class="btn del-actions">
                           <i class="icn-actions la la-trash-o"></i>
                           <span class="actions-text">Delete</span>
-                        </button>
+                        </a>
                       </td>
                     </tr>
                     <tr>
                       <td class="align-top box-checkbox-custom px-3">
                         <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[005]" id="is_tableCheck_005">
-                          <label class="form-check-sign" for="is_tableCheck_005"></label>
+                          <input class="tableCheck" type="checkbox" name="is_tableCheck[005]" id="is_tableCheck_5">
+                          <label class="form-check-sign" for="is_tableCheck_5"></label>
                         </div>
                       </td>
-                      <td class="align-top">005</td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <span class="lockIcon d-block text-center">
+                          <i class="icon-unlock text-info"></i>
+                        </span>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>Do you own a house?</p>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>Do you currently own a house?</p>
                       </td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <p class="text-info fw-bold">
+                        <ul class="answerList">
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">Yes</h5>
+                          </li>
+                          <!-- /item -->
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">No</h5>
+                          </li>
+                          <!-- /item -->
+                        </ul>
+                        </p>
                       </td>
                       <td class="align-top">
-                        WHO IS THE NEXT WINNER OF OUR<br />
-                        PLAYSTATION 5 COMPETITION?!
+                        <p>Sub question</p>
                       </td>
-                      <td class="align-top">
-                        <a href="https://landingpageps5.com" alt="landingpageps5.com">landingpageps5.com</a>
+                      <td class="align-top px-2">
+                        <input type="text" class="form-control px-2 text-center" placeholder="" value="05">
                       </td>
-                      <td class="align-center text-center">
-                        <span class="badge badge-success">Active</span>
-                      </td>
+                      <td class="align-top"><span class="badge badge-success">Active</span></td>
                       <td class="td-actions pt-2">
-                        <a href="#" class="btn edit-actions">
-                          <i class="icn-actions la icon-edit"></i>
-                          <span class="actions-text">Edit</span>
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-eye"></i>
+                          <span class="actions-text">Preview Offer</span>
                         </a>
-                        <!-- <a href="#" class="btn edit-actions">
-                          <i class="icn-actions icon-offers"></i>
-                          <span class="actions-text">Edit Condition Logic</span>
-                        </a> -->
-                        <button class="btn detail-actions del-actions" data-toggle="modal" data-target="#modalConfirm">
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-bar-chart-o"></i>
+                          <span class="actions-text">View Stats</span>
+                        </a>
+                        <a href="#" class="btn del-actions">
                           <i class="icn-actions la la-trash-o"></i>
                           <span class="actions-text">Delete</span>
-                        </button>
+                        </a>
                       </td>
                     </tr>
                     <tr>
                       <td class="align-top box-checkbox-custom px-3">
                         <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[006]" id="is_tableCheck_006">
-                          <label class="form-check-sign" for="is_tableCheck_006"></label>
+                          <input class="tableCheck" type="checkbox" name="is_tableCheck[006]" id="is_tableCheck_6">
+                          <label class="form-check-sign" for="is_tableCheck_6"></label>
                         </div>
                       </td>
-                      <td class="align-top">006</td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <span class="lockIcon d-block text-center">
+                          <i class="icon-unlock text-info"></i>
+                        </span>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>Do you own a house?</p>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>Do you currently own a house?</p>
                       </td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <p class="text-info fw-bold">
+                        <ul class="answerList">
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">Yes</h5>
+                          </li>
+                          <!-- /item -->
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">No</h5>
+                          </li>
+                          <!-- /item -->
+                        </ul>
+                        </p>
                       </td>
                       <td class="align-top">
-                        WHO IS THE NEXT WINNER OF OUR<br />
-                        PLAYSTATION 5 COMPETITION?!
+                        <p>Sub question</p>
                       </td>
-                      <td class="align-top">
-                        <a href="https://landingpageps5.com" alt="landingpageps5.com">landingpageps5.com</a>
+                      <td class="align-top px-2">
+                        <input type="text" class="form-control px-2 text-center" placeholder="" value="06">
                       </td>
-                      <td class="align-center text-center">
-                        <span class="badge badge-success">Active</span>
-                      </td>
+                      <td class="align-top"><span class="badge badge-success">Active</span></td>
                       <td class="td-actions pt-2">
-                        <a href="#" class="btn edit-actions">
-                          <i class="icn-actions la icon-edit"></i>
-                          <span class="actions-text">Edit</span>
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-eye"></i>
+                          <span class="actions-text">Preview Offer</span>
                         </a>
-                        <!-- <a href="#" class="btn edit-actions">
-                          <i class="icn-actions icon-offers"></i>
-                          <span class="actions-text">Edit Condition Logic</span>
-                        </a> -->
-                        <button class="btn detail-actions del-actions" data-toggle="modal" data-target="#modalConfirm">
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-bar-chart-o"></i>
+                          <span class="actions-text">View Stats</span>
+                        </a>
+                        <a href="#" class="btn del-actions">
                           <i class="icn-actions la la-trash-o"></i>
                           <span class="actions-text">Delete</span>
-                        </button>
+                        </a>
                       </td>
                     </tr>
                     <tr>
                       <td class="align-top box-checkbox-custom px-3">
                         <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[007]" id="is_tableCheck_007">
-                          <label class="form-check-sign" for="is_tableCheck_007"></label>
+                          <input class="tableCheck" type="checkbox" name="is_tableCheck[007]" id="is_tableCheck_7">
+                          <label class="form-check-sign" for="is_tableCheck_7"></label>
                         </div>
                       </td>
-                      <td class="align-top">007</td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <span class="lockIcon d-block text-center">
+                          <i class="icon-unlock text-info"></i>
+                        </span>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>Do you own a house?</p>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>Do you currently own a house?</p>
                       </td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <p class="text-info fw-bold">
+                        <ul class="answerList">
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">Yes</h5>
+                          </li>
+                          <!-- /item -->
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">No</h5>
+                          </li>
+                          <!-- /item -->
+                        </ul>
+                        </p>
                       </td>
                       <td class="align-top">
-                        WHO IS THE NEXT WINNER OF OUR<br />
-                        PLAYSTATION 5 COMPETITION?!
+                        <p>Sub question</p>
                       </td>
-                      <td class="align-top">
-                        <a href="https://landingpageps5.com" alt="landingpageps5.com">landingpageps5.com</a>
+                      <td class="align-top px-2">
+                        <input type="text" class="form-control px-2 text-center" placeholder="" value="07">
                       </td>
-                      <td class="align-center text-center">
-                        <span class="badge badge-success">Active</span>
-                      </td>
+                      <td class="align-top"><span class="badge badge-success">Active</span></td>
                       <td class="td-actions pt-2">
-                        <a href="#" class="btn edit-actions">
-                          <i class="icn-actions la icon-edit"></i>
-                          <span class="actions-text">Edit</span>
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-eye"></i>
+                          <span class="actions-text">Preview Offer</span>
                         </a>
-                        <!-- <a href="#" class="btn edit-actions">
-                          <i class="icn-actions icon-offers"></i>
-                          <span class="actions-text">Edit Condition Logic</span>
-                        </a> -->
-                        <button class="btn detail-actions del-actions" data-toggle="modal" data-target="#modalConfirm">
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-bar-chart-o"></i>
+                          <span class="actions-text">View Stats</span>
+                        </a>
+                        <a href="#" class="btn del-actions">
                           <i class="icn-actions la la-trash-o"></i>
                           <span class="actions-text">Delete</span>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="align-top box-checkbox-custom px-3">
-                        <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[008]" id="is_tableCheck_008">
-                          <label class="form-check-sign" for="is_tableCheck_008"></label>
-                        </div>
-                      </td>
-                      <td class="align-top">008</td>
-                      <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
-                      </td>
-                      <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
-                      </td>
-                      <td class="align-top">
-                        WHO IS THE NEXT WINNER OF OUR<br />
-                        PLAYSTATION 5 COMPETITION?!
-                      </td>
-                      <td class="align-top">
-                        <a href="https://landingpageps5.com" alt="landingpageps5.com">landingpageps5.com</a>
-                      </td>
-                      <td class="align-center text-center">
-                        <span class="badge badge-success">Active</span>
-                      </td>
-                      <td class="td-actions pt-2">
-                        <a href="#" class="btn edit-actions">
-                          <i class="icn-actions la icon-edit"></i>
-                          <span class="actions-text">Edit</span>
                         </a>
-                        <!-- <a href="#" class="btn edit-actions">
-                          <i class="icn-actions icon-offers"></i>
-                          <span class="actions-text">Edit Condition Logic</span>
-                        </a> -->
-                        <button class="btn detail-actions del-actions" data-toggle="modal" data-target="#modalConfirm">
-                          <i class="icn-actions la la-trash-o"></i>
-                          <span class="actions-text">Delete</span>
-                        </button>
                       </td>
                     </tr>
+
                     <tr>
                       <td class="align-top box-checkbox-custom px-3">
                         <div class="form-group wrap-tableCheck p-0">
@@ -666,80 +745,60 @@
                           <label class="form-check-sign" for="is_tableCheck_009"></label>
                         </div>
                       </td>
-                      <td class="align-top">009</td>
-                      <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                      <td class="align-top px-2">
+                        <span class="lockIcon d-block text-center">
+                          <i class="icon-lock text-info"></i>
+                        </span>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>What is your current employment status?</p>
+                      </td>
+                      <td class="align-top white-space-normal">
+                        <p>What is your housing situation?</p>
                       </td>
                       <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
+                        <p class="text-info fw-bold">
+                        <ul class="answerList">
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">I’m a home owner</h5>
+                          </li>
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title">I’m renting my home</h5>
+                          </li>
+                          <!-- /item -->
+                          <li class="answerItem w-100 m-0">
+                            <h5 class="answerItem__title"> I’m living with my parents</h5>
+                          </li>
+                          <!-- /item -->
+                        </ul>
+                        </p>
                       </td>
                       <td class="align-top">
-                        WHO IS THE NEXT WINNER OF OUR<br />
-                        PLAYSTATION 5 COMPETITION?!
+                        <p> <i class="icn-actions la icon-edit"></i> Condition logic</p>
                       </td>
-                      <td class="align-top">
-                        <a href="https://landingpageps5.com" alt="landingpageps5.com">landingpageps5.com</a>
+                      <td class="align-top px-2">
+                        <input type="text" class="form-control px-2 text-center" placeholder="" value="009">
                       </td>
-                      <td class="align-center text-center">
-                        <span class="badge badge-success">Active</span>
-                      </td>
+                      <td class="align-top"><span class="badge badge-danger">Inactive</span></td>
                       <td class="td-actions pt-2">
-                        <a href="#" class="btn edit-actions">
-                          <i class="icn-actions la icon-edit"></i>
-                          <span class="actions-text">Edit</span>
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-eye"></i>
+                          <span class="actions-text">Preview Offer</span>
                         </a>
-                        <!-- <a href="#" class="btn edit-actions">
-                          <i class="icn-actions icon-offers"></i>
-                          <span class="actions-text">Edit Condition Logic</span>
-                        </a> -->
-                        <button class="btn detail-actions del-actions" data-toggle="modal" data-target="#modalConfirm">
+                        <a href="#" class="btn preview-actions">
+                          <i class="icn-actions la la-bar-chart-o"></i>
+                          <span class="actions-text">View Stats</span>
+                        </a>
+                        <a href="#" class="btn del-actions">
                           <i class="icn-actions la la-trash-o"></i>
                           <span class="actions-text">Delete</span>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="align-top box-checkbox-custom px-3">
-                        <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[0010]" id="is_tableCheck_0010">
-                          <label class="form-check-sign" for="is_tableCheck_0010"></label>
-                        </div>
-                      </td>
-                      <td class="align-top">0010</td>
-                      <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
-                      </td>
-                      <td class="align-top">
-                        <p class="fw-bold">Win PS5 Competition</p>
-                      </td>
-                      <td class="align-top">
-                        WHO IS THE NEXT WINNER OF OUR<br />
-                        PLAYSTATION 5 COMPETITION?!
-                      </td>
-                      <td class="align-top">
-                        <a href="https://landingpageps5.com" alt="landingpageps5.com">landingpageps5.com</a>
-                      </td>
-                      <td class="align-center text-center">
-                        <span class="badge badge-success">Active</span>
-                      </td>
-                      <td class="td-actions pt-2">
-                        <a href="#" class="btn edit-actions">
-                          <i class="icn-actions la icon-edit"></i>
-                          <span class="actions-text">Edit</span>
                         </a>
-                        <!-- <a href="#" class="btn edit-actions">
-                          <i class="icn-actions icon-offers"></i>
-                          <span class="actions-text">Edit Condition Logic</span>
-                        </a> -->
-                        <button class="btn detail-actions del-actions" data-toggle="modal" data-target="#modalConfirm">
-                          <i class="icn-actions la la-trash-o"></i>
-                          <span class="actions-text">Delete</span>
-                        </button>
                       </td>
                     </tr>
 
                   </tbody>
                 </table>
+
               </div>
               <!-- ./table -->
 
@@ -777,25 +836,6 @@
         </div>
       </div>
     </footer>
-    <!-- Large modal -->
-    <div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content text-center">
-            <div class="modal-body pt-5">
-              <i class="icn-actions text-danger la la-trash la-4x"></i>
-              <h5 class="fw-semimbold pt-2">Are you sure?</h5>
-              <p class="fw-semimbold">Do you really want to detele Liam Duncan?<br />This action can be undone.</p>
-            </div>
-            <div class="modal-footer justify-content-center border-top-0 pt-0 pb-5">
-              <button type="button" class="btn btn-secondary fw-semimbold" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-danger fw-semimbold">Delete</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
   </div>
 
