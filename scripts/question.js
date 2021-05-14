@@ -41,7 +41,7 @@ $(document).ready(function () {
           randomIDCheckbox +
           "_" +
           idTarget +
-          '" name="is_answer_check[' +
+          '" name="is_answer_checkbox[' +
           idTarget +
           '][]" id="is_answer_' +
           randomIDCheckbox +
@@ -79,9 +79,8 @@ $(document).ready(function () {
           randomIDCheckbox +
           "_" +
           idTarget +
-          '" name="answer_image_' +
-          randomIDCheckbox +
-          "_[" +
+          '" name="answer_image' +
+          "[" +
           idTarget +
           ']" />';
         html += "                      </div>";
@@ -94,7 +93,9 @@ $(document).ready(function () {
           '">More Answer</span>';
         html += "</a>";
         html +=
-          '    <i class=" la la-minus-circle text-danger font-24 removeAnswer" data-type="parent_question"></i>';
+          '    <i class="la la-minus-circle text-danger font-24 removeAnswer" data-type="parent_question"><span class="ml-2">Can we add the text here ' +
+          "'Delete'" +
+          " next to this symbol</span></i>";
         html += "</div>";
         html += "</div>";
         $("#itemsAnswer_" + idTarget).append(html);
@@ -132,7 +133,7 @@ $(document).ready(function () {
           randomIDCheckbox +
           "_" +
           idTarget +
-          '" name="sub_is_answer_check[' +
+          '" name="sub_is_answer_checkbox[' +
           idTarget +
           '][]" id="sub_is_answer_' +
           randomIDCheckbox +
@@ -170,9 +171,8 @@ $(document).ready(function () {
           randomIDCheckbox +
           "_" +
           idTarget +
-          '" name="answer_image_' +
-          randomIDCheckbox +
-          "_[" +
+          '" name="answer_image' +
+          "[" +
           idTarget +
           ']" />';
         html += "                      </div>";
@@ -185,7 +185,9 @@ $(document).ready(function () {
           '">More Answer</span>';
         html += "</a>";
         html +=
-          '    <i class="la la-minus-circle text-danger font-24 removeAnswer" data-type="sub_question"></i>';
+          '    <i class="la la-minus-circle text-danger font-24 removeAnswer" data-type="sub_question"><span class="ml-2">Can we add the text here ' +
+          "'Delete'" +
+          " next to this symbol</span></i>";
         html += "</div>";
         html += "</div>";
         $("#itemsSubAnswer_" + idTarget).append(html);
@@ -339,6 +341,9 @@ $(document).ready(function () {
         false
       );
       $(`${classTarget}with_image_1_1_show_${idTarget} input`).val("");
+      $(`${classTarget}with_image_1_1_show_${idTarget} .text-upload`).html(
+        "Upload a image"
+      );
       $(`#${idTargetBox}with_image_16_9_${idTarget}`).prop("disabled", false);
       if (
         (idQuestion_format2 && idQuestion_format2.checked) ||
@@ -369,6 +374,9 @@ $(document).ready(function () {
         false
       );
       $(`${classTarget}with_image_16_9_show_${idTarget} input`).val("");
+      $(`${classTarget}with_image_16_9_show_${idTarget} .text-upload`).html(
+        "Upload a image"
+      );
       if (
         (idQuestion_format2 && idQuestion_format2.checked) ||
         (idQuestion_format3 && idQuestion_format3.checked) ||
@@ -402,6 +410,9 @@ $(document).ready(function () {
         false
       );
       $(`${classTarget}text_below_show_${idTarget} input`).val("");
+      $(`${classTarget}text_below_show_${idTarget} .text-upload`).html(
+        "Upload a image"
+      );
       if (idQuestion_format4 && idQuestion_format4.checked) {
         $(`#${idTargetBox}table-no-border_${idTarget}`).hide();
       } else {
@@ -430,6 +441,9 @@ $(document).ready(function () {
         false
       );
       $(`${classTarget}question_with_images_${idTarget} input`).val("");
+      $(`${classTarget}question_with_images_${idTarget} .text-upload`).html(
+        "Upload a image"
+      );
     }
     //  Is set value checks box answer 1||0
     if (typeTarget === "is_answer_check_question" && targetHtml.checked) {
@@ -462,6 +476,9 @@ $(document).ready(function () {
         false
       );
       $(`${classTarget}question_with_images_${idTarget} input`).val("");
+      $(`${classTarget}question_with_images_${idTarget} .text-upload`).html(
+        "Upload a image"
+      );
     }
     /**End */
   });
@@ -513,6 +530,9 @@ $(document).ready(function () {
       false
     );
     $(`${classTarget}with_image_1_1_show_${idTarget} input`).val("");
+    $(`${classTarget}with_image_1_1_show_${idTarget} .text-upload`).html(
+      "Upload a image"
+    );
 
     $(`${classTarget}with_image_16_9_show_${idTarget}`).hide();
     $(`${classTarget}with_image_16_9_show_${idTarget} input`).prop(
@@ -521,6 +541,9 @@ $(document).ready(function () {
     );
 
     $(`${classTarget}with_image_16_9_show_${idTarget} input`).val("");
+    $(`${classTarget}with_image_16_9_show_${idTarget} .text-upload`).html(
+      "Upload a image"
+    );
 
     $(`${classTarget}with_image_16_9_show_${idTarget} input`).prop(
       "required",
@@ -534,20 +557,27 @@ $(document).ready(function () {
       false
     );
     $(`${classTarget}question_with_images_${idTarget} input`).val("");
-
+    $(`${classTarget}question_with_images_${idTarget} .text-upload`).html(
+      "Upload a image"
+    );
     $(`${classTarget}text_below_show_${idTarget}`).hide();
     $(`${classTarget}text_below_show_${idTarget} input`).prop(
       "required",
       false
     );
     $(`${classTarget}text_below_show_${idTarget} input`).val("");
-
+    $(`${classTarget}text_below_show_${idTarget} .text-upload`).html(
+      "Upload a image"
+    );
     $(`${classTarget}condition_logic_show_${idTarget}`).hide();
     $(`${classTarget}condition_logic_show_${idTarget} input`).prop(
       "required",
       false
     );
     $(`${classTarget}condition_logic_show_${idTarget} input`).val("");
+    $(`${classTarget}condition_logic_show_${idTarget} .text-upload`).html(
+      "Upload a image"
+    );
     $(`${classTarget}condition_logic_show_${idTarget} input`).prop(
       "checked",
       false
@@ -614,7 +644,7 @@ $(document).ready(function () {
     stt++;
     var html_question =
       "<!-- question -->" +
-      '            <div class="box-question bg-white" id="box-question_' +
+      '<div class="box-question bg-white" id="box-question_' +
       idParent +
       '">' +
       '               <span class="delQuestion handleRemove btn" data-name="question_parent" data-id="' +
@@ -789,8 +819,7 @@ $(document).ready(function () {
       "                  </div>" +
       "                </div>" +
       "                </div>" +
-      "                </div>" +
-      '                <div class="row align-items-center m-0">' +
+      '                <div class="row align-items-center m-0 px-2">' +
       '                  <div class="col-lg-3 col-sm-12 col-12">' +
       '                    <div class="form-group  question-edit">' +
       '                      <a href="#" class="">' +
@@ -799,7 +828,7 @@ $(document).ready(function () {
       "                    </div>" +
       "                  </div>" +
       "                </div>" +
-      '                <div class="row align-items-flex-start m-0 itemLastChild">' +
+      '                <div class="row align-items-flex-start m-0 itemLastChild px-2">' +
       '                  <div class="col-lg-4 col-sm-12 col-12 pr-0">' +
       '                    <div class="form-group question-text">' +
       '                      <label for="question" class="fw-normal">Question</label>' +
@@ -812,7 +841,7 @@ $(document).ready(function () {
       '                   <div class="form-group CRM-mobile">' +
       '                       <label for="question_crm[' +
       idParent +
-      ']" class="fw-normal">CRM</label>' +
+      ']" class="fw-normal">CRM Posting Field</label>' +
       '                       <input type="text" name="question_crm[' +
       idParent +
       ']" class="form-control input-solid" required placeholder="Your text here">' +
@@ -894,8 +923,7 @@ $(document).ready(function () {
       "                    </div>" +
       "                  </div>" +
       "                </div>" +
-      "                </div>" +
-      '                <div class="row align-items-start m-0">' +
+      '                <div class="row align-items-start m-0 px-2">' +
       '                  <div class="col-lg-12 col-sm-12 col-12 p-0">' +
       '                    <div class="table table-no-border row" data-id="' +
       idParent +
@@ -923,7 +951,7 @@ $(document).ready(function () {
       '                                  <input type="checkbox" data-id="' +
       idParent +
       '"' +
-      ' class="checkType" data-box="parent_question" data-type="is_answer_check_question" name="is_answer_check[' +
+      ' class="checkType" data-box="parent_question" data-type="is_answer_check_question" name="is_answer_checkbox[' +
       idParent +
       '][]" id="is_answer' +
       idParent +
@@ -958,7 +986,9 @@ $(document).ready(function () {
       "                    </div>" +
       "                  </div>" +
       "                          <div class='col-addAnswer mb-3'>" +
-      "<i class='la la-minus-circle text-danger font-24 removeAnswer first' data-type='parent_question'></i>" +
+      "<i class='la la-minus-circle text-danger font-24 removeAnswer first' data-type='parent_question'><span class='ml-2'>Can we add the text here '" +
+      "Delete" +
+      "' next to this symbol</span></i>" +
       '                            <a href="javascript:void(0);" class="more-answer answer-first">' +
       '                              <i class="la la-plus-circle text-info font-24"></i>' +
       '                              <span class="text-btn addAnswer" data-type="parent_question" data-id="' +
@@ -976,7 +1006,6 @@ $(document).ready(function () {
       "                </div>" +
       "              </div>" +
       "            </div>" +
-      "          </div>" +
       '        <div id="wrapperSubQuestion_' +
       idParent +
       '"></div>';
@@ -1146,8 +1175,7 @@ $(document).ready(function () {
       '">Condition Logic</label>' +
       "                  </div>" +
       "                </div>" +
-      "    </div>" +
-      '    <div class="row align-items-center m-0">' +
+      '    <div class="row align-items-center m-0 px-2">' +
       '       <div class="col-lg-3 col-sm-12 col-12">' +
       '         <div class="form-group question-edit">' +
       '           <a href="#" class="">' +
@@ -1156,8 +1184,8 @@ $(document).ready(function () {
       "         </div>" +
       "       </div>" +
       "     </div>" +
-      '     <div class="row align-items-start m-0 itemLastChild">' +
-      '       <div class="col-lg-4 col-sm-12 col-12 pr-0">' +
+      '     <div class="row align-items-start m-0 itemLastChild px-2">' +
+      '       <div class="col-lg-4 col-sm-12 col-12 px-0">' +
       '         <div class="form-group question-text">' +
       '           <label for="sub_question_name[' +
       idParent +
@@ -1171,7 +1199,7 @@ $(document).ready(function () {
       '           <div class="form-group CRM-mobile">' +
       '               <label for="sub_question_crm[' +
       idParent +
-      ']" class="fw-normal">CRM</label>' +
+      ']" class="fw-normal">CRM Posting Field</label>' +
       '               <input type="text" name="sub_question_crm[' +
       idParent +
       ']" class="form-control input-solid" required placeholder="Your text here">' +
@@ -1259,7 +1287,7 @@ $(document).ready(function () {
       "     </div>" +
       '     <div class="row align-items-start">' +
       '       <div class="col-lg-12 col-sm-12 col-12 no-padding-mb">' +
-      '                    <div class="table table-no-border row" data-id="' +
+      '                    <div class="table table-no-border row px-0" data-id="' +
       idParent +
       '" data-type="sub_question" data-box="sub_question" id="sub_is_table-no-border_' +
       idParent +
@@ -1285,7 +1313,7 @@ $(document).ready(function () {
       '                                  <input type="checkbox" data-id="' +
       idParent +
       '"' +
-      ' class="checkType" data-box="sub_question" data-type="is_answer_check_question" name="sub_is_answer_check[' +
+      ' class="checkType" data-box="sub_question" data-type="is_answer_check_question" name="sub_is_answer_checkbox[' +
       idParent +
       '][]" id="sub_is_answer_' +
       idParent +
@@ -1311,7 +1339,7 @@ $(document).ready(function () {
       '                        <button class="upload-file">' +
       '                          <span class="text-upload">Upload a image</span>' +
       '                          <span class="image-upload"><i class="icon-upload"></i></span></button>' +
-      '                          <input class="file-upload" type="file" id="answer_image' +
+      '                          <input class="file-upload" type="file" id="sub_answer_image' +
       idParent +
       '" name="answer_image[' +
       idParent +
@@ -1320,7 +1348,9 @@ $(document).ready(function () {
       "                    </div>" +
       "                  </div>" +
       "                          <div class='col-addAnswer mb-3'>" +
-      "<i class='la la-minus-circle text-danger font-24 removeAnswer first' data-type='parent_question'></i>" +
+      "<i class='la la-minus-circle text-danger font-24 removeAnswer first' data-type='parent_question'><span class='ml-2'>Can we add the text here '" +
+      "Delete" +
+      "' next to this symbol</span></i>" +
       '                            <a href="javascript:void(0);" class="more-answer answer-first">' +
       '                   <i class="la la-plus-circle text-info font-24"></i>' +
       '                   <span class="text-btn addAnswer" data-type="sub_question" data-id="' +

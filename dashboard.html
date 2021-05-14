@@ -29,7 +29,7 @@
 </head>
 
 <body>
-  <div class="wrapper -apiSettingsPage">
+  <div class="wrapper -homePage">
     <!-- include header.html -->
     <div class="main-header">
       <div class="logo-header d-flex align-items-center">
@@ -152,7 +152,7 @@
     <div class="sidebar">
       <div class="scrollbar-inner sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a href="#">
               <span class="icn-sidebar icon-dashboard"></span>
               <p>Amin Dashboard</p>
@@ -236,7 +236,7 @@
             </div>
           </li>
           <!-- /item -->
-          <li class="nav-item active submenu">
+          <li class="nav-item  submenu">
             <a data-toggle="collapse" href="#Settings" class="" aria-expanded="false">
               <span class="icn-sidebar icon-settings"></span>
               <p>Settings</p>
@@ -280,265 +280,171 @@
     </div>
     <!-- ./sidebar -->
     <main class="main-panel">
-      <div class="content page-table">
+      <div class="content">
         <div class="container-fluid">
-          <form action="#" method="post" id="formExample">
-            <div class="d-flex align-items-center mb-3 flex-wrap headPageTop create-landing-page">
-              <div class="headPageTop__left d-flex align-items-center">
-                <h4 class="page-title">API Settings</h4>
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Settings</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Create new user</li>
-                  </ol>
-                </nav>
-              </div>
-              <div class="headPageTop__right d-flex justify-content-end">
-                <div class="headPageTop-action-item d-flex justify-content-end">
-                  <a href="#" class="btn btn-public btn-draft btn-white mr25">
-                    <i class="la la-angle-left"></i>
-                    <span class="ml-2 text-btn">Back</span>
-                  </a>
-                  <button type="submit"
-                    class="btn btn-info btn-public btnCreate d-flex justify-content-end align-items-center">
-                    <span class="icn-btn icon-save"></span>
-                    <span class="mx-4 text-btn fw-semimbold">Save</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-header has-border-top py-5">
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <label class="fw-bold text-black text-md mb-1">CRM Key</label>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <label class="heading-sm text-black text-md mb-1">Blank CRM field</label>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="URL">URL</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="URL" id="URL" required class="form-control input-solid"
-                          placeholder="Blank CRM field">
+          <h4 class="page-title mb-3">Dashboard</h4>
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="card card-stats card-warning">
+                    <div class="card-body ">
+                      <div class="row">
+                        <div class="col-5">
+                          <div class="icon-big text-center">
+                            <i class="la la-users"></i>
+                          </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                          <div class="numbers">
+                            <p class="card-category">Visitors</p>
+                            <h4 class="card-title">1,294</h4>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="Title">Title</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="Title" id="Title" required class="form-control input-solid"
-                          placeholder="Blank CRM field">
+                <div class="col-md-3">
+                  <div class="card card-stats card-success">
+                    <div class="card-body ">
+                      <div class="row">
+                        <div class="col-5">
+                          <div class="icon-big text-center">
+                            <i class="la la-bar-chart"></i>
+                          </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                          <div class="numbers">
+                            <p class="card-category">Sales</p>
+                            <h4 class="card-title">$ 1,345</h4>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="FirstName">First Name</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="FirstName" id="FirstName" required class="form-control input-solid"
-                          placeholder="Blank CRM field">
+                <div class="col-md-3">
+                  <div class="card card-stats card-danger">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-5">
+                          <div class="icon-big text-center">
+                            <i class="la la-newspaper-o"></i>
+                          </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                          <div class="numbers">
+                            <p class="card-category">Subscribers</p>
+                            <h4 class="card-title">1303</h4>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="LastName">Last Name</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="LastName" id="LastName" required class="form-control input-solid"
-                          placeholder="Blank CRM field">
+                <div class="col-md-3">
+                  <div class="card card-stats card-primary">
+                    <div class="card-body ">
+                      <div class="row">
+                        <div class="col-5">
+                          <div class="icon-big text-center">
+                            <i class="la la-check-circle"></i>
+                          </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                          <div class="numbers">
+                            <p class="card-category">Order</p>
+                            <h4 class="card-title">576</h4>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="Email">Email</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="Email" id="Email" required class="form-control input-solid"
-                          placeholder="Blank CRM field">
+                <div class="col-md-3">
+                  <div class="card card-stats">
+                    <div class="card-body ">
+                      <div class="row">
+                        <div class="col-5">
+                          <div class="icon-big text-center icon-warning">
+                            <i class="la la-pie-chart text-warning"></i>
+                          </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                          <div class="numbers">
+                            <p class="card-category">Number</p>
+                            <h4 class="card-title">150GB</h4>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="Mobile">Mobile</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="Mobile" id="Mobile" required class="form-control input-solid"
-                          placeholder="Blank CRM field">
+                <div class="col-md-3">
+                  <div class="card card-stats">
+                    <div class="card-body ">
+                      <div class="row">
+                        <div class="col-5">
+                          <div class="icon-big text-center">
+                            <i class="la la-bar-chart text-success"></i>
+                          </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                          <div class="numbers">
+                            <p class="card-category">Revenue</p>
+                            <h4 class="card-title">$ 1,345</h4>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="Gender">Gender</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="Gender" id="Gender" required class="form-control input-solid"
-                          placeholder="Blank CRM field">
+                <div class="col-md-3">
+                  <div class="card card-stats">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-5">
+                          <div class="icon-big text-center">
+                            <i class="la la-times-circle-o text-danger"></i>
+                          </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                          <div class="numbers">
+                            <p class="card-category">Errors</p>
+                            <h4 class="card-title">23</h4>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="StreetAddress">Street Address</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="StreetAddress" id="StreetAddress" required
-                          class="form-control input-solid" placeholder="Blank CRM field">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="Suburb">Suburb</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="Suburb" id="Suburb" required class="form-control input-solid"
-                          placeholder="Blank CRM field">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="State">State</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="State" id="State" required class="form-control input-solid"
-                          placeholder="Blank CRM field">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="PostCode"> Post Code</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="PostCode" id="PostCode" required class="form-control input-solid"
-                          placeholder="Blank CRM field">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="DateOfBirth"> Post Code</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="DateOfBirth" id="DateOfBirth" required class="form-control input-solid"
-                          placeholder="Blank CRM field">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="IPAddress"> IP Address</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="IPAddress" id="IPAddress" required class="form-control input-solid"
-                          placeholder="Blank CRM field">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xl-2 col-md-2 col-sm-3 col-12">
-                    <div class="form-group pb-1 mt-2">
-                      <label class="fw-medium" for="SubmissionDate">Submission Date</label>
-                    </div>
-                  </div>
-                  <div class="col-xl-4 col-md-6 col-sm-9 col-12">
-                    <div class="form-group pb-1">
-                      <div class="d-flex align-items-center hasActions">
-                        <input type="text" name="SubmissionDate" id="SubmissionDate" required
-                          class="form-control input-solid" placeholder="Blank CRM field">
+                <div class="col-md-3">
+                  <div class="card card-stats">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-5">
+                          <div class="icon-big text-center">
+                            <i class="la la-heart-o text-primary"></i>
+                          </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                          <div class="numbers">
+                            <p class="card-category">Followers</p>
+                            <h4 class="card-title">+45K</h4>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </main>
+
     <!-- include footer.html -->
     <footer class="footer">
       <div class="container-fluid">
