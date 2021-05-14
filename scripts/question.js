@@ -1351,13 +1351,13 @@ $(document).ready(function () {
     var fileName =
       event.target.files && event.target.files[0] && event.target.files[0].name;
     var inputId = event.target.id;
-    if (inputId) {
+    if (inputId && inputId !== "postcode_file") {
       $("#" + inputId)
         .parent()
         .find(".text-upload")
         .html(fileName);
     }
     //csv upload
-    $(".value-select").val(fileName);
+    $("#text_" + inputId).val(fileName);
   });
 });
