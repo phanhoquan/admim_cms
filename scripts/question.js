@@ -75,9 +75,13 @@ $(document).ready(function () {
         html +=
           '                          <span class="image-upload"><i class="icon-upload"></i></span></button>';
         html +=
-          '                          <input class="file-upload" type="file" id="answer_image' +
+          '                          <input class="file-upload" type="file" id="answer_image_' +
+          randomIDCheckbox +
+          "_" +
           idTarget +
-          '" name="answer_image[' +
+          '" name="answer_image_' +
+          randomIDCheckbox +
+          "_[" +
           idTarget +
           ']" />';
         html += "                      </div>";
@@ -162,9 +166,13 @@ $(document).ready(function () {
         html +=
           '                          <span class="image-upload"><i class="icon-upload"></i></span></button>';
         html +=
-          '                          <input class="file-upload" type="file" id="answer_image' +
+          '                          <input class="file-upload" type="file" id="answer_image_' +
+          randomIDCheckbox +
+          "_" +
           idTarget +
-          '" name="answer_image[' +
+          '" name="answer_image_' +
+          randomIDCheckbox +
+          "_[" +
           idTarget +
           ']" />';
         html += "                      </div>";
@@ -1351,10 +1359,5 @@ $(document).ready(function () {
     }
     //csv upload
     $(".value-select").val(fileName);
-  });
-
-  $("form").submit(function (e) {
-    e.preventDefault();
-    // var data = $(this).serializeFormJSON();
   });
 });

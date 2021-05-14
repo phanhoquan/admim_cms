@@ -226,9 +226,4 @@ $(document).ready(function () {
       "</div>";
     $("#item_parent_parameter_cid").append(html_CIDParameter);
   }
-
-  $("form").submit(function (e) {
-    e.preventDefault();
-    // var data = $(this).serializeFormJSON();
-  });
 });
