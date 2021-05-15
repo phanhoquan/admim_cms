@@ -171,7 +171,7 @@ $(document).ready(function () {
           randomIDCheckbox +
           "_" +
           idTarget +
-          '" name="answer_image' +
+          '" name="sub_answer_image' +
           "[" +
           idTarget +
           '][]" />';
@@ -1341,7 +1341,7 @@ $(document).ready(function () {
       '                          <span class="image-upload"><i class="icon-upload"></i></span></button>' +
       '                          <input class="file-upload" type="file" accept="image/*, capture=camera" id="sub_answer_image' +
       idParent +
-      '" name="answer_image[' +
+      '" name="sub_answer_image[' +
       idParent +
       '][]" />' +
       "                      </div>" +
