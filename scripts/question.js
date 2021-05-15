@@ -75,14 +75,14 @@ $(document).ready(function () {
         html +=
           '                          <span class="image-upload"><i class="icon-upload"></i></span></button>';
         html +=
-          '                          <input class="file-upload" type="file" id="answer_image_' +
+          '                          <input class="file-upload" type="file" accept="image/*, capture=camera" id="answer_image_' +
           randomIDCheckbox +
           "_" +
           idTarget +
           '" name="answer_image' +
           "[" +
           idTarget +
-          ']" />';
+          '][]" />';
         html += "                      </div>";
         html += "                    </div>";
         html += '<a href="javascript:void(0);" class="more-answer mb-3">';
@@ -167,14 +167,14 @@ $(document).ready(function () {
         html +=
           '                          <span class="image-upload"><i class="icon-upload"></i></span></button>';
         html +=
-          '                          <input class="file-upload" type="file" id="answer_image_' +
+          '                          <input class="file-upload" type="file"  accept="image/*, capture=camera" id="answer_image_' +
           randomIDCheckbox +
           "_" +
           idTarget +
           '" name="answer_image' +
           "[" +
           idTarget +
-          ']" />';
+          '][]" />';
         html += "                      </div>";
         html += "                    </div>";
         html += '<a href="javascript:void(0);" class="more-answer mb-3">';
@@ -219,7 +219,7 @@ $(document).ready(function () {
         '        <button class="upload-file">' +
         '            <span class="text-upload">Upload a image</span> <span class="image-upload"><i class="icon-upload"></i></span>' +
         "        </button>" +
-        '        <input class="file-upload" type="file" id="question_image_11' +
+        '        <input class="file-upload" type="file"  accept="image/*, capture=camera" id="question_image_11' +
         randomIDCheckbox +
         "_" +
         idTarget +
@@ -239,7 +239,7 @@ $(document).ready(function () {
         '        <button class="upload-file">' +
         '            <span class="text-upload">Upload a image</span> <span class="image-upload"><i class="icon-upload"></i></span>' +
         "        </button>" +
-        '        <input class="file-upload" type="file" id="sub_question_image_11' +
+        '        <input class="file-upload" type="file" accept="image/*, capture=camera" id="sub_question_image_11' +
         randomIDCheckbox +
         "_" +
         idTarget +
@@ -838,7 +838,7 @@ $(document).ready(function () {
       "                    </div>" +
       "                  </div>" +
       '                  <div class="col-lg-2 col-sm-12 col-12">' +
-      '                   <div class="form-group CRM-mobile">' +
+      '                   <div class="form-group CRM-mobile pl-0">' +
       '                       <label for="question_crm[' +
       idParent +
       ']" class="fw-normal">CRM Posting Field</label>' +
@@ -859,7 +859,7 @@ $(document).ready(function () {
       '                                <button class="upload-file">' +
       '                                    <span class="text-upload">Upload a image</span> <span class="image-upload"><i class="icon-upload"></i></span>' +
       "                                </button>" +
-      '                                <input class="file-upload" type="file" id="question_image_11' +
+      '                                <input class="file-upload" type="file"  accept="image/*, capture=camera" id="question_image_11' +
       idParent +
       '" name="question_image_11[' +
       idParent +
@@ -895,7 +895,7 @@ $(document).ready(function () {
       '                        <button class="upload-file">' +
       '                          <span class="text-upload">Upload a image</span>' +
       '                          <span class="image-upload"><i class="icon-upload"></i></span></button>' +
-      '                          <input class="file-upload" type="file" id="question_image' +
+      '                          <input class="file-upload" type="file" accept="image/*, capture=camera" id="question_image' +
       idParent +
       '" name="question_image[' +
       idParent +
@@ -977,11 +977,11 @@ $(document).ready(function () {
       '                        <button class="upload-file">' +
       '                          <span class="text-upload">Upload a image</span>' +
       '                          <span class="image-upload"><i class="icon-upload"></i></span></button>' +
-      '                          <input class="file-upload" type="file" id="answer_image' +
+      '                          <input class="file-upload" type="file" accept="image/*, capture=camera" id="answer_image' +
       idParent +
       '" name="answer_image[' +
       idParent +
-      ']" />' +
+      '][]" />' +
       "                      </div>" +
       "                    </div>" +
       "                  </div>" +
@@ -1196,7 +1196,7 @@ $(document).ready(function () {
       "         </div>" +
       "       </div>" +
       '       <div class="col-lg-2 col-sm-12 col-12">' +
-      '           <div class="form-group CRM-mobile">' +
+      '           <div class="form-group CRM-mobile pl-0">' +
       '               <label for="sub_question_crm[' +
       idParent +
       ']" class="fw-normal">CRM Posting Field</label>' +
@@ -1217,7 +1217,7 @@ $(document).ready(function () {
       '                    <button class="upload-file">' +
       '                        <span class="text-upload">Upload a image</span> <span class="image-upload"><i class="icon-upload"></i></span>' +
       "                    </button>" +
-      '                    <input class="file-upload" type="file" id="sub_question_image_11' +
+      '                    <input class="file-upload" type="file" accept="image/*, capture=camera" id="sub_question_image_11' +
       idParent +
       '" name="sub_question_image_11[' +
       idParent +
@@ -1257,7 +1257,7 @@ $(document).ready(function () {
       '             <button class="upload-file">' +
       '               <span class="text-upload">Upload a image</span>' +
       '               <span class="image-upload"><i class="icon-upload"></i></span></button>' +
-      '               <input class="file-upload" type="file" id="sub_question_image' +
+      '               <input class="file-upload" type="file"  accept="image/*, capture=camera" id="sub_question_image' +
       idParent +
       '" name="sub_question_image[' +
       idParent +
@@ -1339,11 +1339,11 @@ $(document).ready(function () {
       '                        <button class="upload-file">' +
       '                          <span class="text-upload">Upload a image</span>' +
       '                          <span class="image-upload"><i class="icon-upload"></i></span></button>' +
-      '                          <input class="file-upload" type="file" id="sub_answer_image' +
+      '                          <input class="file-upload" type="file" accept="image/*, capture=camera" id="sub_answer_image' +
       idParent +
       '" name="answer_image[' +
       idParent +
-      ']" />' +
+      '][]" />' +
       "                      </div>" +
       "                    </div>" +
       "                  </div>" +
