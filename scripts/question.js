@@ -1,6 +1,56 @@
 /** @format */
 
 $(document).ready(function () {
+  function customSelect(classSelect1) {
+    // Js custom select
+    $(`${classSelect1}.input-solid`).each(function () {
+      var $this = $(this),
+        numberOfOptions = $(this).children("option").length;
+
+      $this.addClass("select-hidden");
+      $this.removeClass("input-solid");
+      $this.wrap('<div class="select"></div>');
+      $this.after('<div class="select-styled"></div>');
+
+      var $styledSelect = $this.next("div.select-styled");
+      $styledSelect.text($this.children("option").eq(0).text());
+
+      var $list = $("<ul />", {
+        class: "select-options",
+      }).insertAfter($styledSelect);
+
+      for (var i = 0; i < numberOfOptions; i++) {
+        $("<li />", {
+          text: $this.children("option").eq(i).text(),
+          rel: $this.children("option").eq(i).val(),
+        }).appendTo($list);
+      }
+
+      var $listItems = $list.children("li");
+      $styledSelect.click(function (e) {
+        e.stopPropagation();
+        $("div.select-styled.active")
+          .not(this)
+          .each(function () {
+            $(this).removeClass("active").next("ul.select-options").hide();
+          });
+        $(this).toggleClass("active").next("ul.select-options").toggle();
+      });
+
+      $listItems.click(function (e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass("active");
+        $this.val($(this).attr("rel"));
+        $list.hide();
+      });
+
+      $(document).click(function () {
+        $styledSelect.removeClass("active");
+        $list.hide();
+      });
+    });
+  }
+
   var max_input = 100;
   var x = 1;
   var randomID = Math.round(Math.random() * 36 ** 12).toString(36);
@@ -205,6 +255,117 @@ $(document).ready(function () {
       }
     }
   });
+  // add List condition
+  $(document).on("click", ".btnAddConditionLogic", function (e) {
+    var targetHtml = e.target;
+    var randomIDField = Math.round(Math.random() * 36 ** 12).toString(36);
+    var idTarget = $(targetHtml).attr("data-id");
+    var boxTarget = $(targetHtml).attr("data-box");
+    if (boxTarget === "parent_question") {
+      if (x < max_input) {
+        x++;
+        var html =
+          '<div class="row itemConditionLogic" data-id="' +
+          randomIDField +
+          '" id="itemConditionLogic_' +
+          randomIDField +
+          '">' +
+          '<div class="col-md-4 col-sm-6 col-12 ">' +
+          '<div class="form-group px-0 pb-0">' +
+          '<input type="text" name="field_condition_logic[' +
+          randomIDField +
+          '][]" class="form-control input-solid" placeholder="utm_source">' +
+          "</div>" +
+          "</div>" +
+          '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+          '<div class="form-group px-0 pb-0">' +
+          '<select class="form-control input-solid fw-normal" name="select_show_hidden_condition[' +
+          randomIDField +
+          '][]">' +
+          '<option value="0">All</option>' +
+          '<option value="1">Is</option>' +
+          "</select>" +
+          "</div>" +
+          "</div>" +
+          '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+          '<div class="form-group pb-0 px-0 pb-0">' +
+          '<div class="d-flex align-items-center hasActions">' +
+          '<input type="text" name="value_condition[' +
+          randomIDField +
+          '][]" class="form-control input-solid" placeholder="Enter a value">' +
+          '<div class="groupActions d-flex align-items-center">' +
+          '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
+          '<i class="la la-plus-circle la-2x" data-id="' +
+          idTarget +
+          '" data-box="parent_question"></i>' +
+          "</a>" +
+          '<a class="btnRemoveConditionLogic groupActions__item" href="javascript:void(0)">' +
+          '<i class="la la-minus-circle la-2x"></i>' +
+          "</a>" +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>";
+        $(`#listConditionLogic_${idTarget}`).append(html);
+      }
+      customSelect(`#itemConditionLogic_${randomIDField} select`);
+    }
+
+    if (boxTarget === "sub_question") {
+      if (x < max_input) {
+        x++;
+        var htmlSub =
+          '<div class="row itemConditionLogic" data-id="' +
+          randomIDField +
+          '" id="itemSubConditionLogic_' +
+          randomIDField +
+          '">' +
+          '<div class="col-md-4 col-sm-6 col-12 ">' +
+          '<div class="form-group px-0 pb-0">' +
+          '<input type="text" name="sub_field_condition_logic[' +
+          randomIDField +
+          '][]" class="form-control input-solid" placeholder="utm_source">' +
+          "</div>" +
+          "</div>" +
+          '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+          '<div class="form-group px-0 pb-0">' +
+          '<select class="form-control input-solid fw-normal" name="sub_select_show_hidden_condition[' +
+          randomIDField +
+          '][]">' +
+          '<option value="0">All</option>' +
+          '<option value="1">Is</option>' +
+          "</select>" +
+          "</div>" +
+          "</div>" +
+          '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+          '<div class="form-group pb-0 px-0 pb-0">' +
+          '<div class="d-flex align-items-center hasActions">' +
+          '<input type="text" name="sub_value_condition[' +
+          randomIDField +
+          '][]" class="form-control input-solid" placeholder="Enter a value">' +
+          '<div class="groupActions d-flex align-items-center">' +
+          '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
+          '<i class="la la-plus-circle la-2x" data-id="' +
+          idTarget +
+          '" data-box="sub_question"></i>' +
+          "</a>" +
+          '<a class="btnRemoveConditionLogic groupActions__item" href="javascript:void(0)">' +
+          '<i class="la la-minus-circle la-2x"></i>' +
+          "</a>" +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>";
+        $(`#listSubConditionLogic_${idTarget}`).append(htmlSub);
+      }
+      console.log(idTarget, "idTarget");
+      customSelect(`#itemSubConditionLogic_${randomIDField} select`);
+    }
+  });
+
+  // End add List condition
 
   //append image 11
   $(document).on("click", ".add_question_image11", function (e) {
@@ -303,12 +464,12 @@ $(document).ready(function () {
     var idCustomText = $(`#${idTargetBox}text_below_the_button${idTarget}`)[0];
 
     if (typeTarget === "is_condition_logic" && targetHtml.checked) {
+      customSelect(`${classTarget}condition_logic_show_${idTarget} select`);
       $(`${classTarget}condition_logic_show_${idTarget}`).show();
       $(`${classTarget}condition_logic_show_${idTarget} input`).prop(
         "required",
         true
       );
-      $(`${classTarget}condition_logic_show_${idTarget} input`).val("1");
     }
 
     if (typeTarget === "is_condition_logic" && !targetHtml.checked) {
@@ -317,11 +478,6 @@ $(document).ready(function () {
         "required",
         false
       );
-      $(`${classTarget}condition_logic_show_${idTarget} input`).prop(
-        "checked",
-        false
-      );
-      $(`${classTarget}condition_logic_show_${idTarget} input`).val("0");
     }
 
     if (typeTarget === "is_with_image_1_1" && targetHtml.checked) {
@@ -578,12 +734,6 @@ $(document).ready(function () {
     $(`${classTarget}condition_logic_show_${idTarget} .text-upload`).html(
       "Upload a image"
     );
-    $(`${classTarget}condition_logic_show_${idTarget} input`).prop(
-      "checked",
-      false
-    );
-
-    $(`${classTarget}condition_logic_show_${idTarget} input`).val("0");
   }
 
   $(document).on("click", ".sub_handleRadio", function (e) {
@@ -619,6 +769,11 @@ $(document).ready(function () {
       );
     }
     resetHiddenBox(idTarget, "sub");
+  });
+
+  //remove item Condition Logic
+  $(document).on("click", ".btnRemoveConditionLogic", function () {
+    $(this).parents(".itemConditionLogic").remove();
   });
 
   //remove question
@@ -813,7 +968,7 @@ $(document).ready(function () {
       ']" id="is_condition_logic' +
       idParent +
       '" data-type="is_condition_logic" data-box="parent_question">' +
-      '                    <label class="form-check-sign" for="is_condition_logic' +
+      '                    <label class="form-check-sign check_is_condition_logic" for="is_condition_logic' +
       idParent +
       '">Condition Logic</label>' +
       "                  </div>" +
@@ -838,7 +993,7 @@ $(document).ready(function () {
       "                    </div>" +
       "                  </div>" +
       '                  <div class="col-lg-2 col-sm-12 col-12">' +
-      '                   <div class="form-group CRM-mobile pl-0">' +
+      '                   <div class="form-group CRM-mobile pl-lg-0">' +
       '                       <label for="question_crm[' +
       idParent +
       ']" class="fw-normal">CRM Posting Field</label>' +
@@ -903,23 +1058,91 @@ $(document).ready(function () {
       "                      </div>" +
       "                    </div>" +
       "                  </div>" +
-      '                  <div class="col-lg-3 col-sm-12 col-12 is_condition_logic_show_' +
+      '                  <div class="col-lg-12 col-sm-12 col-12 is_condition_logic_show_' +
       idParent +
-      '" style="display: none;">' +
-      '                    <div class="form-group ">' +
+      '" style="display:none">' +
+      '                    <div class="form-group max-600 ml-auto">' +
       '                      <label for="question" class="fw-normal">Condition Logic</label>' +
-      '                      <div class="condition-wrapper box-radio-custom px-0">' +
-      '<input type="radio" class="conditionLogic" value="0" data-type="parent_question" data-id="' +
-      idParent +
-      '" id="is_condition_logic_id_' +
-      idParent +
-      '" name="is_condition_logic_id[' +
+      "<!-- HTML condition Logic -->" +
+      '<div class="condition-logic-wrap">' +
+      '<div class="row">' +
+      '<div class="col-md-4 col-sm-6 col-12">' +
+      '<div class="form-group px-0 pt-0">' +
+      '<select class="form-control input-solid fw-normal" name="is_show_condition_logic[' +
       idParent +
       ']">' +
-      '<label class="input-solid" for="is_condition_logic_id_' +
+      '<option value="0">Show</option>' +
+      '<option value="1">Hidden</option>' +
+      "</select>" +
+      "</div>" +
+      "</div>" +
+      '<div class="col-md-8 col-sm-12 col-12 full-992 pl-lg-0">' +
+      '<div class="form-group p-0">' +
+      '<div class="selectIf">' +
+      '<div class="selectIf__left">' +
+      '<span class="textBefore">This field if</span>' +
+      '<select class="form-control input-solid fw-normal" name="is_show_field_condition_logic[' +
       idParent +
-      '"><span><i class="icn-actions la icon-edit"></i>Edit Condition Logic</span></label>' +
-      "                      </div>" +
+      ']">' +
+      '<option value="0">All</option>' +
+      '<option value="1">Is</option>' +
+      "</select>" +
+      '<div class="selectIf__right">' +
+      '<span class="textAfter ml-0">Of the following match:</span>' +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      '<div id="listConditionLogic_' +
+      idParent +
+      '" class="listConditionLogic">' +
+      '<div class="row itemConditionLogic" data-id="' +
+      idParent +
+      '" id="itemConditionLogic_' +
+      idParent +
+      '">' +
+      '<div class="col-md-4 col-sm-6 col-12 ">' +
+      '<div class="form-group p-0">' +
+      '<input type="text" name="field_condition_logic[' +
+      idParent +
+      '][]" class="form-control input-solid" placeholder="utm_source">' +
+      "</div>" +
+      "</div>" +
+      '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+      '<div class="form-group pb-0 px-0 pt-0">' +
+      '<select class="form-control input-solid fw-normal" name="select_show_hidden_condition[' +
+      idParent +
+      '][]">' +
+      '<option value="0">All</option>' +
+      '<option value="1">Is</option>' +
+      "</select>" +
+      "</div>" +
+      "</div>" +
+      '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+      '<div class="form-group pb-0 px-0 pt-0">' +
+      '<div class="d-flex align-items-center hasActions">' +
+      '<input type="text" name="value_condition[' +
+      idParent +
+      '][]" class="form-control input-solid" placeholder="Enter a value">' +
+      '<div class="groupActions d-flex align-items-center">' +
+      '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
+      '<i class="la la-plus-circle la-2x" data-id=' +
+      idParent +
+      " data-box='parent_question'></i>" +
+      "</a>" +
+      '<a class="btnRemoveConditionLogic groupActions__item" href="javascript:void(0)">' +
+      '<i class="la la-minus-circle la-2x"></i>' +
+      "</a>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "<!-- end condition Logic -->" +
       "                    </div>" +
       "                  </div>" +
       "                </div>" +
@@ -1006,7 +1229,7 @@ $(document).ready(function () {
       "                </div>" +
       "              </div>" +
       "            </div>" +
-      '        <div id="wrapperSubQuestion_' +
+      '        <div class="wrapperSubQuestion" id="wrapperSubQuestion_' +
       idParent +
       '"></div>';
     $("#wrapperQuestion").append(html_question);
@@ -1170,13 +1393,13 @@ $(document).ready(function () {
       ']" id="sub_is_condition_logic' +
       idParent +
       '" data-type="is_condition_logic" data-box="sub_question">' +
-      '                    <label class="form-check-sign" for="sub_is_condition_logic' +
+      '                    <label class="form-check-sign check_is_condition_logic" for="sub_is_condition_logic' +
       idParent +
       '">Condition Logic</label>' +
       "                  </div>" +
       "                </div>" +
       '    <div class="row align-items-center m-0 px-2">' +
-      '       <div class="col-lg-3 col-sm-12 col-12">' +
+      '       <div class="col-lg-3 col-sm-12 col-12 px-0">' +
       '         <div class="form-group question-edit">' +
       '           <a href="#" class="">' +
       '             <span class="text-btn fw-bold text-info">Question Edit</span>' +
@@ -1265,23 +1488,91 @@ $(document).ready(function () {
       "           </div>" +
       "         </div>" +
       "       </div>" +
-      '                  <div class="col-lg-3 col-sm-12 col-12 sub_is_condition_logic_show_' +
+      '                  <div class="col-lg-12 col-sm-12 col-12  sub_is_condition_logic_show_' +
       idParent +
       '" style=" display: none;">' +
-      '                    <div class="form-group ">' +
+      '                    <div class="form-group max-600 ml-auto">' +
       '                      <label for="question" class="fw-normal">Condition Logic</label>' +
-      '                      <div class="condition-wrapper box-radio-custom px-0">' +
-      '<input type="radio" class="conditionLogic" value="0" data-type="sub_question" data-id="' +
-      idParent +
-      '" id="sub_is_condition_logic_id_' +
-      idParent +
-      '" name="sub_is_condition_logic_id[' +
+      "<!-- HTML Sub condition Logic -->" +
+      '<div class="condition-logic-wrap">' +
+      '<div class="row">' +
+      '<div class="col-md-4 col-sm-6 col-12">' +
+      '<div class="form-group px-0 pt-0">' +
+      '<select class="form-control input-solid fw-normal" name="sub_is_show_condition_logic[' +
       idParent +
       ']">' +
-      '<label class="input-solid" for="sub_is_condition_logic_id_' +
+      '<option value="0">Show</option>' +
+      '<option value="1">Hidden</option>' +
+      "</select>" +
+      "</div>" +
+      "</div>" +
+      '<div class="col-md-8 col-sm-12 col-12 full-992 pl-lg-0">' +
+      '<div class="form-group p-0">' +
+      '<div class="selectIf">' +
+      '<div class="selectIf__left">' +
+      '<span class="textBefore">This field if</span>' +
+      '<select class="form-control input-solid fw-normal" name="sub_is_show_field_condition_logic[' +
       idParent +
-      '"><span><i class="icn-actions la icon-edit"></i>Edit Condition Logic</span></label>' +
-      "                      </div>" +
+      ']">' +
+      '<option value="0">All</option>' +
+      '<option value="1">Is</option>' +
+      "</select>" +
+      '<div class="selectIf__right">' +
+      '<span class="textAfter ml-0">Of the following match:</span>' +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      '<div id="listSubConditionLogic_' +
+      idParent +
+      '" class="listSubConditionLogic">' +
+      '<div class="row itemConditionLogic" data-id="' +
+      idParent +
+      '" id="itemSubConditionLogic_' +
+      idParent +
+      '">' +
+      '<div class="col-md-4 col-sm-6 col-12 ">' +
+      '<div class="form-group p-0">' +
+      '<input type="text" name="sub_field_condition_logic[' +
+      idParent +
+      '][]" class="form-control input-solid" placeholder="utm_source">' +
+      "</div>" +
+      "</div>" +
+      '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+      '<div class="form-group pb-0 px-0 pt-0">' +
+      '<select class="form-control input-solid fw-normal" name="sub_select_show_hidden_condition[' +
+      idParent +
+      '][]">' +
+      '<option value="0">All</option>' +
+      '<option value="1">Is</option>' +
+      "</select>" +
+      "</div>" +
+      "</div>" +
+      '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+      '<div class="form-group pb-0 px-0 pt-0">' +
+      '<div class="d-flex align-items-center hasActions">' +
+      '<input type="text" name="sub_value_condition[' +
+      idParent +
+      '][]" class="form-control input-solid" placeholder="Enter a value">' +
+      '<div class="groupActions d-flex align-items-center">' +
+      '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
+      '<i class="la la-plus-circle la-2x" data-id=' +
+      idParent +
+      " data-box='sub_question'></i>" +
+      "</a>" +
+      '<a class="btnRemoveConditionLogic groupActions__item" href="javascript:void(0)">' +
+      '<i class="la la-minus-circle la-2x"></i>' +
+      "</a>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "<!-- end sub condition Logic -->" +
       "                    </div>" +
       "                  </div>" +
       "     </div>" +
@@ -1375,6 +1666,7 @@ $(document).ready(function () {
     var randomID = Math.round(Math.random() * 36 ** 12).toString(36);
     htmlQuestion(randomID);
     $(`#is_table-no-border_${randomID} input`).prop("required", true);
+    // customSelect(`.condition-logic-wrap select`);
   });
 
   $(document).on("change", ".file-upload", function (event) {
@@ -1390,4 +1682,5 @@ $(document).ready(function () {
     //csv upload
     $("#text_" + inputId).val(fileName);
   });
+  customSelect(".condition-logic-wrap select");
 });
