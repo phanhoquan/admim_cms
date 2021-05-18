@@ -74,7 +74,7 @@ $(document).ready(function () {
         x++;
         var html = "";
         html += "<div class='table-tbody col-12 pr-0 w-100'>";
-        html += '<div class="max720 pr-0 col-lg-4 col-sm-6 col-12 p-0">';
+        html += '<div class="max720 pr-0 col-lg-6 col-sm-6 col-12 p-0">';
         html += '<div class="d-flex align-items-center mb-3">';
         html += '    <div class="box-checkbox-custom">';
         html += '        <div class="form-group mb0 p10 text-center">';
@@ -113,7 +113,7 @@ $(document).ready(function () {
         html += "</div>";
         html += "</div>";
         html +=
-          '<div class="col-lg-3 col-sm-4 col-12  mb-3 form-group py-0 withImages  is_question_with_images_' +
+          '<div class="col-lg-4 col-sm-4 col-12  mb-3 form-group py-0 withImages  is_question_with_images_' +
           idTarget +
           '" data-id="' +
           idTarget +
@@ -143,9 +143,7 @@ $(document).ready(function () {
           '">More Answer</span>';
         html += "</a>";
         html +=
-          '    <i class="la la-minus-circle text-danger font-24 removeAnswer" data-type="parent_question"><span class="ml-2">Can we add the text here ' +
-          "'Delete'" +
-          " next to this symbol</span></i>";
+          '    <i class="la la-minus-circle text-danger font-24 removeAnswer" data-type="parent_question"><span class="ml-2">Delete</span></i>';
         html += "</div>";
         html += "</div>";
         $("#itemsAnswer_" + idTarget).append(html);
@@ -166,7 +164,7 @@ $(document).ready(function () {
         x++;
         var html = "";
         html += "<div class='table-tbody col-12 pr-0 w-100'>";
-        html += '<div class="max720 pr-0 col-lg-4 col-sm-6 col-12 p-0">';
+        html += '<div class="max720 pr-0 col-lg-6 col-sm-6 col-12 p-0">';
         html += '<div class="d-flex align-items-center mb-3">';
         html += '    <div class="box-checkbox-custom">';
         html += '        <div class="form-group mb0 p10 text-center">';
@@ -205,7 +203,7 @@ $(document).ready(function () {
         html += "</div>";
         html += "</div>";
         html +=
-          '<div class="col-lg-3 col-sm-4 col-12  mb-3 form-group py-0  withImages  sub_is_question_with_images_' +
+          '<div class="col-lg-4 col-sm-4 col-12  mb-3 form-group py-0  withImages  sub_is_question_with_images_' +
           idTarget +
           '" data-id="' +
           idTarget +
@@ -235,9 +233,7 @@ $(document).ready(function () {
           '">More Answer</span>';
         html += "</a>";
         html +=
-          '    <i class="la la-minus-circle text-danger font-24 removeAnswer" data-type="sub_question"><span class="ml-2">Can we add the text here ' +
-          "'Delete'" +
-          " next to this symbol</span></i>";
+          '    <i class="la la-minus-circle text-danger font-24 removeAnswer" data-type="sub_question"><span class="ml-2">Delete</span></i>';
         html += "</div>";
         html += "</div>";
         $("#itemsSubAnswer_" + idTarget).append(html);
@@ -270,14 +266,14 @@ $(document).ready(function () {
           '" id="itemConditionLogic_' +
           randomIDField +
           '">' +
-          '<div class="col-md-4 col-sm-6 col-12 ">' +
+          '<div class="col-md-5 col-sm-6 col-12 ">' +
           '<div class="form-group px-0 pb-0">' +
           '<input type="text" name="field_condition_logic[' +
           randomIDField +
           '][]" class="form-control input-solid" placeholder="utm_source">' +
           "</div>" +
           "</div>" +
-          '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+          '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
           '<div class="form-group px-0 pb-0">' +
           '<select class="form-control input-solid fw-normal" name="select_show_hidden_condition[' +
           randomIDField +
@@ -321,14 +317,14 @@ $(document).ready(function () {
           '" id="itemSubConditionLogic_' +
           randomIDField +
           '">' +
-          '<div class="col-md-4 col-sm-6 col-12 ">' +
+          '<div class="col-md-5 col-sm-6 col-12 ">' +
           '<div class="form-group px-0 pb-0">' +
           '<input type="text" name="sub_field_condition_logic[' +
           randomIDField +
           '][]" class="form-control input-solid" placeholder="utm_source">' +
           "</div>" +
           "</div>" +
-          '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+          '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
           '<div class="form-group px-0 pb-0">' +
           '<select class="form-control input-solid fw-normal" name="sub_select_show_hidden_condition[' +
           randomIDField +
@@ -780,17 +776,16 @@ $(document).ready(function () {
   $(document).on("click", ".handleRemove", function (e) {
     var idTarget = $(this).attr("data-id");
     var nameTarget = $(this).attr("data-name");
-    if (nameTarget === "question_sub") {
-      //hidden TODO UPDATE
-      // $("#wrapperSubQuestion_" + idTarget).empty();
-      // $(".checkSubquestion").prop("checked", false);
-    }
+    var wrapperQuestion = $("#wrapperQuestion");
 
+    if (wrapperQuestion.children() && wrapperQuestion.children().length === 2) {
+      $("#addBoxQuestion").removeClass("lastChild");
+    }
     if (nameTarget === "question_parent") {
       //remove all
       $("#box-question_" + idTarget).remove();
       $("#wrapperSubQuestion_" + idTarget).remove();
-      $(".checkSubquestion").prop("checked", false);
+      $(`#is_sub_question${idTarget}`).prop("checked", false);
     }
   });
 
@@ -811,8 +806,8 @@ $(document).ready(function () {
       '              <div class="card-header has-border-top">' +
       '                <div class="row align-items-center">' +
       '                  <div class="col-lg-12 col-sm-12 col-12">' +
-      '                    <div class="form-group fw-bold custom-pannel-heading">' +
-      '                      <label class="fw-normal">Question Formats ' +
+      '                    <div class="form-group fw-bold custom-pannel-heading number-question ">' +
+      '                      <label class="fw-normal">Question ' +
       (stt || 1) +
       "</label>" +
       "                    </div>" +
@@ -984,8 +979,8 @@ $(document).ready(function () {
       "                  </div>" +
       "                </div>" +
       '                <div class="row align-items-flex-start m-0 itemLastChild px-2">' +
-      '                  <div class="col-lg-4 col-sm-12 col-12 pr-0">' +
-      '                    <div class="form-group question-text">' +
+      '                  <div class="col-lg-4 col-sm-12 col-12 max-w-29">' +
+      '                    <div class="form-group question-text pr-0">' +
       '                      <label for="question" class="fw-normal">Question</label>' +
       '                      <input type="text" name="question_name[' +
       idParent +
@@ -1058,15 +1053,94 @@ $(document).ready(function () {
       "                      </div>" +
       "                    </div>" +
       "                  </div>" +
-      '                  <div class="col-lg-12 col-sm-12 col-12 is_condition_logic_show_' +
+      "                </div>" +
+      '                <div class="row align-items-start m-0 px-2">' +
+      '                  <div class="col-lg-7 col-sm-12 col-12 p-0 max-w-53">' +
+      '                    <div class="table table-no-border row" data-id="' +
+      idParent +
+      '" data-type="parent_question" data-box="parent_question" id="is_table-no-border_' +
+      idParent +
+      '">' +
+      "                      <div class='table-head col-12 p-0'>" +
+      '                          <div class="col-CRM col-lg-6 col-sm-6 col-12">Send to CRM   <span>Answer</span></div>' +
+      '                          <div style="display:none" class="col-lg-6 col-sm-6 col-12 col-question_with_images is_question_with_images_' +
+      idParent +
+      '" id="withImages" data-id="' +
+      idParent +
+      '" data-type="parent_question" data-box="parent_question">Images</div>' +
+      "                      </div>" +
+      "                      <div class='table-tbody col-12 pr-0 first-item-answer'>" +
+      "                          <div class='max720 pr-0 col-lg-6 col-sm-6 col-12 p-0' style='padding-right:0 !important'>" +
+      '                            <div class="d-flex align-items-center mb-3">' +
+      '                              <div class="box-checkbox-custom">' +
+      '                                <div class="form-group mb0 p10 text-center">' +
+      '                                  <input type="hidden" name="is_answer_check[' +
+      idParent +
+      '][]" id="is_answer_hidden_' +
+      idParent +
+      '" value="0">' +
+      '                                  <input type="checkbox" data-id="' +
+      idParent +
+      '"' +
+      ' class="checkType" data-box="parent_question" data-type="is_answer_check_question" name="is_answer_checkbox[' +
+      idParent +
+      '][]" id="is_answer' +
+      idParent +
+      '">' +
+      '                                  <label for="is_answer' +
+      idParent +
+      '" class="form-check-sign"></label>' +
+      "                                </div>" +
+      "                              </div>" +
+      '                              <input type="text" name="answer_name[' +
+      idParent +
+      '][]" class="form-control input-solid" placeholder="Please input answer...">' +
+      '                              <i class="ml-2" style="width: 23px; height: 26px; display:block;"></i>' +
+      "                            </div>" +
+      "                          </div>" +
+      "<div  style='display:none' data-id='" +
+      idParent +
+      "' class='col-lg-4 col-sm-4 col-12 withImages pl-2 is_question_with_images_" +
+      idParent +
+      "' data-type='parent_question' data-box='parent_question'>" +
+      '<div class="form-group py-0 px-0 mb-3">' +
+      '                      <div class="upload-btn-wrapper">' +
+      '                        <button class="upload-file">' +
+      '                          <span class="text-upload">Upload a image</span>' +
+      '                          <span class="image-upload"><i class="icon-upload"></i></span></button>' +
+      '                          <input class="file-upload" type="file" accept="image/*, capture=camera" id="answer_image' +
+      idParent +
+      '" name="answer_image[' +
+      idParent +
+      '][]" />' +
+      "                      </div>" +
+      "                    </div>" +
+      "                  </div>" +
+      "                          <div class='col-addAnswer mb-3'>" +
+      "<i class='la la-minus-circle text-danger font-24 removeAnswer first' data-type='parent_question'><span class='ml-2'>Delete</span></i>" +
+      '                            <a href="javascript:void(0);" class="more-answer answer-first">' +
+      '                              <i class="la la-plus-circle text-info font-24"></i>' +
+      '                              <span class="text-btn addAnswer" data-type="parent_question" data-id="' +
+      idParent +
+      '">More Answer</span>' +
+      "                            </a>" +
+      "                          </div>" +
+      "</div>" +
+      '                            <div class="itemsAnswer w-100" id="itemsAnswer_' +
+      idParent +
+      '"></div>' +
+      "                      </div>" +
+      "                    </div>" +
+      '<div class="col-lg-5 col-sm-12 col-12 p-0 col-condition-logic">' +
+      '                  <div class=" is_condition_logic_show_' +
       idParent +
       '" style="display:none">' +
-      '                    <div class="form-group max-600 ml-auto">' +
+      '                    <div class="form-group ml-auto">' +
       '                      <label for="question" class="fw-normal">Condition Logic</label>' +
       "<!-- HTML condition Logic -->" +
       '<div class="condition-logic-wrap">' +
       '<div class="row">' +
-      '<div class="col-md-4 col-sm-6 col-12">' +
+      '<div class="col-md-5 col-sm-6 col-12">' +
       '<div class="form-group px-0 pt-0">' +
       '<select class="form-control input-solid fw-normal" name="is_show_condition_logic[' +
       idParent +
@@ -1076,7 +1150,7 @@ $(document).ready(function () {
       "</select>" +
       "</div>" +
       "</div>" +
-      '<div class="col-md-8 col-sm-12 col-12 full-992 pl-lg-0">' +
+      '<div class="col-md-7 col-sm-12 col-12 full-992 pl-lg-0">' +
       '<div class="form-group p-0">' +
       '<div class="selectIf">' +
       '<div class="selectIf__left">' +
@@ -1103,15 +1177,15 @@ $(document).ready(function () {
       '" id="itemConditionLogic_' +
       idParent +
       '">' +
-      '<div class="col-md-4 col-sm-6 col-12 ">' +
-      '<div class="form-group p-0">' +
+      '<div class="col-md-5 col-sm-6 col-12 ">' +
+      '<div class="form-group p-0 pb-3 pb-md-0">' +
       '<input type="text" name="field_condition_logic[' +
       idParent +
       '][]" class="form-control input-solid" placeholder="utm_source">' +
       "</div>" +
       "</div>" +
-      '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
-      '<div class="form-group pb-0 px-0 pt-0">' +
+      '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
+      '<div class="form-group pb-md-0 px-0 pt-0">' +
       '<select class="form-control input-solid fw-normal" name="select_show_hidden_condition[' +
       idParent +
       '][]">' +
@@ -1121,7 +1195,7 @@ $(document).ready(function () {
       "</div>" +
       "</div>" +
       '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
-      '<div class="form-group pb-0 px-0 pt-0">' +
+      '<div class="form-group pb-md-0 px-0 pt-0">' +
       '<div class="d-flex align-items-center hasActions">' +
       '<input type="text" name="value_condition[' +
       idParent +
@@ -1145,93 +1219,12 @@ $(document).ready(function () {
       "<!-- end condition Logic -->" +
       "                    </div>" +
       "                  </div>" +
-      "                </div>" +
-      '                <div class="row align-items-start m-0 px-2">' +
-      '                  <div class="col-lg-12 col-sm-12 col-12 p-0">' +
-      '                    <div class="table table-no-border row" data-id="' +
-      idParent +
-      '" data-type="parent_question" data-box="parent_question" id="is_table-no-border_' +
-      idParent +
-      '">' +
-      "                      <div class='table-head col-12 p-0'>" +
-      '                          <div class="col-CRM col-lg-4 col-sm-6 col-12">Send to CRM   <span>Answer</span></div>' +
-      '                          <div style="display:none" class="col-lg-2 col-sm-6 col-12 col-question_with_images is_question_with_images_' +
-      idParent +
-      '" id="withImages" data-id="' +
-      idParent +
-      '" data-type="parent_question" data-box="parent_question">Images</div>' +
-      "                      </div>" +
-      "                      <div class='table-tbody col-12 pr-0 first-item-answer'>" +
-      "                          <div class='max720 pr-0 col-lg-4 col-sm-6 col-12 p-0' style='padding-right:0 !important'>" +
-      '                            <div class="d-flex align-items-center mb-3">' +
-      '                              <div class="box-checkbox-custom">' +
-      '                                <div class="form-group mb0 p10 text-center">' +
-      '                                  <input type="hidden" name="is_answer_check[' +
-      idParent +
-      '][]" id="is_answer_hidden_' +
-      idParent +
-      '" value="0">' +
-      '                                  <input type="checkbox" data-id="' +
-      idParent +
-      '"' +
-      ' class="checkType" data-box="parent_question" data-type="is_answer_check_question" name="is_answer_checkbox[' +
-      idParent +
-      '][]" id="is_answer' +
-      idParent +
-      '">' +
-      '                                  <label for="is_answer' +
-      idParent +
-      '" class="form-check-sign"></label>' +
-      "                                </div>" +
-      "                              </div>" +
-      '                              <input type="text" name="answer_name[' +
-      idParent +
-      '][]" class="form-control input-solid" placeholder="Please input answer...">' +
-      '                              <i class="ml-2" style="width: 26px; height: 26px; display:block;"></i>' +
-      "                            </div>" +
-      "                          </div>" +
-      "<div  style='display:none' data-id='" +
-      idParent +
-      "' class='col-lg-3 col-sm-4 col-12 withImages pl-2 is_question_with_images_" +
-      idParent +
-      "' data-type='parent_question' data-box='parent_question'>" +
-      '<div class="form-group py-0 px-1 mb-3">' +
-      '                      <div class="upload-btn-wrapper">' +
-      '                        <button class="upload-file">' +
-      '                          <span class="text-upload">Upload a image</span>' +
-      '                          <span class="image-upload"><i class="icon-upload"></i></span></button>' +
-      '                          <input class="file-upload" type="file" accept="image/*, capture=camera" id="answer_image' +
-      idParent +
-      '" name="answer_image[' +
-      idParent +
-      '][]" />' +
-      "                      </div>" +
-      "                    </div>" +
-      "                  </div>" +
-      "                          <div class='col-addAnswer mb-3'>" +
-      "<i class='la la-minus-circle text-danger font-24 removeAnswer first' data-type='parent_question'><span class='ml-2'>Can we add the text here '" +
-      "Delete" +
-      "' next to this symbol</span></i>" +
-      '                            <a href="javascript:void(0);" class="more-answer answer-first">' +
-      '                              <i class="la la-plus-circle text-info font-24"></i>' +
-      '                              <span class="text-btn addAnswer" data-type="parent_question" data-id="' +
-      idParent +
-      '">More Answer</span>' +
-      "                            </a>" +
-      "                          </div>" +
       "</div>" +
-      '                            <div class="itemsAnswer w-100" id="itemsAnswer_' +
+      "                  </div>" +
+      '        <div class="wrapperSubQuestion pb-4" id="wrapperSubQuestion_' +
       idParent +
       '"></div>' +
-      "                      </div>" +
-      "                    </div>" +
-      "                  </div>" +
-      "                </div>" +
-      "              </div>" +
-      "            </div>" +
-      '        <div class="wrapperSubQuestion" id="wrapperSubQuestion_' +
-      idParent +
-      '"></div>';
+      "</div>";
     $("#wrapperQuestion").append(html_question);
   }
 
@@ -1241,12 +1234,6 @@ $(document).ready(function () {
       '<div class="box-question bg-blue" id="box-question_' +
       idParent +
       '">' +
-      '  <span class="delQuestion handleRemove btn" data-name="question_sub" data-id="' +
-      idParent +
-      '">' +
-      '   <i class="delQuestion__icon la la-trash-o"></i>' +
-      '   <span class="actions-text">Delete</span>' +
-      "  </span>" +
       '  <div class="card-header has-border-top">' +
       '    <div class="row align-items-center">' +
       '      <div class="col-lg-12 col-sm-12 col-12">' +
@@ -1408,7 +1395,7 @@ $(document).ready(function () {
       "       </div>" +
       "     </div>" +
       '     <div class="row align-items-start m-0 itemLastChild px-2">' +
-      '       <div class="col-lg-4 col-sm-12 col-12 px-0">' +
+      '       <div class="col-lg-4 col-sm-12 col-12 px-0 max-w-27">' +
       '         <div class="form-group question-text">' +
       '           <label for="sub_question_name[' +
       idParent +
@@ -1488,15 +1475,94 @@ $(document).ready(function () {
       "           </div>" +
       "         </div>" +
       "       </div>" +
-      '                  <div class="col-lg-12 col-sm-12 col-12  sub_is_condition_logic_show_' +
+      "     </div>" +
+      '     <div class="row align-items-start">' +
+      '       <div class="col-lg-7 col-sm-12 col-12 no-padding-mb max-w-53">' +
+      '                    <div class="table table-no-border row px-0" data-id="' +
+      idParent +
+      '" data-type="sub_question" data-box="sub_question" id="sub_is_table-no-border_' +
+      idParent +
+      '">' +
+      "                      <div class='table-head col-12 p-0'>" +
+      '                          <div class="col-CRM col-lg-6 col-sm-6 col-12">Send to CRM   <span>Answer</span></div>' +
+      '                          <div style="display:none" class="col-lg-6 col-sm-6 col-12 col-question_with_images sub_is_question_with_images_' +
+      idParent +
+      '" id="withImages" data-id="' +
+      idParent +
+      '" data-type="sub_question" data-box="sub_question">Images</div>' +
+      "                      </div>" +
+      "           <div class='table-tbody col-12 pr-0 first-item-answer'>" +
+      "               <div class='max720 pr-0 col-lg-6 col-sm-6 col-12 p-0 ' style='padding-right:0 !important'>" +
+      '                 <div class="d-flex align-items-center mb-3">' +
+      '                   <div class="box-checkbox-custom">' +
+      '                     <div class="form-group mb0 p10 text-center">' +
+      ' <input type="hidden" name="sub_is_answer_check[' +
+      idParent +
+      '][]" id="sub_is_answer_hidden_' +
+      idParent +
+      '" value="0">' +
+      '                                  <input type="checkbox" data-id="' +
+      idParent +
+      '"' +
+      ' class="checkType" data-box="sub_question" data-type="is_answer_check_question" name="sub_is_answer_checkbox[' +
+      idParent +
+      '][]" id="sub_is_answer_' +
+      idParent +
+      '">' +
+      '                       <label for="sub_is_answer_' +
+      idParent +
+      '" class="form-check-sign"></label>' +
+      "                     </div>" +
+      "                   </div>" +
+      '                   <input type="text" name="sub_answer_name[' +
+      idParent +
+      '][]" class="form-control input-solid" placeholder="Please input answer...">' +
+      '                   <i class="ml-2" style="width: 23px; height: 26px; display:block;"></i>' +
+      "                 </div>" +
+      "               </div>" +
+      "<div  style='display:none' data-id='" +
+      idParent +
+      "' class='col-lg-4 col-sm-4 col-12 withImages pl-2 sub_is_question_with_images_" +
+      idParent +
+      "' data-type='sub_question' data-box='sub_question'>" +
+      '<div class="form-group p-0 mb-3">' +
+      '                      <div class="upload-btn-wrapper">' +
+      '                        <button class="upload-file">' +
+      '                          <span class="text-upload">Upload a image</span>' +
+      '                          <span class="image-upload"><i class="icon-upload"></i></span></button>' +
+      '                          <input class="file-upload" type="file" accept="image/*, capture=camera" id="sub_answer_image' +
+      idParent +
+      '" name="sub_answer_image[' +
+      idParent +
+      '][]" />' +
+      "                      </div>" +
+      "                    </div>" +
+      "                  </div>" +
+      "                          <div class='col-addAnswer mb-3'>" +
+      "<i class='la la-minus-circle text-danger font-24 removeAnswer first' data-type='parent_question'><span class='ml-2'>Delete</span></i>" +
+      '                            <a href="javascript:void(0);" class="more-answer answer-first">' +
+      '                   <i class="la la-plus-circle text-info font-24"></i>' +
+      '                   <span class="text-btn addAnswer" data-type="sub_question" data-id="' +
+      idParent +
+      '">More Answer</span>' +
+      "                 </a>" +
+      "               </div>" +
+      "</div>" +
+      '                 <div class="itemsSubAnswer  w-100" id="itemsSubAnswer_' +
+      idParent +
+      '"></div>' +
+      "           </div>" +
+      "         </div>" +
+      '<div class="col-lg-5 col-sm-12 col-12 no-padding-mb">' +
+      '                  <div class="sub_is_condition_logic_show_' +
       idParent +
       '" style=" display: none;">' +
-      '                    <div class="form-group max-600 ml-auto">' +
+      '                    <div class="form-group ml-auto">' +
       '                      <label for="question" class="fw-normal">Condition Logic</label>' +
       "<!-- HTML Sub condition Logic -->" +
       '<div class="condition-logic-wrap">' +
       '<div class="row">' +
-      '<div class="col-md-4 col-sm-6 col-12">' +
+      '<div class="col-md-5 col-sm-6 col-12">' +
       '<div class="form-group px-0 pt-0">' +
       '<select class="form-control input-solid fw-normal" name="sub_is_show_condition_logic[' +
       idParent +
@@ -1506,7 +1572,7 @@ $(document).ready(function () {
       "</select>" +
       "</div>" +
       "</div>" +
-      '<div class="col-md-8 col-sm-12 col-12 full-992 pl-lg-0">' +
+      '<div class="col-md-7 col-sm-12 col-12 full-992 pl-lg-0">' +
       '<div class="form-group p-0">' +
       '<div class="selectIf">' +
       '<div class="selectIf__left">' +
@@ -1533,15 +1599,15 @@ $(document).ready(function () {
       '" id="itemSubConditionLogic_' +
       idParent +
       '">' +
-      '<div class="col-md-4 col-sm-6 col-12 ">' +
-      '<div class="form-group p-0">' +
+      '<div class="col-md-5 col-sm-6 col-12 ">' +
+      '<div class="form-group p-0 pb-3 pb-md-0">' +
       '<input type="text" name="sub_field_condition_logic[' +
       idParent +
       '][]" class="form-control input-solid" placeholder="utm_source">' +
       "</div>" +
       "</div>" +
-      '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
-      '<div class="form-group pb-0 px-0 pt-0">' +
+      '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
+      '<div class="form-group pb-md-0 px-0 pt-0">' +
       '<select class="form-control input-solid fw-normal" name="sub_select_show_hidden_condition[' +
       idParent +
       '][]">' +
@@ -1551,7 +1617,7 @@ $(document).ready(function () {
       "</div>" +
       "</div>" +
       '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
-      '<div class="form-group pb-0 px-0 pt-0">' +
+      '<div class="form-group pb-md-0 px-0 pt-0">' +
       '<div class="d-flex align-items-center hasActions">' +
       '<input type="text" name="sub_value_condition[' +
       idParent +
@@ -1575,86 +1641,7 @@ $(document).ready(function () {
       "<!-- end sub condition Logic -->" +
       "                    </div>" +
       "                  </div>" +
-      "     </div>" +
-      '     <div class="row align-items-start">' +
-      '       <div class="col-lg-12 col-sm-12 col-12 no-padding-mb">' +
-      '                    <div class="table table-no-border row px-0" data-id="' +
-      idParent +
-      '" data-type="sub_question" data-box="sub_question" id="sub_is_table-no-border_' +
-      idParent +
-      '">' +
-      "                      <div class='table-head col-12 p-0'>" +
-      '                          <div class="col-CRM col-lg-4 col-sm-6 col-12">Send to CRM   <span>Answer</span></div>' +
-      '                          <div style="display:none" class="col-lg-2 col-sm-6 col-12 col-question_with_images sub_is_question_with_images_' +
-      idParent +
-      '" id="withImages" data-id="' +
-      idParent +
-      '" data-type="sub_question" data-box="sub_question">Images</div>' +
-      "                      </div>" +
-      "           <div class='table-tbody col-12 pr-0 first-item-answer'>" +
-      "               <div class='max720 pr-0 col-lg-4 col-sm-6 col-12 p-0 ' style='padding-right:0 !important'>" +
-      '                 <div class="d-flex align-items-center mb-3">' +
-      '                   <div class="box-checkbox-custom">' +
-      '                     <div class="form-group mb0 p10 text-center">' +
-      ' <input type="hidden" name="sub_is_answer_check[' +
-      idParent +
-      '][]" id="sub_is_answer_hidden_' +
-      idParent +
-      '" value="0">' +
-      '                                  <input type="checkbox" data-id="' +
-      idParent +
-      '"' +
-      ' class="checkType" data-box="sub_question" data-type="is_answer_check_question" name="sub_is_answer_checkbox[' +
-      idParent +
-      '][]" id="sub_is_answer_' +
-      idParent +
-      '">' +
-      '                       <label for="sub_is_answer_' +
-      idParent +
-      '" class="form-check-sign"></label>' +
-      "                     </div>" +
-      "                   </div>" +
-      '                   <input type="text" name="sub_answer_name[' +
-      idParent +
-      '][]" class="form-control input-solid" placeholder="Please input answer...">' +
-      '                   <i class="ml-2" style="width: 26px; height: 26px; display:block;"></i>' +
-      "                 </div>" +
-      "               </div>" +
-      "<div  style='display:none' data-id='" +
-      idParent +
-      "' class='col-lg-3 col-sm-4 col-12 withImages pl-2 sub_is_question_with_images_" +
-      idParent +
-      "' data-type='sub_question' data-box='sub_question'>" +
-      '<div class="form-group p-0 mb-3">' +
-      '                      <div class="upload-btn-wrapper">' +
-      '                        <button class="upload-file">' +
-      '                          <span class="text-upload">Upload a image</span>' +
-      '                          <span class="image-upload"><i class="icon-upload"></i></span></button>' +
-      '                          <input class="file-upload" type="file" accept="image/*, capture=camera" id="sub_answer_image' +
-      idParent +
-      '" name="sub_answer_image[' +
-      idParent +
-      '][]" />' +
-      "                      </div>" +
-      "                    </div>" +
-      "                  </div>" +
-      "                          <div class='col-addAnswer mb-3'>" +
-      "<i class='la la-minus-circle text-danger font-24 removeAnswer first' data-type='parent_question'><span class='ml-2'>Can we add the text here '" +
-      "Delete" +
-      "' next to this symbol</span></i>" +
-      '                            <a href="javascript:void(0);" class="more-answer answer-first">' +
-      '                   <i class="la la-plus-circle text-info font-24"></i>' +
-      '                   <span class="text-btn addAnswer" data-type="sub_question" data-id="' +
-      idParent +
-      '">More Answer</span>' +
-      "                 </a>" +
-      "               </div>" +
       "</div>" +
-      '                 <div class="itemsSubAnswer  w-100" id="itemsSubAnswer_' +
-      idParent +
-      '"></div>' +
-      "           </div>" +
-      "         </div>" +
       "       </div>" +
       "     </div>" +
       "   </div>" +
@@ -1665,6 +1652,7 @@ $(document).ready(function () {
   $("#addBoxQuestion").click(function (e) {
     var randomID = Math.round(Math.random() * 36 ** 12).toString(36);
     htmlQuestion(randomID);
+    $(this).addClass("lastChild");
     $(`#is_table-no-border_${randomID} input`).prop("required", true);
     // customSelect(`.condition-logic-wrap select`);
   });
