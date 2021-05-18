@@ -266,7 +266,7 @@ $(document).ready(function () {
           '" id="itemConditionLogic_' +
           randomIDField +
           '">' +
-          '<div class="col-md-5 col-sm-6 col-12 ">' +
+          '<div class="col-md-4 col-sm-6 col-12 ">' +
           '<div class="form-group px-0 pb-0">' +
           '<input type="text" name="field_condition_logic[' +
           randomIDField +
@@ -283,7 +283,7 @@ $(document).ready(function () {
           "</select>" +
           "</div>" +
           "</div>" +
-          '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+          '<div class="col-md-5 col-sm-6 col-12 pl-lg-0">' +
           '<div class="form-group pb-0 px-0 pb-0">' +
           '<div class="d-flex align-items-center hasActions">' +
           '<input type="text" name="value_condition[' +
@@ -291,12 +291,12 @@ $(document).ready(function () {
           '][]" class="form-control input-solid" placeholder="Enter a value">' +
           '<div class="groupActions d-flex align-items-center">' +
           '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
-          '<i class="la la-plus-circle la-2x" data-id="' +
+          '<i class="la la-plus-circle la-2x font-24" data-id="' +
           idTarget +
           '" data-box="parent_question"></i>' +
           "</a>" +
           '<a class="btnRemoveConditionLogic groupActions__item" href="javascript:void(0)">' +
-          '<i class="la la-minus-circle la-2x"></i>' +
+          '<i class="la la-minus-circle la-2x font-24"></i>' +
           "</a>" +
           "</div>" +
           "</div>" +
@@ -317,7 +317,7 @@ $(document).ready(function () {
           '" id="itemSubConditionLogic_' +
           randomIDField +
           '">' +
-          '<div class="col-md-5 col-sm-6 col-12 ">' +
+          '<div class="col-md-4 col-sm-6 col-12 ">' +
           '<div class="form-group px-0 pb-0">' +
           '<input type="text" name="sub_field_condition_logic[' +
           randomIDField +
@@ -334,7 +334,7 @@ $(document).ready(function () {
           "</select>" +
           "</div>" +
           "</div>" +
-          '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+          '<div class="col-md-5 col-sm-6 col-12 pl-lg-0">' +
           '<div class="form-group pb-0 px-0 pb-0">' +
           '<div class="d-flex align-items-center hasActions">' +
           '<input type="text" name="sub_value_condition[' +
@@ -342,12 +342,12 @@ $(document).ready(function () {
           '][]" class="form-control input-solid" placeholder="Enter a value">' +
           '<div class="groupActions d-flex align-items-center">' +
           '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
-          '<i class="la la-plus-circle la-2x" data-id="' +
+          '<i class="la la-plus-circle la-2x font-24" data-id="' +
           idTarget +
           '" data-box="sub_question"></i>' +
           "</a>" +
           '<a class="btnRemoveConditionLogic groupActions__item" href="javascript:void(0)">' +
-          '<i class="la la-minus-circle la-2x"></i>' +
+          '<i class="la la-minus-circle la-2x font-24"></i>' +
           "</a>" +
           "</div>" +
           "</div>" +
@@ -1095,7 +1095,7 @@ $(document).ready(function () {
       '                              <input type="text" name="answer_name[' +
       idParent +
       '][]" class="form-control input-solid" placeholder="Please input answer...">' +
-      '                              <i class="ml-2" style="width: 23px; height: 26px; display:block;"></i>' +
+      '                              <i class="ml-2" style="width: 25px; height: 26px; display:block;"></i>' +
       "                            </div>" +
       "                          </div>" +
       "<div  style='display:none' data-id='" +
@@ -1140,7 +1140,7 @@ $(document).ready(function () {
       "<!-- HTML condition Logic -->" +
       '<div class="condition-logic-wrap">' +
       '<div class="row">' +
-      '<div class="col-md-5 col-sm-6 col-12">' +
+      '<div class="col-md-4 col-sm-6 col-12">' +
       '<div class="form-group px-0 pt-0">' +
       '<select class="form-control input-solid fw-normal" name="is_show_condition_logic[' +
       idParent +
@@ -1150,7 +1150,7 @@ $(document).ready(function () {
       "</select>" +
       "</div>" +
       "</div>" +
-      '<div class="col-md-7 col-sm-12 col-12 full-992 pl-lg-0">' +
+      '<div class="col-md-8 col-sm-12 col-12 full-992 pl-lg-0">' +
       '<div class="form-group p-0">' +
       '<div class="selectIf">' +
       '<div class="selectIf__left">' +
@@ -1177,7 +1177,7 @@ $(document).ready(function () {
       '" id="itemConditionLogic_' +
       idParent +
       '">' +
-      '<div class="col-md-5 col-sm-6 col-12 ">' +
+      '<div class="col-md-4 col-sm-6 col-12 ">' +
       '<div class="form-group p-0 pb-3 pb-md-0">' +
       '<input type="text" name="field_condition_logic[' +
       idParent +
@@ -1194,7 +1194,7 @@ $(document).ready(function () {
       "</select>" +
       "</div>" +
       "</div>" +
-      '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+      '<div class="col-md-5 col-sm-6 col-12 pl-lg-0">' +
       '<div class="form-group pb-md-0 px-0 pt-0">' +
       '<div class="d-flex align-items-center hasActions">' +
       '<input type="text" name="value_condition[' +
@@ -1202,12 +1202,12 @@ $(document).ready(function () {
       '][]" class="form-control input-solid" placeholder="Enter a value">' +
       '<div class="groupActions d-flex align-items-center">' +
       '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
-      '<i class="la la-plus-circle la-2x" data-id=' +
+      '<i class="la la-plus-circle la-2x font-24" data-id=' +
       idParent +
       " data-box='parent_question'></i>" +
       "</a>" +
       '<a class="btnRemoveConditionLogic groupActions__item" href="javascript:void(0)">' +
-      '<i class="la la-minus-circle la-2x"></i>' +
+      '<i class="la la-minus-circle la-2x font-24"></i>' +
       "</a>" +
       "</div>" +
       "</div>" +
@@ -1517,7 +1517,7 @@ $(document).ready(function () {
       '                   <input type="text" name="sub_answer_name[' +
       idParent +
       '][]" class="form-control input-solid" placeholder="Please input answer...">' +
-      '                   <i class="ml-2" style="width: 23px; height: 26px; display:block;"></i>' +
+      '                   <i class="ml-2" style="width: 25px; height: 26px; display:block;"></i>' +
       "                 </div>" +
       "               </div>" +
       "<div  style='display:none' data-id='" +
@@ -1557,12 +1557,12 @@ $(document).ready(function () {
       '                  <div class="sub_is_condition_logic_show_' +
       idParent +
       '" style=" display: none;">' +
-      '                    <div class="form-group ml-auto">' +
+      '                    <div class="form-group ml-auto px-0">' +
       '                      <label for="question" class="fw-normal">Condition Logic</label>' +
       "<!-- HTML Sub condition Logic -->" +
       '<div class="condition-logic-wrap">' +
       '<div class="row">' +
-      '<div class="col-md-5 col-sm-6 col-12">' +
+      '<div class="col-md-4 col-sm-6 col-12">' +
       '<div class="form-group px-0 pt-0">' +
       '<select class="form-control input-solid fw-normal" name="sub_is_show_condition_logic[' +
       idParent +
@@ -1572,7 +1572,7 @@ $(document).ready(function () {
       "</select>" +
       "</div>" +
       "</div>" +
-      '<div class="col-md-7 col-sm-12 col-12 full-992 pl-lg-0">' +
+      '<div class="col-md-8 col-sm-12 col-12 full-992 pl-lg-0">' +
       '<div class="form-group p-0">' +
       '<div class="selectIf">' +
       '<div class="selectIf__left">' +
@@ -1599,7 +1599,7 @@ $(document).ready(function () {
       '" id="itemSubConditionLogic_' +
       idParent +
       '">' +
-      '<div class="col-md-5 col-sm-6 col-12 ">' +
+      '<div class="col-md-4 col-sm-6 col-12 ">' +
       '<div class="form-group p-0 pb-3 pb-md-0">' +
       '<input type="text" name="sub_field_condition_logic[' +
       idParent +
@@ -1616,7 +1616,7 @@ $(document).ready(function () {
       "</select>" +
       "</div>" +
       "</div>" +
-      '<div class="col-md-4 col-sm-6 col-12 pl-lg-0">' +
+      '<div class="col-md-5 col-sm-6 col-12 pl-lg-0">' +
       '<div class="form-group pb-md-0 px-0 pt-0">' +
       '<div class="d-flex align-items-center hasActions">' +
       '<input type="text" name="sub_value_condition[' +
@@ -1624,12 +1624,12 @@ $(document).ready(function () {
       '][]" class="form-control input-solid" placeholder="Enter a value">' +
       '<div class="groupActions d-flex align-items-center">' +
       '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
-      '<i class="la la-plus-circle la-2x" data-id=' +
+      '<i class="la la-plus-circle la-2x font-24" data-id=' +
       idParent +
       " data-box='sub_question'></i>" +
       "</a>" +
       '<a class="btnRemoveConditionLogic groupActions__item" href="javascript:void(0)">' +
-      '<i class="la la-minus-circle la-2x"></i>' +
+      '<i class="la la-minus-circle la-2x font-24"></i>' +
       "</a>" +
       "</div>" +
       "</div>" +
