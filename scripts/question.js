@@ -565,14 +565,17 @@ $(document).ready(function () {
       $(`${classTarget}text_below_show_${idTarget} .text-upload`).html(
         "Upload a image"
       );
+
       if (idQuestion_format4 && idQuestion_format4.checked) {
         $(`#${idTargetBox}table-no-border_${idTarget}`).hide();
+        $(`#${idTargetBox}with_images${idTarget}`).prop("disabled", true);
+        $(`#${idTargetBox}mutiple_choises${idTarget}`).prop("disabled", true);
       } else {
         $(`#${idTargetBox}table-no-border_${idTarget}`).show();
+        $(`#${idTargetBox}with_images${idTarget}`).prop("disabled", false);
+        $(`#${idTargetBox}mutiple_choises${idTarget}`).prop("disabled", false);
       }
       $(`${classTarget}text_below_show_${idTarget}`).hide();
-      $(`#${idTargetBox}with_images${idTarget}`).prop("disabled", false);
-      $(`#${idTargetBox}mutiple_choises${idTarget}`).prop("disabled", false);
     }
 
     if (typeTarget === "is_with_images" && targetHtml.checked) {
