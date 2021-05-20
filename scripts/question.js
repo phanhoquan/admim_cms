@@ -268,14 +268,14 @@ $(document).ready(function () {
           '">' +
           '<div class="col-md-4 col-sm-6 col-12 ">' +
           '<div class="form-group px-0 pb-0">' +
-          '<input type="text" name="field_condition_logic[' +
+          '<input type="text" name="condition_logic_field[' +
           randomIDField +
           '][]" class="form-control input-solid" placeholder="utm_source">' +
           "</div>" +
           "</div>" +
           '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
           '<div class="form-group px-0 pb-0">' +
-          '<select class="form-control input-solid fw-normal" name="select_show_hidden_condition[' +
+          '<select class="form-control input-solid fw-normal" name="math_logic[' +
           randomIDField +
           '][]">' +
           '<option value="0">All</option>' +
@@ -286,7 +286,7 @@ $(document).ready(function () {
           '<div class="col-md-5 col-sm-6 col-12 pl-lg-0">' +
           '<div class="form-group pb-0 px-0 pb-0">' +
           '<div class="d-flex align-items-center hasActions">' +
-          '<input type="text" name="value_condition[' +
+          '<input type="text" name="condition_logic_value[' +
           randomIDField +
           '][]" class="form-control input-solid" placeholder="Enter a value">' +
           '<div class="groupActions d-flex align-items-center">' +
@@ -319,14 +319,14 @@ $(document).ready(function () {
           '">' +
           '<div class="col-md-4 col-sm-6 col-12 ">' +
           '<div class="form-group px-0 pb-0">' +
-          '<input type="text" name="sub_field_condition_logic[' +
+          '<input type="text" name="sub_condition_logic_field[' +
           randomIDField +
           '][]" class="form-control input-solid" placeholder="utm_source">' +
           "</div>" +
           "</div>" +
           '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
           '<div class="form-group px-0 pb-0">' +
-          '<select class="form-control input-solid fw-normal" name="sub_select_show_hidden_condition[' +
+          '<select class="form-control input-solid fw-normal" name="sub_math_logic[' +
           randomIDField +
           '][]">' +
           '<option value="0">All</option>' +
@@ -337,7 +337,7 @@ $(document).ready(function () {
           '<div class="col-md-5 col-sm-6 col-12 pl-lg-0">' +
           '<div class="form-group pb-0 px-0 pb-0">' +
           '<div class="d-flex align-items-center hasActions">' +
-          '<input type="text" name="sub_value_condition[' +
+          '<input type="text" name="sub_condition_logic_value[' +
           randomIDField +
           '][]" class="form-control input-solid" placeholder="Enter a value">' +
           '<div class="groupActions d-flex align-items-center">' +
@@ -1158,7 +1158,7 @@ $(document).ready(function () {
       '<div class="selectIf">' +
       '<div class="selectIf__left">' +
       '<span class="textBefore">This field if</span>' +
-      '<select class="form-control input-solid fw-normal" name="is_show_field_condition_logic[' +
+      '<select class="form-control input-solid fw-normal" name="this_field_if[' +
       idParent +
       ']">' +
       '<option value="0">All</option>' +
@@ -1182,14 +1182,14 @@ $(document).ready(function () {
       '">' +
       '<div class="col-md-4 col-sm-6 col-12 ">' +
       '<div class="form-group p-0 pb-3 pb-md-0">' +
-      '<input type="text" name="field_condition_logic[' +
+      '<input type="text" name="condition_logic_field[' +
       idParent +
       '][]" class="form-control input-solid" placeholder="utm_source">' +
       "</div>" +
       "</div>" +
       '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
       '<div class="form-group pb-md-0 px-0 pt-0">' +
-      '<select class="form-control input-solid fw-normal" name="select_show_hidden_condition[' +
+      '<select class="form-control input-solid fw-normal" name="math_logic[' +
       idParent +
       '][]">' +
       '<option value="0">All</option>' +
@@ -1200,7 +1200,7 @@ $(document).ready(function () {
       '<div class="col-md-5 col-sm-6 col-12 pl-lg-0">' +
       '<div class="form-group pb-md-0 px-0 pt-0">' +
       '<div class="d-flex align-items-center hasActions">' +
-      '<input type="text" name="value_condition[' +
+      '<input type="text" name="condition_logic_value[' +
       idParent +
       '][]" class="form-control input-solid" placeholder="Enter a value">' +
       '<div class="groupActions d-flex align-items-center">' +
@@ -1580,7 +1580,7 @@ $(document).ready(function () {
       '<div class="selectIf">' +
       '<div class="selectIf__left">' +
       '<span class="textBefore">This field if</span>' +
-      '<select class="form-control input-solid fw-normal" name="sub_is_show_field_condition_logic[' +
+      '<select class="form-control input-solid fw-normal" name="sub_this_field_if[' +
       idParent +
       ']">' +
       '<option value="0">All</option>' +
@@ -1604,14 +1604,14 @@ $(document).ready(function () {
       '">' +
       '<div class="col-md-4 col-sm-6 col-12 ">' +
       '<div class="form-group p-0 pb-3 pb-md-0">' +
-      '<input type="text" name="sub_field_condition_logic[' +
+      '<input type="text" name="sub_condition_logic_field[' +
       idParent +
       '][]" class="form-control input-solid" placeholder="utm_source">' +
       "</div>" +
       "</div>" +
       '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
       '<div class="form-group pb-md-0 px-0 pt-0">' +
-      '<select class="form-control input-solid fw-normal" name="sub_select_show_hidden_condition[' +
+      '<select class="form-control input-solid fw-normal" name="sub_math_logic[' +
       idParent +
       '][]">' +
       '<option value="0">All</option>' +
@@ -1622,7 +1622,7 @@ $(document).ready(function () {
       '<div class="col-md-5 col-sm-6 col-12 pl-lg-0">' +
       '<div class="form-group pb-md-0 px-0 pt-0">' +
       '<div class="d-flex align-items-center hasActions">' +
-      '<input type="text" name="sub_value_condition[' +
+      '<input type="text" name="sub_condition_logic_value[' +
       idParent +
       '][]" class="form-control input-solid" placeholder="Enter a value">' +
       '<div class="groupActions d-flex align-items-center">' +
