@@ -54,12 +54,17 @@ $(document).ready(function () {
   var max_input = 100;
   var x = 1;
   var randomID = Math.round(Math.random() * 36 ** 12).toString(36);
-  htmlQuestion(randomID);
+  htmlQuestion(randomID, "first-none");
   // is_table-no-border_
   $(`#is_table-no-border_${randomID} .max720 input.input-solid`).prop(
     "required",
     true
   );
+
+  setTimeout(() => {
+    $(".first-none").remove();
+  }, 100);
+
   //add annswer sub question TODO UPDATE
   $(document).on("click", ".addAnswer", function (e) {
     var targetHtml = e.target;
@@ -269,14 +274,14 @@ $(document).ready(function () {
           '<div class="col-md-4 col-sm-6 col-12 ">' +
           '<div class="form-group px-0 pb-0">' +
           '<input type="text" name="condition_logic_field[' +
-          randomIDField +
+          idTarget +
           '][]" class="form-control input-solid" placeholder="utm_source">' +
           "</div>" +
           "</div>" +
           '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
           '<div class="form-group px-0 pb-0">' +
           '<select class="form-control input-solid fw-normal" name="math_logic[' +
-          randomIDField +
+          idTarget +
           '][]">' +
           '<option value="0">All</option>' +
           '<option value="1">Is</option>' +
@@ -287,7 +292,7 @@ $(document).ready(function () {
           '<div class="form-group pb-0 px-0 pb-0">' +
           '<div class="d-flex align-items-center hasActions">' +
           '<input type="text" name="condition_logic_value[' +
-          randomIDField +
+          idTarget +
           '][]" class="form-control input-solid" placeholder="Enter a value">' +
           '<div class="groupActions d-flex align-items-center">' +
           '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
@@ -320,14 +325,14 @@ $(document).ready(function () {
           '<div class="col-md-4 col-sm-6 col-12 ">' +
           '<div class="form-group px-0 pb-0">' +
           '<input type="text" name="sub_condition_logic_field[' +
-          randomIDField +
+          idTarget +
           '][]" class="form-control input-solid" placeholder="utm_source">' +
           "</div>" +
           "</div>" +
           '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
           '<div class="form-group px-0 pb-0">' +
           '<select class="form-control input-solid fw-normal" name="sub_math_logic[' +
-          randomIDField +
+          idTarget +
           '][]">' +
           '<option value="0">All</option>' +
           '<option value="1">Is</option>' +
@@ -338,7 +343,7 @@ $(document).ready(function () {
           '<div class="form-group pb-0 px-0 pb-0">' +
           '<div class="d-flex align-items-center hasActions">' +
           '<input type="text" name="sub_condition_logic_value[' +
-          randomIDField +
+          idTarget +
           '][]" class="form-control input-solid" placeholder="Enter a value">' +
           '<div class="groupActions d-flex align-items-center">' +
           '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
@@ -424,8 +429,9 @@ $(document).ready(function () {
   $(document).on("change", ".checkSubquestion", function (e) {
     var targetHtml = e.target;
     var idTarget = $(targetHtml).attr("data-id");
+    var idTargetFirstNone = $(targetHtml).attr("data-firstnone");
     if (targetHtml.checked) {
-      htmlSubQuetion(idTarget);
+      htmlSubQuetion(idTarget, idTargetFirstNone);
       $(`#sub_is_table-no-border_${idTarget} .max720 input.input-solid`).prop(
         "required",
         true
@@ -433,6 +439,9 @@ $(document).ready(function () {
     } else {
       $("#wrapperSubQuestion_" + idTarget).empty();
     }
+    setTimeout(() => {
+      $(".first-none").remove();
+    }, 100);
   });
 
   //checkbox onchange
@@ -793,7 +802,7 @@ $(document).ready(function () {
   });
 
   var stt = 1;
-  function htmlQuestion(idParent) {
+  function htmlQuestion(idParent, firstNone = "") {
     stt++;
     var html_question =
       "<!-- question -->" +
@@ -931,7 +940,9 @@ $(document).ready(function () {
       '">Text below the button</label>' +
       "                  </div>" +
       '                  <div class="form-group col-2-6 col-sm-3 col-3 sub_question">' +
-      '                    <input type="checkbox" class="checkSubquestion" data-id="' +
+      '                    <input type="checkbox" data-firstNone="' +
+      firstNone +
+      '" class="checkSubquestion" data-id="' +
       idParent +
       '" name="is_sub_question[' +
       idParent +
@@ -956,8 +967,10 @@ $(document).ready(function () {
       idParent +
       '">With images</label>' +
       "                  </div>" +
-      '                  <div class="form-group col-2-6 col-sm-3 col-3">' +
-      '                    <input type="checkbox" class="checkType check_is_condition_logic resetChecked_' +
+      '                  <div class="form-group col-2-6 col-sm-3 col-3 ' +
+      firstNone +
+      ' ">' +
+      '                    <input type="checkbox" class=" checkType check_is_condition_logic resetChecked_' +
       idParent +
       ' " data-id="' +
       idParent +
@@ -1134,7 +1147,9 @@ $(document).ready(function () {
       '"></div>' +
       "                      </div>" +
       "                    </div>" +
-      '<div class="col-lg-5 col-sm-12 col-12 p-0 col-condition-logic">' +
+      '<div class="col-lg-5 col-sm-12 col-12 p-0 col-condition-logic ' +
+      firstNone +
+      '">' +
       '                  <div class=" is_condition_logic_show_' +
       idParent +
       '" style="display:none">' +
@@ -1231,7 +1246,7 @@ $(document).ready(function () {
     $("#wrapperQuestion").append(html_question);
   }
 
-  function htmlSubQuetion(idParent) {
+  function htmlSubQuetion(idParent, firstNone = "") {
     var html_sub_question =
       "<!-- sub question -->" +
       '<div class="box-question bg-blue" id="box-question_' +
@@ -1373,7 +1388,9 @@ $(document).ready(function () {
       idParent +
       '">With images</label>' +
       "      </div>" +
-      '                  <div class="form-group col-2-6 col-sm-3 col-3">' +
+      '                  <div class="form-group col-2-6 col-sm-3 col-3 ' +
+      firstNone +
+      '">' +
       '                    <input type="checkbox" class="checkType check_is_condition_logic resetChecked_' +
       idParent +
       ' " data-id="' +
@@ -1557,7 +1574,9 @@ $(document).ready(function () {
       "           </div>" +
       "         </div>" +
       '<div class="col-lg-5 col-sm-12 col-12 no-padding-mb">' +
-      '                  <div class="sub_is_condition_logic_show_' +
+      '                  <div class="' +
+      firstNone +
+      " sub_is_condition_logic_show_" +
       idParent +
       '" style=" display: none;">' +
       '                    <div class="form-group ml-auto px-0">' +
