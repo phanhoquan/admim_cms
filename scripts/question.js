@@ -1656,7 +1656,10 @@ $(document).ready(function () {
     var randomID = Math.round(Math.random() * 36 ** 12).toString(36);
     htmlQuestion(randomID);
     $(this).addClass("lastChild");
-    $(`#is_table-no-border_${randomID} input`).prop("required", true);
+    $(`#is_table-no-border_${randomID} input.input-solid`).prop(
+      "required",
+      true
+    );
     // customSelect(`.condition-logic-wrap select`);
   });
 
