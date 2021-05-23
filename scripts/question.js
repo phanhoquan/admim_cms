@@ -387,7 +387,7 @@ $(document).ready(function () {
         idTarget +
         '" name="question_image_11[' +
         idTarget +
-        '][]" />' +
+        ']" />' +
         "    </div>" +
         '    <i class="ml-3 la la-minus-circle text-danger font-24 removeImage11" style=" cursor: pointer;" data-type="parent_question"></i>' +
         "</div>";
@@ -407,7 +407,7 @@ $(document).ready(function () {
         idTarget +
         '" name="sub_question_image_11[' +
         idTarget +
-        '][]" />' +
+        ']" />' +
         "    </div>" +
         '    <i class="ml-3 la la-minus-circle text-danger font-24 removeImage11" style=" cursor: pointer;" data-type="parent_question"></i>' +
         "</div>";
@@ -1029,7 +1029,7 @@ $(document).ready(function () {
       idParent +
       '" name="question_image_11[' +
       idParent +
-      '][]" />' +
+      ']" />' +
       "                            </div>" +
       // '                            <a href="javascript:void(0);" data-type="parent_question" class="add_question_image11 ml-3" data-id="' +
       // idParent +
@@ -1451,7 +1451,7 @@ $(document).ready(function () {
       idParent +
       '" name="sub_question_image_11[' +
       idParent +
-      '][]" />' +
+      ']" />' +
       "                </div>" +
       // '                <a href="javascript:void(0);" data-type="sub_question" class="add_question_image11 ml-3" data-id="' +
       // idParent +
