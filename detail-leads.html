@@ -25,7 +25,7 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap"
     rel="stylesheet">
   <!-- include styles.html -->
-  <link rel="stylesheet" href="style/style-26e17aff2c.min.css">
+  <link rel="stylesheet" href="style/style-bf8c53af07.min.css">
 </head>
 
 <body>
@@ -155,7 +155,7 @@
           <li class="nav-item ">
             <a href="#">
               <span class="icn-sidebar icon-dashboard"></span>
-              <p>Amin Dashboard</p>
+              <p>Admin Dashboard</p>
             </a>
           </li>
           <!-- /item -->
@@ -169,13 +169,16 @@
           <li class="nav-item  submenu">
             <a data-toggle="collapse" href="#campaign" class="" aria-expanded="false">
               <span class="icn-sidebar icon-offers"></span>
-              <p onclick="location.href='campaigns.html'">
-                Campaign
-              </p>
+              <p>Campaign</p>
               <span class="caret ml-auto"></span>
             </a>
             <div class="collapse" id="campaign">
               <ul class="nav nav-collapse">
+                <li>
+                  <a href="campaigns.html">
+                    <span class="sub-item">List Campaign</span>
+                  </a>
+                </li>
                 <li>
                   <a href="create-offers.html">
                     <span class="sub-item">Create Campaign</span>
@@ -188,11 +191,16 @@
           <li class="nav-item ">
             <a data-toggle="collapse" href="#landing_page" class="" aria-expanded="false">
               <span class="icn-sidebar icon-landing-page"></span>
-              <p onclick="location.href='landing-page.html'">Landing Pages</p>
+              <p>Landing Pages</p>
               <span class="caret ml-auto"></span>
             </a>
             <div class="collapse" id="landing_page">
               <ul class="nav nav-collapse">
+                <li>
+                  <a href="landing-page.html">
+                    <span class="sub-item">Landing Pages List</span>
+                  </a>
+                </li>
                 <li>
                   <a href="create-landing-page.html">
                     <span class="sub-item">Create Landing Pages</span>
@@ -205,11 +213,16 @@
           <li class="nav-item ">
             <a data-toggle="collapse" href="#user_manager" class="" aria-expanded="false">
               <span class="icn-sidebar icon-user"></span>
-              <p onclick="location.href='user-management.html'">User Management</p>
+              <p>User Management</p>
               <span class="caret ml-auto"></span>
             </a>
             <div class="collapse" id="user_manager">
               <ul class="nav nav-collapse">
+                <li>
+                  <a href="user-management.html">
+                    <span class="sub-item">User List</span>
+                  </a>
+                </li>
                 <li>
                   <a href="create-user.html">
                     <span class="sub-item">Create New User</span>
@@ -222,11 +235,16 @@
           <li class="nav-item ">
             <a data-toggle="collapse" href="#sponsors" class="" aria-expanded="false">
               <span class="icn-sidebar icon-dollar"></span>
-              <p onclick="location.href='sponsors.html'">Sponsors</p>
+              <p>Sponsors</p>
               <span class="caret ml-auto"></span>
             </a>
             <div class="collapse" id="sponsors">
               <ul class="nav nav-collapse">
+                <li>
+                  <a href="sponsors.html">
+                    <span class="sub-item">Sponsors List</span>
+                  </a>
+                </li>
                 <li>
                   <a href="create-sponsors.html">
                     <span class="sub-item">Add Sponsors</span>
@@ -251,19 +269,19 @@
                 </li>
                 <li>
                   <a href="co-api-settings.html">
-                    <span class="sub-item">Co Sponsor API Settings</span>
+                    <span class="sub-item">Cosponsor setting</span>
                   </a>
                 </li>
               </ul>
             </div>
           </li>
           <!-- /item -->
-          <li class="nav-item @activeReport">
-            <a href="#">
-              <span class="icn-sidebar icon-report"></span>
-              <p>Report</p>
-            </a>
-          </li>
+          <!-- <li class="nav-item @activeReport">
+        <a href="#">
+          <span class="icn-sidebar icon-report"></span>
+          <p>Report</p>
+        </a>
+      </li> -->
           <!-- /item -->
         </ul>
       </div>
@@ -313,8 +331,8 @@
               <div class="card-header has-border-top">
                 <div class="row">
                   <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo-top form-group form-inline">
-                      <label class="fw-bold col-md-6 col-form-label justify-content-start"
+                    <div class="itemInfo-top form-group form-inline px-0">
+                      <label class="fw-bold col-md-6 col-form-label justify-content-start px-0"
                         for="submission_date">Received
                         At (submission date) </label>
                       <div class="col-md-6">
@@ -327,8 +345,8 @@
                   </div>
                   <!-- /item -->
                   <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo-top form-group form-inline">
-                      <label class="fw-bold col-lg-7 col-sm-6 col-form-label justify-content-start"
+                    <div class="itemInfo-top form-group form-inline px-0">
+                      <label class="fw-bold col-lg-7 col-sm-6 col-form-label justify-content-start px-0"
                         for="submission_date">Consent
                         to marketing channels</label>
                       <div class="col-lg-5 col-sm-6">
@@ -347,8 +365,8 @@
                     </div>
                   </div>
                   <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo-top form-group form-inline">
-                      <label class="fw-bold col-lg-9 col-sm-6 col-form-label justify-content-start"
+                    <div class="itemInfo-top form-group form-inline px-0">
+                      <label class="fw-bold col-lg-9 col-sm-6 col-form-label justify-content-start px-0"
                         for="submission_date">Agreed
                         to the terms and conditions</label>
                       <div class="col-lg-3 col-sm-6 pr-0">
@@ -368,175 +386,182 @@
             <h2 class="box-title">Lead Data</h2>
           </div>
           <div class="card mb-3">
-            <div class="card-header has-border-top pb-4">
+            <div class="card-header has-border-top pb-4 formCampaignLead">
               <!-- /top -->
               <div class="content-box">
                 <div class="row">
                   <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start"
-                        for="FirstName">First
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start px-0"
+                        for="title">Title</label>
+                      <div class="col-lg-8 col-md-9 px-0">
+                        <input type="text" name="title" id="title" value="Mr" class="form-control input-solid w-100"
+                          placeholder="Title" required>
+                      </div>
+                    </div>
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start px-0"
+                        for="firstName">First
                         Name</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium Edit">Liam <a href="#" class="ml-4 btn edit-actions">
-                            <i class="icn-actions la icon-edit"></i>
-                            <span class="actions-text">Edit</span>
-                          </a></p>
+                      <div class="col-lg-8 col-md-9 px-0">
+                        <input type="text" name="firstName" id="firstName" value="Lima"
+                          class="form-control input-solid w-100" placeholder="First Name" required>
                       </div>
                     </div>
-                  </div>
-                  <!-- /item -->
-                  <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start"
-                        for="Age">Age</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium">32</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /item -->
-                  <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start"
-                        for="Email">Email</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium text-info">liamzz23@gmail.com</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /item -->
-                  <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start" for="LastName">Last
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start px-0"
+                        for="lastName">Last
                         Name</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium">Duncan</p>
+                      <div class="col-lg-8 col-md-9 px-0">
+                        <input type="text" name="lastName" id="lastName" value="Duncan"
+                          class="form-control input-solid w-100" placeholder="Last Name" required>
                       </div>
                     </div>
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start px-0"
+                        for="address">Address</label>
+                      <div class="col-lg-8 col-md-9 px-0">
+                        <input type="text" name="address" id="address" value="33 Whitehaven Crescent"
+                          class="form-control input-solid w-100" placeholder="Address" required>
+                      </div>
+                    </div>
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start px-0"
+                        for="suburb">Suburb</label>
+                      <div class="col-lg-8 col-md-9 px-0">
+                        <input type="text" name="suburb" id="suburb" value="Queensland"
+                          class="form-control input-solid w-100" placeholder="Suburb" required>
+                      </div>
+                    </div>
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start px-0"
+                        for="state">State</label>
+                      <div class="col-lg-8 col-md-9 px-0">
+                        <input type="text" name="state" id="state" value="Queensland"
+                          class="form-control input-solid w-100" placeholder="Suburb" required>
+                      </div>
+                    </div>
+
                   </div>
+
                   <!-- /item -->
                   <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start"
-                        for="Gender">Gender</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium">male</p>
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start px-0"
+                        for="postcode">Postcode</label>
+                      <div class="col-lg-8 col-md-9 px-0">
+                        <input type="text" name="postcode" id="postcode" value="4865"
+                          class="form-control input-solid w-100" placeholder="Postcode" required>
                       </div>
                     </div>
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start px-0"
+                        for="DateOfBirth">Date of
+                        Birth</label>
+                      <div class="col-lg-8 col-md-9 px-0">
+                        <input type="text" name="dateOfBirth" id="DateOfBirth" value="1988-09-23"
+                          class="form-control input-solid w-100" placeholder="Date of Birth" required>
+                      </div>
+                    </div>
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start px-0"
+                        for="age">Age</label>
+                      <div class="col-lg-8 col-md-9 px-0">
+                        <input type="text" name="age" value="23" id="age" class="form-control input-solid w-100"
+                          placeholder="Age" required>
+                      </div>
+                    </div>
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start px-0"
+                        for="gender">Gender</label>
+                      <div class="col-lg-8 col-md-9 px-0">
+                        <input type="text" name="gender" id="gender" value="Male" class="form-control input-solid w-100"
+                          placeholder="Gender" required>
+                      </div>
+                    </div>
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start px-0"
+                        for="email">Email</label>
+                      <div class="col-lg-8 col-md-9 px-0">
+                        <input type="text" name="email" id="email" value="liamduncan@gmail.com"
+                          class="form-control input-solid w-100" placeholder="Email" required>
+                      </div>
+                    </div>
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start px-0"
+                        for="mobile">Mobile</label>
+                      <div class="col-lg-8 col-md-9 px-0">
+                        <input type="text" name="mobile" id="mobile" value="0411 222 444"
+                          class="form-control input-solid w-100" placeholder="Mobile" required>
+                      </div>
+                    </div>
+
                   </div>
+
                   <!-- /item -->
                   <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start"
-                        for="Mobile">Mobile</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium">0421123223</p>
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-3 col-md-3 col-form-label justify-content-start px-0"
+                        for="prize">Prize</label>
+                      <div class="col-lg-9 col-md-9 px-0">
+                        <input type="text" name="prize" id="prize" value="Play Station"
+                          class="form-control input-solid w-100" placeholder="Prize" required>
+                      </div>
+                    </div>
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label class="fw-bold col-lg-3 col-md-3 col-form-label justify-content-start px-0"
+                        for="pageURL">Page
+                        URL</label>
+                      <div class="col-lg-9 col-md-9 px-0">
+                        <input type="text" name="pageURL" id="pageURL"
+                          value="http://competitions.giftcardgiveaway.com.au/playstation5"
+                          class="form-control input-solid w-100" placeholder="Page URL" required>
+                      </div>
+                    </div>
+
+                    <div class="itemInfo form-group pb-0 form-inline px-0">
+                      <label
+                        class="fw-bold col-lg-3 col-md-3 col-form-label justify-content-start px-0 align-self-start"
+                        for="comment">Comment</label>
+                      <div class="col-lg-9 col-md-9 px-0">
+                        <textarea type="text" name="comment" id="comment" rows="12"
+                          class="form-control input-solid w-100" placeholder="Comment"
+                          required>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</textarea>
                       </div>
                     </div>
                   </div>
                   <!-- /item -->
+
+                  <div class="mt-4 d-flex justify-content-end px-3 w-100">
+                    <div class=" d-sm-flex justify-content-end">
+                      <button class="buttonCancel btn btn-danger btnCreate btn-public ico-delete px-5 mr-3">
+                        <span class="text-btn fw-semimbold">Cancel</span>
+                      </button>
+                      <button class="btn bg-info btnCreate ico-dowload px-5 buttonSave">
+                        <span class="text-btn fw-semimbold text-white">Save</span>
+                      </button>
+
+                      <button class="btn bg-info btnCreate ico-dowload  ml-3 px-5 buttonEdit">
+                        <span class="text-btn fw-semimbold text-white">Edit</span>
+                      </button>
+
+                    </div>
+                  </div>
                 </div>
                 <!-- ./group -->
-                <div class="row">
-                  <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start"
-                        for="Address">Address</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium">33 Whitehaven Crescent</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /item -->
-                  <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group  pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start"
-                        for="Postcode">Postcode</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium">4865</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /item -->
-                  <!-- /item -->
-                  <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group  pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start" for="Postcode">Date
-                        of birth</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium">1988-09-23</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /item -->
-                </div>
-                <div class="row">
-                  <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start"
-                        for="Suburb">Suburb</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium">Queensland</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /item -->
-                  <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start"
-                        for="State">State</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium">State</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start"
-                        for="Suburb">Title</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium">Mr</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /item -->
-                </div>
-                <div class="row">
-                  <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start"
-                        for="Landing_Page">Landing Page</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium text-info">giftcardgiveaway.com.au</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /item -->
-                  <div class="col-lg-4 col-md-12">
-                    <div class="itemInfo form-group pb-0 form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start"
-                        for="Prize">Prize</label>
-                      <div class="col-lg-8 col-md-9">
-                        <p class="mb0 fw-medium">Play Station 5</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /item -->
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <div class="itemInfo form-group form-inline">
-                      <label class="fw-bold col-lg-4 col-md-3 col-form-label justify-content-start mw-159"
-                        for="Comment">Comment</label>
-                      <div class="col-lg-8 col-md-9 pl-lg-0">
-                        <p class="mb0 fw-medium">Lorem Ipsum is simply dummy text of the printing and typesetting
-                          industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /item -->
-                </div>
+
               </div>
             </div>
 
