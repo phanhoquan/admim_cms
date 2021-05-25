@@ -7,11 +7,12 @@ $(document).ready(function () {
       $(`${classSelect1}.input-solid`).niceSelect();
     });
   }
-
   var max_input = 100;
   var x = 1;
   var randomID = Math.round(Math.random() * 36 ** 12).toString(36);
-  htmlQuestion(randomID, "first-none");
+  $(".createOffersCampaign").each(function () {
+    htmlQuestion(randomID, "first-none");
+  });
   // is_table-no-border_
   $(`#is_table-no-border_${randomID} .max720 input.input-solid`).prop(
     "required",
