@@ -616,7 +616,9 @@ $(document).ready(function () {
     $(`#is_mutiple_choises${idTarget}`).prop("disabled", false);
     $(`#question_image${idTarget}`).prop("disabled", false);
     $(`.resetChecked_${idTarget}`).prop("checked", false);
+    $(`#is_condition_logic${idTarget}`).prop("checked", false);
     $(`#is_with_images${idTarget}`).prop("disabled", false);
+    $(`#is_condition_logic${idTarget}`).prop("disabled", false);
     $(`#is_question_with_images_${idTarget}`).hide();
     $(`#is_table-no-border_${idTarget} .max720 input.input-solid`).prop(
       "required",
@@ -635,6 +637,7 @@ $(document).ready(function () {
       $(`#is_mutiple_choises${idTarget}`).prop("disabled", true);
       $(`#is_with_images${idTarget}`).prop("disabled", true);
       $(`#is_table-no-border_${idTarget}`).hide();
+      $(`#is_condition_logic${idTarget}`).prop("disabled", true);
       $(`#is_table-no-border_${idTarget} .max720 input.input-solid`).prop(
         "required",
         false
@@ -713,6 +716,8 @@ $(document).ready(function () {
     $(`#sub_is_mutiple_choises${idTarget}`).prop("disabled", false);
     $(`#sub_question_image${idTarget}`).prop("disabled", false);
     $(`#sub_is_with_images${idTarget}`).prop("disabled", false);
+    $(`#sub_is_condition_logic${idTarget}`).prop("disabled", false);
+    $(`#sub_is_condition_logic${idTarget}`).prop("checked", false);
     $(`#sub_is_table-no-border_${idTarget} .max720 input.input-solid`).prop(
       "required",
       true
@@ -728,6 +733,7 @@ $(document).ready(function () {
     if (typeTarget === "sub_question_custom") {
       $(`#sub_is_mutiple_choises${idTarget}`).prop("disabled", true);
       $(`#sub_is_with_images${idTarget}`).prop("disabled", true);
+      $(`#sub_is_condition_logic${idTarget}`).prop("disabled", true);
       $(`#sub_is_table-no-border_${idTarget}`).hide();
       $(`#sub_is_table-no-border_${idTarget} .max720 input.input-solid`).prop(
         "required",
