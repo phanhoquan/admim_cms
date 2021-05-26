@@ -18,9 +18,7 @@ $(document).ready(function () {
         '">' +
         '<div class="col-lg-4 col-md-5 col-sm-6 col-12">' +
         '<div class="form-group pt-0">' +
-        '<input type="text" name="parameter_cid[' +
-        randomIDField +
-        '][]" id="parameter_cid_' +
+        '<input type="text" name="parameter_cid[]" id="parameter_cid_' +
         randomIDField +
         '" required class="form-control input-solid" placeholder="Custom field">' +
         "</div>" +
@@ -28,9 +26,7 @@ $(document).ready(function () {
         '<div class="col-lg-5 col-md-6 col-sm-6 col-12">' +
         '<div class="form-group pt-0">' +
         '<div class="d-flex align-items-center hasActions">' +
-        '<input type="text" name="text_field[' +
-        randomIDField +
-        '][]" id="text_field_parameter_cid_' +
+        '<input type="text" name="text_field[]" id="text_field_parameter_cid_' +
         randomIDField +
         '" class="form-control input-solid" required placeholder="Text field">' +
         '<div class="groupActions d-flex align-items-center">' +
