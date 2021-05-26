@@ -241,8 +241,8 @@ $(document).ready(function () {
           '<select class="form-control input-solid fw-normal" name="math_logic[' +
           idTarget +
           '][]">' +
-          '<option value="0">All</option>' +
-          '<option value="1">Is</option>' +
+          '<option value="0">Is</option>' +
+          '<option value="1">Are</option>' +
           "</select>" +
           "</div>" +
           "</div>" +
@@ -292,8 +292,8 @@ $(document).ready(function () {
           '<select class="form-control input-solid fw-normal" name="sub_math_logic[' +
           idTarget +
           '][]">' +
-          '<option value="0">All</option>' +
-          '<option value="1">Is</option>' +
+          '<option value="0">Is</option>' +
+          '<option value="1">Are</option>' +
           "</select>" +
           "</div>" +
           "</div>" +
@@ -1121,8 +1121,8 @@ $(document).ready(function () {
       '<select class="form-control input-solid fw-normal" name="is_show_condition_logic[' +
       idParent +
       ']">' +
-      '<option value="0">Show</option>' +
-      '<option value="1">Hidden</option>' +
+      '<option value="1">Show</option>' +
+      '<option value="0">Hidden</option>' +
       "</select>" +
       "</div>" +
       "</div>" +
@@ -1134,8 +1134,8 @@ $(document).ready(function () {
       '<select class="form-control input-solid fw-normal" name="this_field_if[' +
       idParent +
       ']">' +
-      '<option value="0">All</option>' +
-      '<option value="1">Is</option>' +
+      '<option value="1">All</option>' +
+      '<option value="0">One</option>' +
       "</select>" +
       '<div class="selectIf__right">' +
       '<span class="textAfter ml-0">Of the following match:</span>' +
@@ -1165,8 +1165,8 @@ $(document).ready(function () {
       '<select class="form-control input-solid fw-normal" name="math_logic[' +
       idParent +
       '][]">' +
-      '<option value="0">All</option>' +
-      '<option value="1">Is</option>' +
+      '<option value="0">Is</option>' +
+      '<option value="1">Are</option>' +
       "</select>" +
       "</div>" +
       "</div>" +
@@ -1547,8 +1547,8 @@ $(document).ready(function () {
       '<select class="form-control input-solid fw-normal" name="sub_is_show_condition_logic[' +
       idParent +
       ']">' +
-      '<option value="0">Show</option>' +
-      '<option value="1">Hidden</option>' +
+      '<option value="1">Show</option>' +
+      '<option value="0">Hidden</option>' +
       "</select>" +
       "</div>" +
       "</div>" +
@@ -1560,8 +1560,8 @@ $(document).ready(function () {
       '<select class="form-control input-solid fw-normal" name="sub_this_field_if[' +
       idParent +
       ']">' +
-      '<option value="0">All</option>' +
-      '<option value="1">Is</option>' +
+      '<option value="1">All</option>' +
+      '<option value="0">One</option>' +
       "</select>" +
       '<div class="selectIf__right">' +
       '<span class="textAfter ml-0">Of the following match:</span>' +
@@ -1591,8 +1591,8 @@ $(document).ready(function () {
       '<select class="form-control input-solid fw-normal" name="sub_math_logic[' +
       idParent +
       '][]">' +
-      '<option value="0">All</option>' +
-      '<option value="1">Is</option>' +
+      '<option value="0">Is</option>' +
+      '<option value="1">Are</option>' +
       "</select>" +
       "</div>" +
       "</div>" +
