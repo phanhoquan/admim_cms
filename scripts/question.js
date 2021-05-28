@@ -226,7 +226,7 @@ $(document).ready(function () {
         var html =
           '<div class="row itemConditionLogic" data-id="' +
           randomIDField +
-          '" id="itemConditionLogic_' +
+          '" data-box="parent_question" id="itemConditionLogic_' +
           randomIDField +
           '">' +
           '<div class="col-md-4 col-sm-6 col-12 ">' +
@@ -237,7 +237,9 @@ $(document).ready(function () {
           "</div>" +
           "</div>" +
           '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
-          '<div class="form-group px-0 pb-0">' +
+          '<div class="form-group px-0 pb-0 wrapMathLogic" data-box="parent_question" data-id=' +
+          idTarget +
+          ">" +
           '<select class="form-control input-solid fw-normal" name="math_logic[' +
           idTarget +
           '][]">' +
@@ -263,6 +265,14 @@ $(document).ready(function () {
           "</a>" +
           "</div>" +
           "</div>" +
+          // start
+          '<div class="listConditionLogicValue" id="listConditionLogicValue_' +
+          randomIDField +
+          '">' +
+          "</div>" +
+          /**
+           * end
+           */
           "</div>" +
           "</div>" +
           "</div>";
@@ -277,7 +287,7 @@ $(document).ready(function () {
         var htmlSub =
           '<div class="row itemConditionLogic" data-id="' +
           randomIDField +
-          '" id="itemSubConditionLogic_' +
+          '" data-box="sub_question" id="itemSubConditionLogic_' +
           randomIDField +
           '">' +
           '<div class="col-md-4 col-sm-6 col-12 ">' +
@@ -288,7 +298,9 @@ $(document).ready(function () {
           "</div>" +
           "</div>" +
           '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
-          '<div class="form-group px-0 pb-0">' +
+          '<div class="form-group pb-md-0 px-0 pb-0 wrapMathLogic" data-box="sub_question" data-id=' +
+          idTarget +
+          ">" +
           '<select class="form-control input-solid fw-normal" name="sub_math_logic[' +
           idTarget +
           '][]">' +
@@ -314,12 +326,19 @@ $(document).ready(function () {
           "</a>" +
           "</div>" +
           "</div>" +
+          // start
+          '<div class="listConditionLogicValue" id="sub_listConditionLogicValue_' +
+          randomIDField +
+          '">' +
+          "</div>" +
+          /**
+           * end
+           */
           "</div>" +
           "</div>" +
           "</div>";
         $(`#listSubConditionLogic_${idTarget}`).append(htmlSub);
       }
-      console.log(idTarget, "idTarget");
       customSelect(`#itemSubConditionLogic_${randomIDField} select`);
     }
   });
@@ -382,6 +401,67 @@ $(document).ready(function () {
     $(this).parents(".first-item-answer").remove();
     $(this).parent().remove();
   });
+
+  //remove list value condition logic
+  $(document).on("click", ".btnRemoveConditionLogicAre", function () {
+    $(this).parents(".parentsRemoveConditionLogicAre").remove();
+  });
+
+  /**
+   * add list value condition logic
+   */
+  $(document).on("click", ".itemConditionLogic .list li", function (event) {
+    const textInner = (event.target && event.target.innerText) || "";
+    const idTarget = $(this).parents(".itemConditionLogic").attr("data-id");
+    const dataType = $(this).parents(".itemConditionLogic").attr("data-box");
+    var idTargetRemove = dataType === "parent_question" ? "#" : "#sub_";
+    if (textInner === "Are") {
+      htmlValueCondition(idTarget, dataType);
+    } else {
+      $(`${idTargetRemove}listConditionLogicValue_${idTarget}`)
+        .find("div")
+        .remove();
+    }
+  });
+  /**
+   * Click icon add item
+   */
+  $(document).on("click", ".btnAddConditionLogicAre", function () {
+    const idTarget = $(this).find("i").attr("data-id");
+    const dataType = $(this).find("i").attr("data-box");
+    htmlValueCondition(idTarget, dataType);
+  });
+
+  function htmlValueCondition(idParent, dataType) {
+    var nameTarget = dataType === "parent_question" ? "" : "sub_";
+    var idTarget = dataType === "parent_question" ? "#" : "#sub_";
+    var html_ValueCondition =
+      "<!--html_ValueCondition -->" +
+      '<div class="parentsRemoveConditionLogicAre d-flex align-items-center mt-2">' +
+      '<input type="text" name="' +
+      nameTarget +
+      "condition_logic_value[" +
+      idParent +
+      '][]" class="form-control input-solid" placeholder="Enter a value">' +
+      '<div class="groupActions d-flex align-items-center">' +
+      '<a class="btnAddConditionLogicAre groupActions__item mr-0" href="javascript:void(0)">' +
+      '<i class="la la-plus-circle la-2x font-24" data-id=' +
+      idParent +
+      " data-box=" +
+      dataType +
+      "></i>" +
+      "</a>" +
+      '<a class="btnRemoveConditionLogicAre groupActions__item" href="javascript:void(0)">' +
+      '<i class="la la-minus-circle la-2x font-24"></i>' +
+      "</a>" +
+      "</div>";
+    $(`${idTarget}listConditionLogicValue_${idParent}`).append(
+      html_ValueCondition
+    );
+  }
+  /**
+   * End add list value condition logic
+   */
 
   //check sub question
   $(document).on("change", ".checkSubquestion", function (e) {
@@ -1156,7 +1236,7 @@ $(document).ready(function () {
       '" class="listConditionLogic">' +
       '<div class="row itemConditionLogic" data-id="' +
       idParent +
-      '" id="itemConditionLogic_' +
+      '" data-box="parent_question" id="itemConditionLogic_' +
       idParent +
       '">' +
       '<div class="col-md-4 col-sm-6 col-12 ">' +
@@ -1167,10 +1247,12 @@ $(document).ready(function () {
       "</div>" +
       "</div>" +
       '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
-      '<div class="form-group pb-md-0 px-0 pt-0">' +
+      '<div class="form-group pb-md-0 px-0 pt-0 wrapMathLogic" data-box="parent_question" data-id=' +
+      idParent +
+      ">" +
       '<select class="form-control input-solid fw-normal" name="math_logic[' +
       idParent +
-      '][]">' +
+      '][]" data-box="parent_question">' +
       '<option value="0">Is</option>' +
       '<option value="1">Are</option>' +
       "</select>" +
@@ -1193,6 +1275,14 @@ $(document).ready(function () {
       "</a>" +
       "</div>" +
       "</div>" +
+      // start
+      '<div class="listConditionLogicValue" id="listConditionLogicValue_' +
+      idParent +
+      '">' +
+      "</div>" +
+      /**
+       * end
+       */
       "</div>" +
       "</div>" +
       "</div>" +
@@ -1582,7 +1672,7 @@ $(document).ready(function () {
       '" class="listSubConditionLogic">' +
       '<div class="row itemConditionLogic" data-id="' +
       idParent +
-      '" id="itemSubConditionLogic_' +
+      '" data-box="sub_question" id="itemSubConditionLogic_' +
       idParent +
       '">' +
       '<div class="col-md-4 col-sm-6 col-12 ">' +
@@ -1593,7 +1683,9 @@ $(document).ready(function () {
       "</div>" +
       "</div>" +
       '<div class="col-md-3 col-sm-6 col-12 pl-lg-0">' +
-      '<div class="form-group pb-md-0 px-0 pt-0">' +
+      '<div class="form-group pb-md-0 px-0 pt-0 wrapMathLogic" data-box="sub_question" data-id=' +
+      idParent +
+      ">" +
       '<select class="form-control input-solid fw-normal" name="sub_math_logic[' +
       idParent +
       '][]">' +
@@ -1619,6 +1711,14 @@ $(document).ready(function () {
       "</a>" +
       "</div>" +
       "</div>" +
+      // start
+      '<div class="listConditionLogicValue" id="sub_listConditionLogicValue_' +
+      idParent +
+      '">' +
+      "</div>" +
+      /**
+       * end
+       */
       "</div>" +
       "</div>" +
       "</div>" +
