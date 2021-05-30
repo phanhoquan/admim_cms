@@ -111,13 +111,13 @@ $(document).ready(function () {
         html += "</div>";
         $("#itemsAnswer_" + idTarget).append(html);
       }
-      $(`#is_table-no-border_${randomID} .max720 input.input-solid`).prop(
+      $(`#is_table-no-border_${idTarget} .max720 input.input-solid`).prop(
         "required",
         true
       );
       if (questionWithImages && questionWithImages.checked) {
         $(`.is_question_with_images_${idTarget}`).show();
-        $(`#is_question_with_images_${randomID} input`).prop("required", true);
+        $(`#is_question_with_images_${idTarget} input`).prop("required", true);
       }
     }
 
@@ -201,13 +201,13 @@ $(document).ready(function () {
         html += "</div>";
         $("#itemsSubAnswer_" + idTarget).append(html);
       }
-      $(`#sub_is_table-no-border_${randomID} .max720 input.input-solid`).prop(
+      $(`#sub_is_table-no-border_${idTarget} .max720 input.input-solid`).prop(
         "required",
         true
       );
       if (subQuestionWithImages && subQuestionWithImages.checked) {
         $(`.sub_is_question_with_images_${idTarget}`).show();
-        $(`#sub_is_question_with_images_${randomID} input`).prop(
+        $(`#sub_is_question_with_images_${idTarget} input`).prop(
           "required",
           true
         );
