@@ -960,7 +960,7 @@ $(document).ready(function () {
       idParent +
       '" data-box="parent_question" data-id="' +
       idParent +
-      '" type="checkbox" data-type="is_mutiple_choises" name="is_mutiple_choises[' +
+      '" type="checkbox" data-type="is_mutiple_choises" name="is_multiple_choices[' +
       idParent +
       ']" id="is_mutiple_choises' +
       idParent +
@@ -1405,7 +1405,7 @@ $(document).ready(function () {
       idParent +
       '" data-box="sub_question" data-id="' +
       idParent +
-      '" type="checkbox" data-type="is_mutiple_choises" name="sub_is_mutiple_choises[' +
+      '" type="checkbox" data-type="is_mutiple_choises" name="sub_is_multiple_choices[' +
       idParent +
       ']" id="sub_is_mutiple_choises' +
       idParent +
