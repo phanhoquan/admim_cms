@@ -1760,4 +1760,25 @@ $(document).ready(function () {
     $("#text_" + inputId).val(fileName);
   });
   customSelect(".condition-logic-wrap select");
+  $(document).on("change", "#text_postcode_file", function (event) {
+    var fileName = $(this).val();
+    if (fileName && fileName.trim()) {
+      $("#postcode_file").prop("required", false);
+      $(this).prop("required", true);
+    } else {
+      $("#postcode_file").prop("required", true);
+    }
+  });
+
+  $(document).on("change", "#postcode_file", function (event) {
+    var fileName = $(this).val();
+    if (fileName && fileName.trim()) {
+      $(this).prop("required", true);
+      $("#text_postcode_file").prop("disabled", true);
+      $("#text_postcode_file").val("");
+    } else {
+      $(this).prop("required", false);
+      $("#text_postcode_file").prop("disabled", false);
+    }
+  });
 });

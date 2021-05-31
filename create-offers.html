@@ -27,7 +27,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
     rel="stylesheet">
   <!-- include styles.html -->
-  <link rel="stylesheet" href="style/style-7a8f7cd665.min.css">
+  <link rel="stylesheet" href="style/style-3a237caba9.min.css">
 </head>
 
 <body>
@@ -169,28 +169,6 @@
             </a>
           </li>
           <!-- /item -->
-          <li class="nav-item active submenu">
-            <a data-toggle="collapse" href="#campaign" class="" aria-expanded="false">
-              <span class="icn-sidebar icon-offers"></span>
-              <p>Campaign</p>
-              <span class="caret ml-auto"></span>
-            </a>
-            <div class="collapse" id="campaign">
-              <ul class="nav nav-collapse">
-                <li>
-                  <a href="campaigns.html">
-                    <span class="sub-item">List Campaign</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="create-offers.html">
-                    <span class="sub-item">Create Campaign</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <!-- /item -->
           <li class="nav-item ">
             <a data-toggle="collapse" href="#landing_page" class="" aria-expanded="false">
               <span class="icn-sidebar icon-landing-page"></span>
@@ -212,6 +190,29 @@
               </ul>
             </div>
           </li>
+          <!-- /item -->
+          <li class="nav-item active submenu">
+            <a data-toggle="collapse" href="#campaign" class="" aria-expanded="false">
+              <span class="icn-sidebar icon-offers"></span>
+              <p>Campaign</p>
+              <span class="caret ml-auto"></span>
+            </a>
+            <div class="collapse" id="campaign">
+              <ul class="nav nav-collapse">
+                <li>
+                  <a href="campaigns.html">
+                    <span class="sub-item">List Campaign</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="create-offers.html">
+                    <span class="sub-item">Create Campaign</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
           <!-- /item -->
           <li class="nav-item ">
             <a data-toggle="collapse" href="#user_manager" class="" aria-expanded="false">
@@ -310,10 +311,9 @@
               </nav>
             </div>
             <div class="headPageTop__right d-flex justify-content-end">
-              <select class="form-control input-square fw-normal mr25 custom-select2" id="squareSelect"
-                style="max-width: 500px;">
-                <option>Duplicate from recent forms</option>
-              </select>
+              <button class="action-item btn btn-info btn-public publish mr25" type="button">
+                Duplicate This Campaign
+              </button>
               <div class="headPageTop-action-item d-flex justify-content-end">
                 <a class="action-item btn  btn-public offers-dashboard mr25" href="offers-detail.html">
                   <span class="icn-dropdown icon-offers"></span>
@@ -339,10 +339,21 @@
             <div class="card-header has-border-top box-top">
               <div class="row align-items-center">
                 <div class="col-lg-6 col-sm-12 col-12">
-                  <div class="form-group fw-bold">
+                  <div class="form-group fw-bold pr-lg-1">
                     <label for="campaignname fw-bold">Campaign Name</label>
                     <input type="text" class="form-control input-solid" required name="campaignname" id="campaignname"
                       placeholder="Campaign name">
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-12 px-lg-0 mrl-2">
+                  <div class="form-group px-0">
+                    <label for="landingPage" class="fw-normal">Select Landing Page</label>
+                    <select class="form-control input-solid fw-normal custom-select2" id="landingPage"
+                      name="landingPage">
+                      <option>Please select landing page</option>
+                      <option>landing page 1</option>
+                      <option>landing page 2</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -368,8 +379,8 @@
                       <div class="d-flex align-items-center">
                         <div class="form-group flex-1 pl-0">
                           <label for="text_postcode_file" class="fw-normal">Postcode</label>
-                          <input type="text" disabled class="form-control input-solid" id="text_postcode_file"
-                            name="text_postcode_file" placeholder="4001,4002,4003,4004,4005,4006">
+                          <input type="text" class="form-control input-solid" id="text_postcode_file"
+                            name="text_postcode_file" pattern="[0-9.]+" placeholder="4001,4002,4003,4004,4005,4006">
                         </div>
                         <div class="upload-btn-wrapper upload-btn-wrapper-no-img mt30 border-0">
                           <button class="upload-file">
@@ -687,7 +698,6 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
     crossorigin="anonymous"></script>
-
   <script type="text/javascript" src="scripts/jquery.nice-select.min.js"></script>
   <script type="text/javascript" src="scripts/jquery.tablednd.js"></script>
   <script type="text/javascript" src="scripts/question.js"></script>
