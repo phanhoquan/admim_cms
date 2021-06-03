@@ -27,7 +27,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
     rel="stylesheet">
   <!-- include styles.html -->
-  <link rel="stylesheet" href="style/style-3a237caba9.min.css">
+  <link rel="stylesheet" href="style/style-287b4490dd.min.css">
 </head>
 
 <body>
@@ -363,490 +363,481 @@
             </div>
             <div class="card-body pt-0">
               <div class="table-responsive">
+                <div class="table table-bordered  tableOffers" id="tableDragAndDrop">
+                  <div class="theader">
+                    <div class="table_header"></div>
+                    <div class="table_header text-center">Lock <br /> Status</div>
+                    <div class="table_header text-center">Campaign title</div>
+                    <div class="table_header text-center">Question</div>
+                    <div class="table_header text-center">Answers</div>
+                    <div class="table_header text-center"> Sub question<br />Condition logic</div>
+                    <div class="table_header text-center">Order</div>
+                    <div class="table_header text-center">Status</div>
+                    <div class="table_header text-center">Action</div>
+                  </div>
+                  <div class="tbody" id="tableDragRow">
+                    <div class="table-row-group">
+                      <div class="table_row">
+                        <div class="td align-top box-checkbox-custom px-3">
+                          <div class="form-group wrap-tableCheck p-0">
+                            <input class="tableCheck" type="checkbox" name="is_tableCheck[000]" id="is_tableCheck_000">
+                            <label class="form-check-sign" for="is_tableCheck_000"></label>
+                          </div>
+                        </div>
+                        <div class="td align-top px-2">
+                          <span class="lockIcon d-block text-center">
+                            <i class="icon-lock text-info"></i>
+                          </span>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>What is your current employment status?</p>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>What is your housing situation?</p>
+                        </div>
+                        <div class="td align-top">
+                          <p class="text-info fw-bold">
+                          <ul class="answerList">
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m a home owner</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m renting my home</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title"> I’m living with my parents</h5>
+                            </li>
+                          </ul>
+                          </p>
+                        </div>
+                        <div class="td align-top text-center">
+                          <p> Condition logic <a href="#" class="editConditionLogic"><i
+                                class="icn-actions la icon-edit"></i></a></p>
+                        </div>
+                        <div class="td align-top px-2">
+                          <input type="text" class="form-control px-2 text-center" placeholder="" value="1" readonly>
+                        </div>
+                        <div class="td align-top"><span class="badge badge-danger badge-action">Inactive</span></div>
+                        <div class="td td-actions pt-2">
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-eye"></i>
+                            <span class="actions-text">Preview Offer</span>
+                          </a>
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-bar-chart-o"></i>
+                            <span class="actions-text">View Stats</span>
+                          </a>
+                          <a href="#" class="btn del-actions">
+                            <i class="icn-actions la la-trash-o"></i>
+                            <span class="actions-text">Delete</span>
+                          </a>
+                        </div>
+                      </div>
+                      <!-- Sub question -->
+                      <div class="table_row">
+                        <div class="td align-top box-checkbox-custom px-3">
+                          <div class="form-group wrap-tableCheck p-0">
+                            <input class="tableCheck" type="checkbox" name="is_tableCheck[001]" id="is_tableCheck_001">
+                            <label class="form-check-sign" for="is_tableCheck_001"></label>
+                          </div>
+                        </div>
+                        <div class="td align-top px-2">
+                          <span class="lockIcon d-block text-center">
+                            <i class="icon-lock text-info"></i>
+                          </span>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>What is your current employment status?</p>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>What is your housing situation?</p>
+                        </div>
+                        <div class="td align-top">
+                          <p class="text-info fw-bold">
+                          <ul class="answerList">
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m a home owner</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m renting my home</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title"> I’m living with my parents</h5>
+                            </li>
+                          </ul>
+                          </p>
+                        </div>
+                        <div class="td align-top text-center">
+                          <p>Sub question</p>
+                        </div>
+                        <div class="td align-top px-2">
+                          <input type="text" class="form-control px-2 text-center" placeholder="" value="1" readonly>
+                        </div>
+                        <div class="td align-top"><span class="badge badge-danger badge-action">Inactive</span></div>
+                        <div class="td td-actions pt-2">
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-eye"></i>
+                            <span class="actions-text">Preview Offer</span>
+                          </a>
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-bar-chart-o"></i>
+                            <span class="actions-text">View Stats</span>
+                          </a>
+                          <a href="#" class="btn del-actions">
+                            <i class="icn-actions la la-trash-o"></i>
+                            <span class="actions-text">Delete</span>
+                          </a>
+                        </div>
+                      </div>
+                      <!-- En Sun question -->
+                    </div>
+                    <div class="table-row-group">
+                      <div class="table_row">
+                        <div class="td align-top box-checkbox-custom px-3">
+                          <div class="form-group wrap-tableCheck p-0">
+                            <input class="tableCheck" type="checkbox" name="is_tableCheck[002]" id="is_tableCheck_2">
+                            <label class="form-check-sign" for="is_tableCheck_2"></label>
+                          </div>
+                        </div>
+                        <div class="td align-top">
+                          <span class="lockIcon d-block text-center">
+                            <i class="icon-unlock text-info"></i>
+                          </span>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>Do you own a house?</p>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>Do you currently own a house?</p>
+                        </div>
+                        <div class="td align-top">
+                          <p class="text-info fw-bold">
+                          <ul class="answerList">
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m a home owner</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m renting my home</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title"> I’m living with my parents</h5>
+                            </li>
+                          </ul>
+                          </p>
+                        </div>
+                        <div class="td align-top text-center">
+                          <p>Question</p>
+                        </div>
+                        <div class="td align-top px-2">
+                          <input type="text" class="form-control px-2 text-center" placeholder="" value="2" readonly>
+                        </div>
+                        <div class="td align-top"><span class="badge badge-success badge-action">Active</span></div>
+                        <div class="td td-actions pt-2">
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-eye"></i>
+                            <span class="actions-text">Preview Offer</span>
+                          </a>
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-bar-chart-o"></i>
+                            <span class="actions-text">View Stats</span>
+                          </a>
+                          <a href="#" class="btn del-actions">
+                            <i class="icn-actions la la-trash-o"></i>
+                            <span class="actions-text">Delete</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-row-group">
+                      <div class="table_row">
+                        <div class="td align-top box-checkbox-custom px-3">
+                          <div class="form-group wrap-tableCheck p-0">
+                            <input class="tableCheck" type="checkbox" name="is_tableCheck[003]" id="is_tableCheck_3">
+                            <label class="form-check-sign" for="is_tableCheck_3"></label>
+                          </div>
+                        </div>
+                        <div class="td align-top">
+                          <span class="lockIcon d-block text-center">
+                            <i class="icon-unlock text-info"></i>
+                          </span>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>Do you own a house?</p>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>Do you currently own a house?</p>
+                        </div>
+                        <div class="td align-top">
+                          <p class="text-info fw-bold">
+                          <ul class="answerList">
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m a home owner</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m renting my home</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title"> I’m living with my parents</h5>
+                            </li>
+                          </ul>
+                          </p>
+                        </div>
+                        <div class="td align-top text-center">
+                          <p>Question</p>
+                        </div>
+                        <div class="td align-top px-2">
+                          <input type="text" class="form-control px-2 text-center" placeholder="" value="3" readonly>
+                        </div>
+                        <div class="td align-top"><span class="badge badge-success badge-action">Active</span></div>
+                        <div class="td td-actions pt-2">
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-eye"></i>
+                            <span class="actions-text">Preview Offer</span>
+                          </a>
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-bar-chart-o"></i>
+                            <span class="actions-text">View Stats</span>
+                          </a>
+                          <a href="#" class="btn del-actions">
+                            <i class="icn-actions la la-trash-o"></i>
+                            <span class="actions-text">Delete</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-row-group">
+                      <div class="table_row">
+                        <div class="td align-top box-checkbox-custom px-3">
+                          <div class="form-group wrap-tableCheck p-0">
+                            <input class="tableCheck" type="checkbox" name="is_tableCheck[004]" id="is_tableCheck_4">
+                            <label class="form-check-sign" for="is_tableCheck_4"></label>
+                          </div>
+                        </div>
+                        <div class="td align-top">
+                          <span class="lockIcon d-block text-center">
+                            <i class="icon-unlock text-info"></i>
+                          </span>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>Do you own a house?</p>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>Do you currently own a house?</p>
+                        </div>
+                        <div class="td align-top">
+                          <p class="text-info fw-bold">
+                          <ul class="answerList">
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m a home owner</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m renting my home</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title"> I’m living with my parents</h5>
+                            </li>
+                          </ul>
+                          </p>
+                        </div>
+                        <div class="td align-top text-center">
+                          <p>Question</p>
+                        </div>
+                        <div class="td align-top px-2">
+                          <input type="text" class="form-control px-2 text-center" placeholder="" value="4" readonly>
+                        </div>
+                        <div class="td align-top"><span class="badge badge-success badge-action">Active</span></div>
+                        <div class="td td-actions pt-2">
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-eye"></i>
+                            <span class="actions-text">Preview Offer</span>
+                          </a>
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-bar-chart-o"></i>
+                            <span class="actions-text">View Stats</span>
+                          </a>
+                          <a href="#" class="btn del-actions">
+                            <i class="icn-actions la la-trash-o"></i>
+                            <span class="actions-text">Delete</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-row-group">
+                      <div class="table_row">
+                        <div class="td align-top box-checkbox-custom px-3">
+                          <div class="form-group wrap-tableCheck p-0">
+                            <input class="tableCheck" type="checkbox" name="is_tableCheck[005]" id="is_tableCheck_5">
+                            <label class="form-check-sign" for="is_tableCheck_5"></label>
+                          </div>
+                        </div>
+                        <div class="td align-top">
+                          <span class="lockIcon d-block text-center">
+                            <i class="icon-unlock text-info"></i>
+                          </span>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>Do you own a house?</p>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>Do you currently own a house?</p>
+                        </div>
+                        <div class="td align-top">
+                          <p class="text-info fw-bold">
+                          <ul class="answerList">
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m a home owner</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m renting my home</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title"> I’m living with my parents</h5>
+                            </li>
+                          </ul>
+                          </p>
+                        </div>
+                        <div class="td align-top text-center">
+                          <p>Question</p>
+                        </div>
+                        <div class="td align-top px-2">
+                          <input type="text" class="form-control px-2 text-center" placeholder="" value="5" readonly>
+                        </div>
+                        <div class="td align-top"><span class="badge badge-success badge-action">Active</span></div>
+                        <div class="td td-actions pt-2">
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-eye"></i>
+                            <span class="actions-text">Preview Offer</span>
+                          </a>
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-bar-chart-o"></i>
+                            <span class="actions-text">View Stats</span>
+                          </a>
+                          <a href="#" class="btn del-actions">
+                            <i class="icn-actions la la-trash-o"></i>
+                            <span class="actions-text">Delete</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-row-group">
+                      <div class="table_row">
+                        <div class="td align-top box-checkbox-custom px-3">
+                          <div class="form-group wrap-tableCheck p-0">
+                            <input class="tableCheck" type="checkbox" name="is_tableCheck[006]" id="is_tableCheck_6">
+                            <label class="form-check-sign" for="is_tableCheck_6"></label>
+                          </div>
+                        </div>
+                        <div class="td align-top">
+                          <span class="lockIcon d-block text-center">
+                            <i class="icon-unlock text-info"></i>
+                          </span>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>Do you own a house?</p>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>Do you currently own a house?</p>
+                        </div>
+                        <div class="td align-top">
+                          <p class="text-info fw-bold">
+                          <ul class="answerList">
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m a home owner</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m renting my home</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title"> I’m living with my parents</h5>
+                            </li>
+                          </ul>
+                          </p>
+                        </div>
+                        <div class="td align-top text-center">
+                          <p>Question</p>
+                        </div>
+                        <div class="td align-top px-2">
+                          <input type="text" class="form-control px-2 text-center" placeholder="" value="6" readonly>
+                        </div>
+                        <div class="td align-top"><span class="badge badge-success badge-action">Active</span></div>
+                        <div class="td td-actions pt-2">
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-eye"></i>
+                            <span class="actions-text">Preview Offer</span>
+                          </a>
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-bar-chart-o"></i>
+                            <span class="actions-text">View Stats</span>
+                          </a>
+                          <a href="#" class="btn del-actions">
+                            <i class="icn-actions la la-trash-o"></i>
+                            <span class="actions-text">Delete</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-row-group">
+                      <div class="table_row">
+                        <div class="td align-top box-checkbox-custom px-3">
+                          <div class="form-group wrap-tableCheck p-0">
+                            <input class="tableCheck" type="checkbox" name="is_tableCheck[007]" id="is_tableCheck_7">
+                            <label class="form-check-sign" for="is_tableCheck_7"></label>
+                          </div>
+                        </div>
+                        <div class="td align-top">
+                          <span class="lockIcon d-block text-center">
+                            <i class="icon-unlock text-info"></i>
+                          </span>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>Do you own a house?</p>
+                        </div>
+                        <div class="td align-top white-space-normal">
+                          <p>Do you currently own a house?</p>
+                        </div>
+                        <div class="td align-top">
+                          <p class="text-info fw-bold">
+                          <ul class="answerList">
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m a home owner</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title">I’m renting my home</h5>
+                            </li>
+                            <li class="answerItem w-100 m-0">
+                              <h5 class="answerItem__title"> I’m living with my parents</h5>
+                            </li>
+                          </ul>
+                          </p>
+                        </div>
+                        <div class="td align-top text-center">
+                          <p>Question</p>
+                        </div>
+                        <div class="td align-top px-2">
+                          <input type="text" class="form-control px-2 text-center" placeholder="" value="7" readonly>
+                        </div>
+                        <div class="td align-top"><span class="badge badge-success badge-action">Active</span></div>
+                        <div class="td td-actions pt-2">
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-eye"></i>
+                            <span class="actions-text">Preview Offer</span>
+                          </a>
+                          <a href="#" class="btn preview-actions">
+                            <i class="icn-actions la la-bar-chart-o"></i>
+                            <span class="actions-text">View Stats</span>
+                          </a>
+                          <a href="#" class="btn del-actions">
+                            <i class="icn-actions la la-trash-o"></i>
+                            <span class="actions-text">Delete</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
 
-                <table class="table drag-table table-bordered table-head-bg-info tableOffers">
-                  <thead>
-                    <tr>
-                      <th width="36px"></th>
-                      <th width="50px" class="text-center">Lock <br /> Status</th>
-                      <th class="text-center" width="250px">Campaign title</th>
-                      <th class="text-center" width="200px">Question</th>
-                      <th class="text-center">Answers</th>
-                      <th width="280px" class="text-center">Sub question<br />Condition logic</th>
-                      <th width="40px" class="text-center">Order</th>
-                      <th class="text-center">Status</th>
-                      <th width="200px" class="text-center">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="table-row">
-                      <td class="align-top box-checkbox-custom px-3">
-                        <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[001]" id="is_tableCheck_001">
-                          <label class="form-check-sign" for="is_tableCheck_001"></label>
-                        </div>
-                      </td>
-                      <td class="align-top px-2">
-                        <span class="lockIcon d-block text-center">
-                          <i class="icon-lock text-info"></i>
-                        </span>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>What is your current employment status?</p>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>What is your housing situation?</p>
-                      </td>
-                      <td class="align-top">
-                        <p class="text-info fw-bold">
-                        <ul class="answerList">
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">I’m a home owner</h5>
-                          </li>
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">I’m renting my home</h5>
-                          </li>
-                          <!-- /item -->
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title"> I’m living with my parents</h5>
-                          </li>
-                          <!-- /item -->
-                        </ul>
-                        </p>
-                      </td>
-                      <td class="align-top text-center">
-                        <p> Condition logic <a href="#" class="editConditionLogic"><i
-                              class="icn-actions la icon-edit"></i></a></p>
-                      </td>
-                      <td class="align-top px-2">
-                        <input type="text" class="form-control px-2 text-center" placeholder="" value="001">
-                      </td>
-                      <td class="align-top"><span class="badge badge-danger badge-action">Inactive</span></td>
-                      <td class="td-actions pt-2">
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-eye"></i>
-                          <span class="actions-text">Preview Offer</span>
-                        </a>
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-bar-chart-o"></i>
-                          <span class="actions-text">View Stats</span>
-                        </a>
-                        <a href="#" class="btn del-actions">
-                          <i class="icn-actions la la-trash-o"></i>
-                          <span class="actions-text">Delete</span>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr class="table-row">
-                      <td class="align-top box-checkbox-custom px-3">
-                        <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[002]" id="is_tableCheck_2">
-                          <label class="form-check-sign" for="is_tableCheck_2"></label>
-                        </div>
-                      </td>
-                      <td class="align-top">
-                        <span class="lockIcon d-block text-center">
-                          <i class="icon-unlock text-info"></i>
-                        </span>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>Do you own a house?</p>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>Do you currently own a house?</p>
-                      </td>
-                      <td class="align-top">
-                        <p class="text-info fw-bold">
-                        <ul class="answerList">
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">Yes</h5>
-                          </li>
-                          <!-- /item -->
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">No</h5>
-                          </li>
-                          <!-- /item -->
-                        </ul>
-                        </p>
-                      </td>
-                      <td class="align-top text-center">
-                        <p>Sub question</p>
-                      </td>
-                      <td class="align-top px-2">
-                        <input type="text" class="form-control px-2 text-center" placeholder="" value="02">
-                      </td>
-                      <td class="align-top"><span class="badge badge-success badge-action">Active</span></td>
-                      <td class="td-actions pt-2">
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-eye"></i>
-                          <span class="actions-text">Preview Offer</span>
-                        </a>
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-bar-chart-o"></i>
-                          <span class="actions-text">View Stats</span>
-                        </a>
-                        <a href="#" class="btn del-actions">
-                          <i class="icn-actions la la-trash-o"></i>
-                          <span class="actions-text">Delete</span>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr class="table-row">
-                      <td class="align-top box-checkbox-custom px-3">
-                        <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[003]" id="is_tableCheck_3">
-                          <label class="form-check-sign" for="is_tableCheck_3"></label>
-                        </div>
-                      </td>
-                      <td class="align-top">
-                        <span class="lockIcon d-block text-center">
-                          <i class="icon-unlock text-info"></i>
-                        </span>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>Do you own a house?</p>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>Do you currently own a house?</p>
-                      </td>
-                      <td class="align-top">
-                        <p class="text-info fw-bold">
-                        <ul class="answerList">
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">Yes</h5>
-                          </li>
-                          <!-- /item -->
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">No</h5>
-                          </li>
-                          <!-- /item -->
-                        </ul>
-                        </p>
-                      </td>
-                      <td class="align-top text-center">
-                        <p>Sub question</p>
-                      </td>
-                      <td class="align-top px-2">
-                        <input type="text" class="form-control px-2 text-center" placeholder="" value="03">
-                      </td>
-                      <td class="align-top"><span class="badge badge-success badge-action">Active</span></td>
-                      <td class="td-actions pt-2">
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-eye"></i>
-                          <span class="actions-text">Preview Offer</span>
-                        </a>
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-bar-chart-o"></i>
-                          <span class="actions-text">View Stats</span>
-                        </a>
-                        <a href="#" class="btn del-actions">
-                          <i class="icn-actions la la-trash-o"></i>
-                          <span class="actions-text">Delete</span>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr class="table-row">
-                      <td class="align-top box-checkbox-custom px-3">
-                        <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[004]" id="is_tableCheck_4">
-                          <label class="form-check-sign" for="is_tableCheck_4"></label>
-                        </div>
-                      </td>
-                      <td class="align-top">
-                        <span class="lockIcon d-block text-center">
-                          <i class="icon-unlock text-info"></i>
-                        </span>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>Do you own a house?</p>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>Do you currently own a house?</p>
-                      </td>
-                      <td class="align-top">
-                        <p class="text-info fw-bold">
-                        <ul class="answerList">
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">Yes</h5>
-                          </li>
-                          <!-- /item -->
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">No</h5>
-                          </li>
-                          <!-- /item -->
-                        </ul>
-                        </p>
-                      </td>
-                      <td class="align-top text-center">
-                        <p>Sub question</p>
-                      </td>
-                      <td class="align-top px-2">
-                        <input type="text" class="form-control px-2 text-center" placeholder="" value="04">
-                      </td>
-                      <td class="align-top"><span class="badge badge-success badge-action">Active</span></td>
-                      <td class="td-actions pt-2">
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-eye"></i>
-                          <span class="actions-text">Preview Offer</span>
-                        </a>
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-bar-chart-o"></i>
-                          <span class="actions-text">View Stats</span>
-                        </a>
-                        <a href="#" class="btn del-actions">
-                          <i class="icn-actions la la-trash-o"></i>
-                          <span class="actions-text">Delete</span>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr class="table-row">
-                      <td class="align-top box-checkbox-custom px-3">
-                        <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[005]" id="is_tableCheck_5">
-                          <label class="form-check-sign" for="is_tableCheck_5"></label>
-                        </div>
-                      </td>
-                      <td class="align-top">
-                        <span class="lockIcon d-block text-center">
-                          <i class="icon-unlock text-info"></i>
-                        </span>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>Do you own a house?</p>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>Do you currently own a house?</p>
-                      </td>
-                      <td class="align-top">
-                        <p class="text-info fw-bold">
-                        <ul class="answerList">
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">Yes</h5>
-                          </li>
-                          <!-- /item -->
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">No</h5>
-                          </li>
-                          <!-- /item -->
-                        </ul>
-                        </p>
-                      </td>
-                      <td class="align-top text-center">
-                        <p>Sub question</p>
-                      </td>
-                      <td class="align-top px-2">
-                        <input type="text" class="form-control px-2 text-center" placeholder="" value="05">
-                      </td>
-                      <td class="align-top"><span class="badge badge-success badge-action">Active</span></td>
-                      <td class="td-actions pt-2">
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-eye"></i>
-                          <span class="actions-text">Preview Offer</span>
-                        </a>
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-bar-chart-o"></i>
-                          <span class="actions-text">View Stats</span>
-                        </a>
-                        <a href="#" class="btn del-actions">
-                          <i class="icn-actions la la-trash-o"></i>
-                          <span class="actions-text">Delete</span>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr class="table-row">
-                      <td class="align-top box-checkbox-custom px-3">
-                        <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[006]" id="is_tableCheck_6">
-                          <label class="form-check-sign" for="is_tableCheck_6"></label>
-                        </div>
-                      </td>
-                      <td class="align-top">
-                        <span class="lockIcon d-block text-center">
-                          <i class="icon-unlock text-info"></i>
-                        </span>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>Do you own a house?</p>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>Do you currently own a house?</p>
-                      </td>
-                      <td class="align-top">
-                        <p class="text-info fw-bold">
-                        <ul class="answerList">
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">Yes</h5>
-                          </li>
-                          <!-- /item -->
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">No</h5>
-                          </li>
-                          <!-- /item -->
-                        </ul>
-                        </p>
-                      </td>
-                      <td class="align-top text-center">
-                        <p>Sub question</p>
-                      </td>
-                      <td class="align-top px-2">
-                        <input type="text" class="form-control px-2 text-center" placeholder="" value="06">
-                      </td>
-                      <td class="align-top"><span class="badge badge-success badge-action">Active</span></td>
-                      <td class="td-actions pt-2">
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-eye"></i>
-                          <span class="actions-text">Preview Offer</span>
-                        </a>
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-bar-chart-o"></i>
-                          <span class="actions-text">View Stats</span>
-                        </a>
-                        <a href="#" class="btn del-actions">
-                          <i class="icn-actions la la-trash-o"></i>
-                          <span class="actions-text">Delete</span>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr class="table-row">
-                      <td class="align-top box-checkbox-custom px-3">
-                        <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[007]" id="is_tableCheck_7">
-                          <label class="form-check-sign" for="is_tableCheck_7"></label>
-                        </div>
-                      </td>
-                      <td class="align-top">
-                        <span class="lockIcon d-block text-center">
-                          <i class="icon-unlock text-info"></i>
-                        </span>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>Do you own a house?</p>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>Do you currently own a house?</p>
-                      </td>
-                      <td class="align-top">
-                        <p class="text-info fw-bold">
-                        <ul class="answerList">
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">Yes</h5>
-                          </li>
-                          <!-- /item -->
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">No</h5>
-                          </li>
-                          <!-- /item -->
-                        </ul>
-                        </p>
-                      </td>
-                      <td class="align-top text-center">
-                        <p>Sub question</p>
-                      </td>
-                      <td class="align-top px-2">
-                        <input type="text" class="form-control px-2 text-center" placeholder="" value="07">
-                      </td>
-                      <td class="align-top"><span class="badge badge-success badge-action">Active</span></td>
-                      <td class="td-actions pt-2">
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-eye"></i>
-                          <span class="actions-text">Preview Offer</span>
-                        </a>
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-bar-chart-o"></i>
-                          <span class="actions-text">View Stats</span>
-                        </a>
-                        <a href="#" class="btn del-actions">
-                          <i class="icn-actions la la-trash-o"></i>
-                          <span class="actions-text">Delete</span>
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr class="table-row">
-                      <td class="align-top box-checkbox-custom px-3">
-                        <div class="form-group wrap-tableCheck p-0">
-                          <input class="tableCheck" type="checkbox" name="is_tableCheck[009]" id="is_tableCheck_009">
-                          <label class="form-check-sign" for="is_tableCheck_009"></label>
-                        </div>
-                      </td>
-                      <td class="align-top px-2">
-                        <span class="lockIcon d-block text-center">
-                          <i class="icon-lock text-info"></i>
-                        </span>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>What is your current employment status?</p>
-                      </td>
-                      <td class="align-top white-space-normal">
-                        <p>What is your housing situation?</p>
-                      </td>
-                      <td class="align-top">
-                        <p class="text-info fw-bold">
-                        <ul class="answerList">
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">I’m a home owner</h5>
-                          </li>
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title">I’m renting my home</h5>
-                          </li>
-                          <!-- /item -->
-                          <li class="answerItem w-100 m-0">
-                            <h5 class="answerItem__title"> I’m living with my parents</h5>
-                          </li>
-                          <!-- /item -->
-                        </ul>
-                        </p>
-                      </td>
-                      <td class="align-top text-center">
-                        <p>Condition logic <a href="#" class="editConditionLogic"><i
-                              class="icn-actions la icon-edit"></i></a></p>
-                      </td>
-                      <td class="align-top px-2">
-                        <input type="text" class="form-control px-2 text-center" placeholder="" value="009">
-                      </td>
-                      <td class="align-top"><span class="badge badge-danger badge-action">Inactive</span></td>
-                      <td class="td-actions pt-2">
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-eye"></i>
-                          <span class="actions-text">Preview Offer</span>
-                        </a>
-                        <a href="#" class="btn preview-actions">
-                          <i class="icn-actions la la-bar-chart-o"></i>
-                          <span class="actions-text">View Stats</span>
-                        </a>
-                        <a href="#" class="btn del-actions">
-                          <i class="icn-actions la la-trash-o"></i>
-                          <span class="actions-text">Delete</span>
-                        </a>
-                      </td>
-                    </tr>
-
-                  </tbody>
-                </table>
-
+                  </div>
+                </div>
               </div>
               <!-- ./table -->
-
-              <!-- include footer.html -->
-              <div class="d-flex justify-content-center mt-4">
-                <ul class="pagination pg-info">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                      <span aria-hidden="true">«</span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                  </li>
-                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                      <span aria-hidden="true">»</span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -870,8 +861,8 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
     crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script type="text/javascript" src="scripts/jquery.nice-select.min.js"></script>
-  <script type="text/javascript" src="scripts/jquery.tablednd.js"></script>
   <script type="text/javascript" src="scripts/question.js"></script>
   <script type="text/javascript" src="scripts/apiSetting.js"></script>
   <script type="text/javascript" src="scripts/drapTable.js"></script>

@@ -1,17 +1,31 @@
 /** @format */
+jQuery.browser = {
+  msie: false,
+  version: 0,
+};
+
 $(document).ready(function () {
   // Drag row table
-  $(".drag-table").each(function () {
-    $(".drag-table").tableDnD({
-      onDragClass: "myDragClass",
-      onDragStop: function (table, row) {
-        var rows = table.tBodies[0].rows;
-        var debugStr = "Row dropped was " + row.id + ". New order: ";
-        for (var i = 0; i < rows.length; i++) {
-          debugStr += rows[i].id + " ";
-        }
-        console.log("onDropwwwwwwwwwwwwwwwwwwwwwwwwww", table, row);
+
+  $("#tableDragAndDrop").each(function () {
+    // Drag and drops list image
+    $("#tableDragRow").sortable({
+      animation: 150,
+      axis: "y",
+      dropOnEmpty: false,
+      start: function (event, ui) {
+        // console.log(event, ui, "eventeventevent");
+      },
+      stop: function (e, ui) {
+        $(this)
+          .find(".table_row")
+          .each(function (index) {
+            $(this)
+              .find(".td input.form-control")
+              .val(index + 1);
+          });
       },
     });
+    //End Drag and drops list image
   });
 });
