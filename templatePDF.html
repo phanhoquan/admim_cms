@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>HTML Template PDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap" rel="stylesheet">
+
+  <style>
+    .leadDetails {
+      width: 1020px;
+      margin: auto;
+      padding: 60px 80px;
+      background-color: #fff;
+    }
+
+    .card {
+      padding-bottom: 30px;
+    }
+
+    .leadDetails * {
+      color: #212121;
+      font-family: 'Poppins',
+        sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .box-title {
+      font-size: 18px;
+      padding-bottom: 20px;
+      margin-bottom: 0;
+      border-bottom: 3px solid #d5f1ff;
+      font-weight: 700;
+    }
+
+    .box-title span {
+      font-size: 16px;
+      font-weight: 400;
+      margin-left: 10px;
+    }
+
+    .content-box {
+      padding: 5px 20px;
+    }
+
+    .content-box .item-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .content-box .item-info p {
+      font-weight: 700;
+      margin-right: 30px;
+      width: 250px;
+    }
+
+    .text-info {
+      color: #1da9eb
+    }
+
+    .sub-title {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .text-title {
+      font-weight: 600;
+    }
+
+    .content-question {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .content-question .sub-title {
+      margin: 0;
+    }
+
+    .question {
+      margin-right: 100px;
+    }
+
+    .answerItem__title {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .answerItem__title::before {
+      content: "";
+      width: 0.375rem;
+      height: 0.375rem;
+      background-color: #39bfff;
+      border-radius: 50%;
+      display: inline-block;
+      position: absolute;
+      top: 0.375rem;
+      left: -20px;
+    }
+
+    .answerItem__content ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .answerItem__content ul li {
+      font-weight: 700;
+    }
+
+
+    .answerItem__content {
+      margin-left: 20px;
+    }
+
+    .answerItem {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .px-3 .content-box {
+      padding-left: 40px;
+    }
+
+    .box-user {
+      display: flex;
+      align-items: center;
+    }
+
+    .item-info-user.first {
+      width: 40%;
+    }
+
+    .item-info-user {
+      width: 30%;
+    }
+
+    .w-60 {
+      width: 60% !important;
+    }
+
+    .w-60.item-info-user {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .w-60.item-info-user p {
+      width: 140px;
+    }
+
+    .w-100 {
+      width: 100% !important;
+
+    }
+
+    .item-info-user {
+      display: flex;
+      align-items: center;
+    }
+
+    .item-info-user div {
+      white-space: pre-line;
+      width: calc(100% - 110px);
+    }
+
+    .item-info-user p {
+      width: 110px;
+      margin: 0;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .mb-10 .box-title {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="leadDetails">
+    <div class="card">
+      <h2 class="box-title">Lead Details <span>Leads / View Detail ID: 10 </span></h2>
+      <div class="card-header">
+        <div class="content-box">
+          <div class="item-info">
+            <p>Received At (submission date)</p>
+            <span>12-03-2021 09:32:23</span>
+          </div>
+          <div class="item-info">
+            <p>Consent to marketing channels</p>
+            <span>Email</span>
+          </div>
+          <div class="item-info">
+            <p>Agreed to the terms and conditions</p>
+            <span>Yes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-10">
+      <h2 class="box-title">Lead Data</h2>
+      <div class="card-header">
+        <div class="content-box box-user">
+          <div class="item-info-user first">
+            <p>Title</p>
+            <span>Mr</span>
+          </div>
+          <div class="item-info-user">
+            <p>Suburb</p>
+            <span>Queensland</span>
+          </div>
+          <div class="item-info-user">
+            <p>Age</p>
+            <span>23</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-header">
+        <div class="content-box box-user">
+          <div class="item-info-user first">
+            <p>First name</p>
+            <span>Liam</span>
+          </div>
+          <div class="item-info-user">
+            <p>State</p>
+            <span>Queensland</span>
+          </div>
+          <div class="item-info-user">
+            <p>Gender</p>
+            <span>Male</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-header">
+        <div class="content-box box-user">
+          <div class="item-info-user first">
+            <p>Last name</p>
+            <span>Duncan</span>
+          </div>
+          <div class="item-info-user">
+            <p>Postcode</p>
+            <span>4865</span>
+          </div>
+          <div class="item-info-user">
+            <p>Email</p>
+            <span>liamduncan@gmail.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-header">
+        <div class="content-box box-user">
+          <div class="item-info-user first">
+            <p>Address</p>
+            <span>33 Whitehaven Crescent</span>
+          </div>
+          <div class="item-info-user">
+            <p>Date of Birth</p>
+            <span>1988-09-23</span>
+          </div>
+          <div class="item-info-user">
+            <p>Mobile</p>
+            <span>0411 222 444</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-header">
+        <div class="content-box box-user">
+          <div class="item-info-user first">
+            <p>Prize</p>
+            <span>Play Station 5</span>
+          </div>
+          <div class="item-info-user w-60">
+            <p>Landing Page URL</p>
+            <span>http://competitions.giftcardgiveaway.com.au/playstation5 </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-header">
+        <div class="content-box box-user">
+          <div class="item-info-user w-100">
+            <p>Comment</p>
+            <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+              theindustry's standard dummy text ever since unknown printer took a galley of type and scrambled it to
+              make a type specimen book. It has survived not only five centuries, but also the leap in typesetting,
+              remaining essentially unchanged.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card px-3">
+      <h2 class="box-title">Campaign Specific</h2>
+      <div class="card-header">
+        <div class="content-box">
+          <h3 class="text-info sub-title">Sponsors</h3>
+          <div class="text-title">
+            Red Energy
+          </div>
+        </div>
+      </div>
+      <div class="card-header">
+        <!-- /top -->
+        <div class="content-box">
+          <h3 class="sub-title mb-0">Campaign ID 99</h3>
+          <div class="content-question">
+            <div class="question">
+              <h3 class="text-info sub-title">Question 1</h3>
+              <div class="answerList">
+                <div class="answerItem">
+                  <h5 class="answerItem__title">Who is your current ENERGY supplier?</h5>
+                  <div class="answerItem__content">
+                    <ul>
+                      <li>
+                        Answer 1
+                      </li>
+                      <li>
+                        Answer 2
+                      </li>
+                      <li>
+                        Answer 3
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-question">
+              <h3 class="text-info sub-title mt-1 mb-3">Sub Question</h3>
+              <div class="answerList">
+                <div class="answerItem">
+                  <h5 class="answerItem__title">What is your housing situation?</h5>
+                  <div class="answerItem__content">
+                    <ul>
+                      <li>
+                        I’m renting my house
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-header">
+        <!-- /top -->
+        <div class="content-box">
+          <h3 class="sub-title mb-0">Campaign ID 99</h3>
+          <div class="content-question">
+            <div class="question">
+              <h3 class="text-info sub-title">Question 2</h3>
+              <div class="answerList">
+                <div class="answerItem">
+                  <h5 class="answerItem__title">Who is your current ENERGY supplier?</h5>
+                  <div class="answerItem__content">
+                    <ul>
+                      <li>
+                        Yes
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-header">
+        <!-- /top -->
+        <div class="content-box">
+          <h3 class="sub-title mb-0">Campaign ID 99</h3>
+          <div class="content-question">
+            <div class="question">
+              <h3 class="text-info sub-title">Question 3</h3>
+              <div class="answerList">
+                <div class="answerItem">
+                  <h5 class="answerItem__title">Who is your current ENERGY supplier?</h5>
+                  <div class="answerItem__content">
+                    <ul>
+                      <li>
+                        Yes
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-header">
+        <!-- /top -->
+        <div class="content-box">
+          <h3 class="sub-title mb-0">Campaign ID 99</h3>
+          <div class="content-question">
+            <div class="question">
+              <h3 class="text-info sub-title">Question 4</h3>
+              <div class="answerList">
+                <div class="answerItem">
+                  <h5 class="answerItem__title">Who is your current ENERGY supplier?</h5>
+                  <div class="answerItem__content">
+                    <ul>
+                      <li>
+                        Yes
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-question">
+              <h3 class="text-info sub-title mt-1 mb-3">Sub Question</h3>
+              <div class="answerList">
+                <div class="answerItem">
+                  <h5 class="answerItem__title">What is your housing situation?</h5>
+                  <div class="answerItem__content">
+                    <ul>
+                      <li>
+                        I’m renting my house
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
