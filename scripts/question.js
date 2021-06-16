@@ -256,7 +256,7 @@ $(document).ready(function () {
           '" name="condition_logic_value[' +
           idTarget +
           '][]" class="form-control input-solid" placeholder="Enter a value">' +
-          '<div id="condition_logic_value_show_' +
+          '<div class="w-100" id="condition_logic_value_show_' +
           randomIDField +
           '">' +
           '<input type="text" name="condition_logic_value_show[' +
@@ -328,7 +328,7 @@ $(document).ready(function () {
           '" name="sub_condition_logic_value[' +
           idTarget +
           '][]" class="form-control input-solid" placeholder="Enter a value">' +
-          '<div id="sub_condition_logic_value_show_' +
+          '<div class="w-100" id="sub_condition_logic_value_show_' +
           randomIDField +
           '">' +
           '<input type="text" name="sub_condition_logic_value_show[' +
@@ -427,6 +427,34 @@ $(document).ready(function () {
   //remove list value condition logic
   $(document).on("click", ".btnRemoveConditionLogicAre", function () {
     $(this).parents(".parentsRemoveConditionLogicAre").remove();
+    var idTarget = $(this).attr("data-id");
+    var dataType = $(this).attr("data-box");
+    var targetBox = dataType === "parent_question" ? "#" : "#sub_";
+    var targetBoxSub = dataType === "parent_question" ? "#is_" : "#sub_";
+
+    const allValueInput = $(
+      `${targetBox}listConditionLogicValue_${idTarget} .parentsRemoveConditionLogicAre`
+    );
+    const inputValueShow = $(
+      `${targetBox}condition_logic_value_show_${idTarget}`
+    );
+    let valueInputHidden = [];
+    if ((allValueInput && allValueInput.length + 1 > 0) || inputValueShow) {
+      for (let index = 0; index < ["", ...allValueInput].length; index++) {
+        let element = "";
+        if (index === 0) {
+          element = $(inputValueShow).find("input").val();
+        } else {
+          element = $(allValueInput[index - 1])
+            .find("input")
+            .val();
+        }
+        valueInputHidden = [...valueInputHidden, element];
+      }
+    }
+    $(`${targetBoxSub}condition_logic_value_${idTarget}`).val(
+      valueInputHidden.join("||")
+    );
   });
 
   /**
@@ -475,7 +503,11 @@ $(document).ready(function () {
       dataType +
       "></i>" +
       "</a>" +
-      '<a class="btnRemoveConditionLogicAre groupActions__item" href="javascript:void(0)">' +
+      '<a class="btnRemoveConditionLogicAre groupActions__item" href="javascript:void(0)" data-id="' +
+      idParent +
+      '" data-box="' +
+      dataType +
+      '">' +
       '<i class="la la-minus-circle la-2x font-24"></i>' +
       "</a>" +
       "</div>";
@@ -1290,7 +1322,7 @@ $(document).ready(function () {
       '" name="condition_logic_value[' +
       idParent +
       '][]" class="form-control input-solid" placeholder="Enter a value">' +
-      '<div id="condition_logic_value_show_' +
+      '<div class="w-100" id="condition_logic_value_show_' +
       idParent +
       '">' +
       '<input type="text" name="condition_logic_value_show[' +
@@ -1737,7 +1769,7 @@ $(document).ready(function () {
       '" name="sub_condition_logic_value[' +
       idParent +
       '][]" class="form-control input-solid" placeholder="Enter a value">' +
-      '<div id="sub_condition_logic_value_show_' +
+      '<div class="w-100" id="sub_condition_logic_value_show_' +
       idParent +
       '">' +
       '<input type="text" name="sub_condition_logic_value_show[' +
@@ -1854,7 +1886,7 @@ $(document).ready(function () {
         }
       }
       $(`#is_condition_logic_value_${idTarget}`).val(
-        valueInputHidden.join("|| ")
+        valueInputHidden.join("||")
       );
     }
   );
@@ -1885,8 +1917,15 @@ $(document).ready(function () {
         }
       }
       $(`#sub_condition_logic_value_${idTarget}`).val(
-        valueInputHidden.join("|| ")
+        valueInputHidden.join("||")
       );
+    }
+  );
+  $(document).on(
+    "click",
+    ".listConditionLogic li, .listSubConditionLogic li",
+    function (e) {
+      $(this).parents(".itemConditionLogic").find(".hasActions input").val("");
     }
   );
 });
