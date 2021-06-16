@@ -251,9 +251,20 @@ $(document).ready(function () {
           '<div class="col-md-5 col-sm-6 col-12 pl-lg-0">' +
           '<div class="form-group pb-0 px-0 pb-0">' +
           '<div class="d-flex align-items-center hasActions">' +
-          '<input type="text" name="condition_logic_value[' +
+          '<input type="hidden" id="is_condition_logic_value_' +
+          randomIDField +
+          '" name="condition_logic_value[' +
           idTarget +
           '][]" class="form-control input-solid" placeholder="Enter a value">' +
+          '<div id="condition_logic_value_show_' +
+          randomIDField +
+          '">' +
+          '<input type="text" name="condition_logic_value_show[' +
+          idTarget +
+          '][]" class="form-control input-solid conditionLogicValueShow" data-id=' +
+          randomIDField +
+          '  placeholder="Enter a value">' +
+          "</div>" +
           '<div class="groupActions d-flex align-items-center">' +
           '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
           '<i class="la la-plus-circle la-2x font-24" data-id="' +
@@ -312,9 +323,20 @@ $(document).ready(function () {
           '<div class="col-md-5 col-sm-6 col-12 pl-lg-0">' +
           '<div class="form-group pb-0 px-0 pb-0">' +
           '<div class="d-flex align-items-center hasActions">' +
-          '<input type="text" name="sub_condition_logic_value[' +
+          '<input type="hidden" id="sub_condition_logic_value_' +
+          randomIDField +
+          '" name="sub_condition_logic_value[' +
           idTarget +
           '][]" class="form-control input-solid" placeholder="Enter a value">' +
+          '<div id="sub_condition_logic_value_show_' +
+          randomIDField +
+          '">' +
+          '<input type="text" name="sub_condition_logic_value_show[' +
+          idTarget +
+          '][]" class="form-control input-solid subConditionLogicValueShow" data-id=' +
+          randomIDField +
+          ' placeholder="Enter a value">' +
+          "</div>" +
           '<div class="groupActions d-flex align-items-center">' +
           '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
           '<i class="la la-plus-circle la-2x font-24" data-id="' +
@@ -442,7 +464,9 @@ $(document).ready(function () {
       nameTarget +
       "condition_logic_value[" +
       idParent +
-      '][]" class="form-control input-solid" placeholder="Enter a value">' +
+      '][]" class="form-control input-solid" data-id="' +
+      idParent +
+      '" placeholder="Enter a value">' +
       '<div class="groupActions d-flex align-items-center">' +
       '<a class="btnAddConditionLogicAre groupActions__item mr-0" href="javascript:void(0)">' +
       '<i class="la la-plus-circle la-2x font-24" data-id=' +
@@ -1261,9 +1285,20 @@ $(document).ready(function () {
       '<div class="col-md-5 col-sm-6 col-12 pl-lg-0">' +
       '<div class="form-group pb-md-0 px-0 pt-0">' +
       '<div class="d-flex align-items-center hasActions">' +
-      '<input type="text" name="condition_logic_value[' +
+      '<input type="hidden" id="is_condition_logic_value_' +
+      idParent +
+      '" name="condition_logic_value[' +
       idParent +
       '][]" class="form-control input-solid" placeholder="Enter a value">' +
+      '<div id="condition_logic_value_show_' +
+      idParent +
+      '">' +
+      '<input type="text" name="condition_logic_value_show[' +
+      idParent +
+      '][]" class="form-control input-solid conditionLogicValueShow" data-id=' +
+      idParent +
+      ' placeholder="Enter a value">' +
+      "</div>" +
       '<div class="groupActions d-flex align-items-center">' +
       '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
       '<i class="la la-plus-circle la-2x font-24" data-id=' +
@@ -1697,9 +1732,20 @@ $(document).ready(function () {
       '<div class="col-md-5 col-sm-6 col-12 pl-lg-0">' +
       '<div class="form-group pb-md-0 px-0 pt-0">' +
       '<div class="d-flex align-items-center hasActions">' +
-      '<input type="text" name="sub_condition_logic_value[' +
+      '<input type="hidden" id="sub_condition_logic_value_' +
+      idParent +
+      '" name="sub_condition_logic_value[' +
       idParent +
       '][]" class="form-control input-solid" placeholder="Enter a value">' +
+      '<div id="sub_condition_logic_value_show_' +
+      idParent +
+      '">' +
+      '<input type="text" name="sub_condition_logic_value_show[' +
+      idParent +
+      '][]" class="form-control input-solid subConditionLogicValueShow" data-id=' +
+      idParent +
+      ' placeholder="Enter a value">' +
+      "</div>" +
       '<div class="groupActions d-flex align-items-center">' +
       '<a class="btnAddConditionLogic groupActions__item mr-0" href="javascript:void(0)">' +
       '<i class="la la-plus-circle la-2x font-24" data-id=' +
@@ -1781,4 +1827,66 @@ $(document).ready(function () {
       $("#text_postcode_file").prop("disabled", false);
     }
   });
+  /**
+   * parent question
+   */
+  $(document).on(
+    "keyup",
+    ".listConditionLogic .itemConditionLogic input",
+    function (event) {
+      var idTarget = $(this).attr("data-id");
+      const allValueInput = $(
+        `#listConditionLogicValue_${idTarget} .parentsRemoveConditionLogicAre `
+      );
+      const inputValueShow = $(`#condition_logic_value_show_${idTarget}`);
+      let valueInputHidden = [];
+      if ((allValueInput && allValueInput.length + 1 > 0) || inputValueShow) {
+        for (let index = 0; index < ["", ...allValueInput].length; index++) {
+          let element = "";
+          if (index === 0) {
+            element = $(inputValueShow).find("input").val();
+          } else {
+            element = $(allValueInput[index - 1])
+              .find("input")
+              .val();
+          }
+          valueInputHidden = [...valueInputHidden, element];
+        }
+      }
+      $(`#is_condition_logic_value_${idTarget}`).val(
+        valueInputHidden.join("|| ")
+      );
+    }
+  );
+  /**
+   * sub question
+   */
+  $(document).on(
+    "keyup",
+    ".listSubConditionLogic .itemConditionLogic input",
+    function (event) {
+      var idTarget = $(this).attr("data-id");
+      const allValueInput = $(
+        `#sub_listConditionLogicValue_${idTarget} .parentsRemoveConditionLogicAre`
+      );
+      const inputValueShow = $(`#sub_condition_logic_value_show_${idTarget}`);
+      let valueInputHidden = [];
+      if ((allValueInput && allValueInput.length + 1 > 0) || inputValueShow) {
+        for (let index = 0; index < ["", ...allValueInput].length; index++) {
+          let element = "";
+          if (index === 0) {
+            element = $(inputValueShow).find("input").val();
+          } else {
+            element = $(allValueInput[index - 1])
+              .find("input")
+              .val();
+          }
+          valueInputHidden = [...valueInputHidden, element];
+        }
+      }
+      $(`#sub_condition_logic_value_${idTarget}`).val(
+        valueInputHidden.join("|| ")
+      );
+    }
+  );
 });
