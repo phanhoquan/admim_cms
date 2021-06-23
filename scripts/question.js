@@ -617,6 +617,10 @@ $(document).ready(function () {
         "required",
         true
       );
+      $(`${classTarget}with_image_16_9_show_${idTarget} input`).prop(
+        "disabled",
+        false
+      );
       $(`${classTarget}with_image_16_9_show_${idTarget}`).show();
       $(`#${idTargetBox}with_images${idTarget}`).prop("disabled", true);
       $(`#${idTargetBox}with_image_1_1${idTarget}`).prop("disabled", true);
@@ -718,7 +722,7 @@ $(document).ready(function () {
     if (typeTarget === "sub_is_with_images" && targetHtml.checked) {
       $(`${classTarget}question_with_images_${idTarget}`).show();
       $(`#sub_is_with_image_1_1${idTarget}`).prop("disabled", true);
-      $(`#sub_is_with_image_16_9_${idTarget}`).prop("disabled", true);
+      $(`#sub_is_with_image_16_9_${idTarget}`).prop("disabled", false);
 
       $(`${classTarget}question_with_images_${idTarget} input`).prop(
         "required",
@@ -1156,7 +1160,9 @@ $(document).ready(function () {
       idParent +
       '" style="display: none;">' +
       '                    <div class="form-group">' +
-      '                      <label for="question" class="fw-normal">16:9 Image</label>' +
+      '                      <label for="question_image' +
+      idParent +
+      '" class="fw-normal">16:9 Image</label>' +
       '                      <div class="upload-btn-wrapper">' +
       '                        <button class="upload-file">' +
       '                          <span class="text-upload">Upload a image</span>' +
