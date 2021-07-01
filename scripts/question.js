@@ -117,7 +117,7 @@ $(document).ready(function () {
       );
       if (questionWithImages && questionWithImages.checked) {
         $(`.is_question_with_images_${idTarget}`).show();
-        $(`#is_question_with_images_${idTarget} input`).prop("required", true);
+        $(`.is_question_with_images_${idTarget} input`).prop("required", true);
       }
     }
 
@@ -207,7 +207,7 @@ $(document).ready(function () {
       );
       if (subQuestionWithImages && subQuestionWithImages.checked) {
         $(`.sub_is_question_with_images_${idTarget}`).show();
-        $(`#sub_is_question_with_images_${idTarget} input`).prop(
+        $(`.sub_is_question_with_images_${idTarget} input`).prop(
           "required",
           true
         );
@@ -1855,11 +1855,13 @@ $(document).ready(function () {
   });
 
   $(document).on("change", "#postcode_file", function (event) {
+    var textFiles =
+      ($(this)[0] && $(this)[0].files[0] && $(this)[0].files[0].name) || "";
     var fileName = $(this).val();
     if (fileName && fileName.trim()) {
       $(this).prop("required", true);
       $("#text_postcode_file").prop("disabled", true);
-      $("#text_postcode_file").val("");
+      $("#text_postcode_file").val(textFiles);
     } else {
       $(this).prop("required", false);
       $("#text_postcode_file").prop("disabled", false);
