@@ -31,6 +31,11 @@ $(document).ready(function () {
     var dataType = $(targetHtml).attr("data-type");
     var questionWithImages = $(`#is_with_images${idTarget}`)[0];
     var subQuestionWithImages = $(`#sub_is_with_images${idTarget}`)[0];
+    const isWithImage =
+      (questionWithImages && questionWithImages.checked) || false;
+    const isWithImageSub =
+      (subQuestionWithImages && subQuestionWithImages.checked) || false;
+    console.log(isWithImage, "isWithImage");
     if (dataType === "parent_question") {
       $(this).parents(".first-item-answer").addClass("none-btn-answer");
       if (x < max_input) {
@@ -88,7 +93,9 @@ $(document).ready(function () {
         html +=
           '                          <span class="image-upload"><i class="icon-upload"></i></span></button>';
         html +=
-          '                          <input class="file-upload" type="file" accept="image/*, capture=camera" id="answer_image_' +
+          '                          <input class="file-upload" type="file" required="' +
+          isWithImage +
+          '" accept="image/*, capture=camera" id="answer_image_' +
           randomIDCheckbox +
           "_" +
           idTarget +
@@ -117,7 +124,7 @@ $(document).ready(function () {
       );
       if (questionWithImages && questionWithImages.checked) {
         $(`.is_question_with_images_${idTarget}`).show();
-        $(`.is_question_with_images_${idTarget} input`).prop("required", true);
+        // $(`.is_question_with_images_${idTarget} input`).prop("required", true);
       }
     }
 
@@ -178,7 +185,9 @@ $(document).ready(function () {
         html +=
           '                          <span class="image-upload"><i class="icon-upload"></i></span></button>';
         html +=
-          '                          <input class="file-upload" type="file"  accept="image/*, capture=camera" id="answer_image_' +
+          '                          <input class="file-upload" type="file" required="' +
+          isWithImageSub +
+          '"  accept="image/*, capture=camera" id="answer_image_' +
           randomIDCheckbox +
           "_" +
           idTarget +
@@ -207,10 +216,10 @@ $(document).ready(function () {
       );
       if (subQuestionWithImages && subQuestionWithImages.checked) {
         $(`.sub_is_question_with_images_${idTarget}`).show();
-        $(`.sub_is_question_with_images_${idTarget} input`).prop(
-          "required",
-          true
-        );
+        // $(`.sub_is_question_with_images_${idTarget} input`).prop(
+        //   "required",
+        //   true
+        // );
       }
     }
   });
