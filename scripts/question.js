@@ -7,6 +7,19 @@ $(document).ready(function () {
       $(`${classSelect1}.input-solid`).niceSelect();
     });
   }
+
+  function addRequiredInputWithImage(randomIDCheckbox, idTarget, isWithImage) {
+    // Js custom addRequiredInputWithImage
+    if (isWithImage === true) {
+      $(`#answer_image_${randomIDCheckbox}_${idTarget}`).prop("required", true);
+    } else {
+      $(`#answer_image_${randomIDCheckbox}_${idTarget}`).prop(
+        "required",
+        false
+      );
+    }
+  }
+
   var max_input = 100;
   var x = 1;
   var randomID = Math.round(Math.random() * 36 ** 12).toString(36);
@@ -35,7 +48,6 @@ $(document).ready(function () {
       (questionWithImages && questionWithImages.checked) || false;
     const isWithImageSub =
       (subQuestionWithImages && subQuestionWithImages.checked) || false;
-    console.log(isWithImage, "isWithImage");
     if (dataType === "parent_question") {
       $(this).parents(".first-item-answer").addClass("none-btn-answer");
       if (x < max_input) {
@@ -93,9 +105,7 @@ $(document).ready(function () {
         html +=
           '                          <span class="image-upload"><i class="icon-upload"></i></span></button>';
         html +=
-          '                          <input class="file-upload" type="file" required="' +
-          isWithImage +
-          '" accept="image/*, capture=camera" id="answer_image_' +
+          '                          <input class="file-upload" type="file" accept="image/*, capture=camera" id="answer_image_' +
           randomIDCheckbox +
           "_" +
           idTarget +
@@ -118,6 +128,7 @@ $(document).ready(function () {
         html += "</div>";
         $("#itemsAnswer_" + idTarget).append(html);
       }
+      addRequiredInputWithImage(randomIDCheckbox, idTarget, isWithImage);
       $(`#is_table-no-border_${idTarget} .max720 input.input-solid`).prop(
         "required",
         true
@@ -185,9 +196,7 @@ $(document).ready(function () {
         html +=
           '                          <span class="image-upload"><i class="icon-upload"></i></span></button>';
         html +=
-          '                          <input class="file-upload" type="file" required="' +
-          isWithImageSub +
-          '"  accept="image/*, capture=camera" id="answer_image_' +
+          '                          <input class="file-upload" type="file" accept="image/*, capture=camera" id="answer_image_' +
           randomIDCheckbox +
           "_" +
           idTarget +
@@ -214,6 +223,7 @@ $(document).ready(function () {
         "required",
         true
       );
+      addRequiredInputWithImage(randomIDCheckbox, idTarget, isWithImageSub);
       if (subQuestionWithImages && subQuestionWithImages.checked) {
         $(`.sub_is_question_with_images_${idTarget}`).show();
         // $(`.sub_is_question_with_images_${idTarget} input`).prop(
